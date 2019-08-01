@@ -1,0 +1,10 @@
+Test run for /var/www/html/storage/TODO/412_1/bin/Debug/netcoreapp2.1/412_1.dll(.NETCoreApp,Version=v2.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.1.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+
+Test Run Successful.
+Total tests: 2
+     Passed: 2
+ Total time: 1.4312 Seconds

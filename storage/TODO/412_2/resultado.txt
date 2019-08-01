@@ -1,0 +1,17 @@
+Test run for /var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/412_2.dll(.NETCoreApp,Version=v2.1)
+Microsoft (R) Test Execution Command Line Tool Version 16.1.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+  X MyFirstUnitTests.Test1.FailingTest [9ms]
+  Error Message:
+   Assert.Equal() Failure
+Expected: 5
+Actual:   4
+  Stack Trace:
+     at MyFirstUnitTests.Test1.FailingTest() in /var/www/html/storage/TODO/412_2/Test.cs:line 18
+
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 1.2587 Seconds

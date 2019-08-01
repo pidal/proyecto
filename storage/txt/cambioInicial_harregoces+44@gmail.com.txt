@@ -1,0 +1,12 @@
+Su usuario de SSM ha sido creado. El acceso será a través de su DNI
+
+Correo: harregoces+44@gmail.com
+
+Introduzca la contraseña para su usario a través del siguiente link
+URL: http://localhost:8085/createUsers/restablishpass/Dqvhdu8W2MS4nZs0
+Las condiciones legales serán aceptadas en el momento que realiza el acceso.
+
+Condiciones:
+
+Lorem ipsum dolor sit amet consectetur adipiscing, elit sociis placerat suspendisse viverra mattis quam, et ultricies curabitur hac facilisis. Risus conubia maecenas platea nec justo tincidunt netus hac elementum odio, parturient nisl nibh cras aliquam sollicitudin mollis dictum curae venenatis curabitur, egestas facilisi ornare rutrum nulla aptent iaculis lectus metus. Et natoque placerat etiam vehicula varius ante tellus aptent bibendum, turpis convallis torquent tincidunt feugiat nam ridiculus scelerisque libero magna, suscipit iaculis sodales faucibus gravida a eleifend mus.
+Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultrices placerat gravida semper dignissim morbi, eget augue egestas bibendum posuere eleifend urna. Habitasse sociis ad torquent vivamus malesuada auctor class curae congue, tempor himenaeos tellus justo egestas lectus vehicula tincidunt, vel aliquet semper metus quisque libero nam id. Molestie vehicula netus pulvinar dapibus pretium platea justo tincidunt porttitor, donec ac vulputate vitae tortor leo aliquam nascetur sodales ante, per potenti tellus montes quam ad non nunc.

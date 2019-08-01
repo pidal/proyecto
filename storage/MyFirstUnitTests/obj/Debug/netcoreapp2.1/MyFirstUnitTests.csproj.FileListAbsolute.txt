@@ -1,0 +1,14 @@
+/var/www/html/storage/MyFirstUnitTests/obj/Debug/netcoreapp2.1/MyFirstUnitTests.csprojAssemblyReference.cache
+/var/www/html/storage/MyFirstUnitTests/obj/Debug/netcoreapp2.1/MyFirstUnitTests.csproj.CoreCompileInputs.cache
+/var/www/html/storage/MyFirstUnitTests/obj/Debug/netcoreapp2.1/MyFirstUnitTests.AssemblyInfoInputs.cache
+/var/www/html/storage/MyFirstUnitTests/obj/Debug/netcoreapp2.1/MyFirstUnitTests.AssemblyInfo.cs
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/MyFirstUnitTests.deps.json
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/MyFirstUnitTests.runtimeconfig.json
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/MyFirstUnitTests.runtimeconfig.dev.json
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/MyFirstUnitTests.dll
+/var/www/html/storage/MyFirstUnitTests/bin/Debug/netcoreapp2.1/MyFirstUnitTests.pdb
+/var/www/html/storage/MyFirstUnitTests/obj/Debug/netcoreapp2.1/MyFirstUnitTests.dll
+/var/www/html/storage/MyFirstUnitTests/obj/Debug/netcoreapp2.1/MyFirstUnitTests.pdb

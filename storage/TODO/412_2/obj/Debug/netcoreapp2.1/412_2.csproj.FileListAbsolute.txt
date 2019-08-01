@@ -1,0 +1,14 @@
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/412_2.deps.json
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/412_2.runtimeconfig.json
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/412_2.runtimeconfig.dev.json
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/412_2.dll
+/var/www/html/storage/TODO/412_2/bin/Debug/netcoreapp2.1/412_2.pdb
+/var/www/html/storage/TODO/412_2/obj/Debug/netcoreapp2.1/412_2.csprojAssemblyReference.cache
+/var/www/html/storage/TODO/412_2/obj/Debug/netcoreapp2.1/412_2.csproj.CoreCompileInputs.cache
+/var/www/html/storage/TODO/412_2/obj/Debug/netcoreapp2.1/412_2.AssemblyInfoInputs.cache
+/var/www/html/storage/TODO/412_2/obj/Debug/netcoreapp2.1/412_2.AssemblyInfo.cs
+/var/www/html/storage/TODO/412_2/obj/Debug/netcoreapp2.1/412_2.dll
+/var/www/html/storage/TODO/412_2/obj/Debug/netcoreapp2.1/412_2.pdb

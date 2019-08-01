@@ -1,0 +1,4 @@
+/var/www/html/storage/TODO/405_2/obj/Debug/netcoreapp2.1/405_2.csprojAssemblyReference.cache
+/var/www/html/storage/TODO/405_2/obj/Debug/netcoreapp2.1/405_2.csproj.CoreCompileInputs.cache
+/var/www/html/storage/TODO/405_2/obj/Debug/netcoreapp2.1/405_2.AssemblyInfoInputs.cache
+/var/www/html/storage/TODO/405_2/obj/Debug/netcoreapp2.1/405_2.AssemblyInfo.cs
