@@ -27,8 +27,6 @@
     },
     "autoload": {
         "classmap": [
-            "database/seeds",
-            "database/factories"
         ],
         "psr-4": {
             "pfg\\": "app/"
