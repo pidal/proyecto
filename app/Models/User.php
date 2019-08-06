@@ -35,6 +35,8 @@ use Illuminate\Notifications\Notifiable;
  */
 class User extends Authenticatable
 {
+    const ROLE_ALUMNO = 3;
+
     use Notifiable;
 
 	protected $casts = [
@@ -107,4 +109,16 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 
 		return $filename;
 	}
+
+	public function delete(){
+
+	    //Solo para alumnos
+        if($this->role->id == self::ROLE_ALUMNO){
+            RelUsersGroup::where('users_id',$this->id)->delete();
+            RelUsersSubject::where('users_id',$this->id)->delete();
+            StudentFile::where('users_id',$this->id)->delete();
+        }
+
+	    parent::delete();
+    }
 }

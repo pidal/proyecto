@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 
 class AlumnosController extends Controller
 {
-    const ROLE_ALUMNO = 3;
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +16,7 @@ class AlumnosController extends Controller
      */
     public function index()
     {
-        $alumnos = User::where('roles_id', self::ROLE_ALUMNO)->orderBy('id', 'DESC')->paginate(7);
+        $alumnos = User::where('roles_id', User::ROLE_ALUMNO)->orderBy('id', 'DESC')->paginate(7);
         return view('alumnos.index', compact('alumnos'));
     }
 
@@ -38,7 +38,7 @@ class AlumnosController extends Controller
      */
     public function store(Request $request)
     {
-        $request->roles_id = self::ROLE_ALUMNO;
+        $request->roles_id = User::ROLE_ALUMNO;
         $this->validate($request, [
             'name' => 'required',
             'email' => [
@@ -87,7 +87,7 @@ class AlumnosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->roles_id = self::ROLE_ALUMNO;
+        $request->roles_id = User::ROLE_ALUMNO;
         $this->validate($request, [
             'name' => 'required',
             'email' => [
