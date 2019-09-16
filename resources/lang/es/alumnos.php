@@ -5,7 +5,7 @@ return [
     'email' => 'Email',
     'dni' => 'Dni',
     'surname' => 'Alias',
-    'add' => 'Adicionar Nuevo',
+    'add' => 'Nuevo',
     'new' => 'Nuevo',
     'back' => 'Atras',
     'save' => 'Guardar',

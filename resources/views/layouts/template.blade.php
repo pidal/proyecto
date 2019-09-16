@@ -11,7 +11,7 @@
 
     <title>@yield('title', 'SSM')</title>
 
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" property="stylesheet" href="/css/app.css">
     @yield('styles')
     @yield('head')
@@ -55,8 +55,8 @@
     <div class="bg-img">
         <div class="menu">
             <div class="topnav">
-                <a href="{{ url('/register') }}">Registrar usuario/s</a>
-                <a href="{{ url('/home') }}">Usuarios</a>
+                <a href="{{ url('/adminalumnos') }}">Usuarios</a>
+                <a href="{{ url('/adminasignaturas') }}">Asignaturas</a>
                 <a href="{{ url('/logout') }}">Salir</a>
             </div>
         </div>

@@ -16,12 +16,11 @@ Route::get('/', function () {
 });
 
 
-Route::resource('admin', 'AdminController');
 
 Route::resource('alumno', 'AlumnoController');
 Auth::routes();
 
-Route::get('/home', 'AdminController@index')->name('home');
+
 
 Route::post('/practicas', 'AlumnoController@practicas');
 Route::post('/archivos', 'AlumnoController@archivos');
@@ -103,3 +102,14 @@ Route::post('/newpassword','Controller@newpassword')->name('newpassword');
 
 
 Route::resource('alumnos', 'AlumnosController');
+
+Route::resource('teacherassignment','TeacherAssigmentController');
+Route::get('teacherassignmentadd','TeacherAssigmentController@add')->name('teacherassignmentadd');
+Route::get('teacherassignmentcreate','TeacherAssigmentController@create')->name('teacherassignmentcreate');
+
+Route::resource('adminalumnos', 'AdminAlumnosController');
+Route::resource('adminasignaturas', 'AdminSubjectsController');
+Route::get('/adminrelatedsubjects/{subject_id}', 'AdminSubjectsController@relateSubjects')->name('adminrelatedsubjects');
+Route::post('/postadminrelatedsubjects/{subject_id}', 'AdminSubjectsController@postrelateSubjects')->name('postadminrelatedsubjects');
+#Route::resource('admin', 'AdminAlumnosController');
+Route::get('/home', 'AdminAlumnosController@index')->name('home');

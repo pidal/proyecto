@@ -9,6 +9,14 @@ use Illuminate\Validation\Rule;
 class AlumnosController extends Controller
 {
 
+    const ROLE_ALUMNO = 3;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('CheckTeacher');
+    }
+
     /**
      * Display a listing of the resource.
      *

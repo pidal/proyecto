@@ -1,4 +1,4 @@
-@extends ('layouts.templateProfesor')
+@extends ('layouts.template')
 
 @section('content')
     <div class="container-fluid">
@@ -23,14 +23,15 @@
 
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-                            <h3 class="panel-title">{{__('alumnos.new')}}</h3>
+                            <h3 class="panel-title">{{__('adminalumnos.new')}}</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
                                 <form method="POST" action="{{ route('adminalumnos.update',$alumno->id) }}" role="form">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
-                                    <input name="roles_id" type="hidden" value="@php echo \pfg\Http\Controllers\AlumnosController::ROLE_ALUMNO @endphp">
+
+                                    <input name="id" type="hidden" value="{{$alumno->id}}">
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.email')}} </label>
@@ -57,9 +58,19 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <a href="{{ route('alumnos.index') }}"
+                                        <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.rol')}} </label>
+                                        <select name="roles_id" id="roles_id" class="form-control col-sm-6 input-sm" required>
+                                            <option value="">{{__('Seleccione un Rol')}}</option>
+                                            <option value="1" @if($alumno->roles_id == '1') selected @endif>{{__('Admin')}}</option>
+                                            <option value="2" @if($alumno->roles_id == '2') selected @endif>{{__('Profesor')}}</option>
+                                            <option value="3" @if($alumno->roles_id == '3') selected @endif>{{__('Alumno')}}</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <a href="{{ route('adminalumnos.index') }}"
                                            class="btn btn-primary col-sm-2 link"> <- {{__('alumnos.back')}}</a>
-                                            <input type="submit" value="{{__('alumnos.save')}}" class="col-sm-2 btn btn-success btn-block"/>
+                                            <input type="submit" value="{{__('alumnos.update')}}" class="col-sm-2 btn btn-success btn-block"/>
                                     </div>
                                 </form>
                             </div>

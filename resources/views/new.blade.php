@@ -32,7 +32,7 @@
     @endif
 
 
-      <form class="form-group" method="POST" action="{{dirname($_SERVER['PHP_SELF']) . '/admin'}}" enctype="multipart/form-data">
+      <form class="form-group" method="POST" action="{{dirname($_SERVER['PHP_SELF']) . '/adminalumnos'}}" enctype="multipart/form-data">
           @csrf
           <div class="card" style="margin-left: auto; margin-right: auto; width: 60rem; margin-top: 70px; padding: 4%;">
 

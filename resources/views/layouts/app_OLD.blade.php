@@ -28,14 +28,14 @@
                     <?php   $idRol = DB::table('profesor')->where('users_id',auth()->id())->value('roles_id');
                     if($idRol == null){
                         $idRol = DB::table('alumno')->where('users_id',auth()->id())->value('roles_id');
-                    };?>
+-                    };?>
 
                     @if($idRol == null)
                             <a class="navbar-brand" href="{{ url('/register') }}">
                                 {{ config('app.menu4', 'REGISTRARSE') }}
                             </a>
                     @elseif($idRol == 2)
-                        <a class="navbar-brand" href="{{ url('/admin') }}">
+                        <a class="navbar-brand" href="{{ url('/adminalumnos') }}">
                             {{ config('app.menu1', 'CREAR PRÁCTICA') }}
                         </a>
 
@@ -43,7 +43,7 @@
                             {{ config('app.menu2', 'PRÁCTICAS') }}
                         </a>
 
-                        <a class="navbar-brand" href="{{ url('/admin') }}">
+                        <a class="navbar-brand" href="{{ url('/adminalumnos') }}">
                             {{ config('app.menu3', 'ALUMNOS') }}
                         </a>
                   @elseif($idRol == 3)

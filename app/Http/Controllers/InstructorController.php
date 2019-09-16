@@ -116,7 +116,6 @@ class InstructorController extends Controller
             $student = array('number_students' => count($query), 'users' => $query);
         }
         return view('layouts.createAssignment', compact('subjects', 'student', 'users'));
-
     }
 
 

@@ -63,5 +63,6 @@ class Kernel extends HttpKernel
         'CheckStudent' => \pfg\Http\Middleware\CheckStudent::class,
         'CheckTeacher' => \pfg\Http\Middleware\CheckTeacher::class,
         'CheckAdmin' => \pfg\Http\Middleware\CheckAdmin::class,
+        'CheckAdminTeacher' => \pfg\Http\Middleware\CheckAdminTeacher::class
     ];
 }

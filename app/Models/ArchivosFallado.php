@@ -36,4 +36,5 @@ class ArchivosFallado extends Authenticatable
 	{
 		return $this->belongsTo(\pfg\Models\StudentFile::class, 'archivos_id');
 	}
+
 }

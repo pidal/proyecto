@@ -32,9 +32,9 @@ class LoginController extends Controller
 	protected function authenticated(Request $request, $user)
 	{
 		if ($user->roles_id == 1) {
-			return redirect('/admin');
+			return redirect('/adminalumnos');
 		} else if ($user->roles_id == 2) {
-			return redirect('/createAssignment');
+			return redirect('/teacherassignment');
 		} else if ($user->roles_id == 3) {
 			return redirect('/showSubjectsStudent');
 		} else {

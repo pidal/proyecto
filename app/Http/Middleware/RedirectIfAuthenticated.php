@@ -20,9 +20,9 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
 
             if (Auth::user()->roles_id == 1) {
-                return redirect('/admin');
+                return redirect('/adminalumnos');
             } else if (Auth::user()->roles_id == 2) {
-                return redirect('/createAssignment');
+                return redirect('/teacherassignment');
             } else if (Auth::user()->roles_id == 3) {
                 return redirect('/showSubjectsStudent');
             } else {

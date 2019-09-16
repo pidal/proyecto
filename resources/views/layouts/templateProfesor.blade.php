@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="csrf-token" content="{{{ csrf_token() }}}">
 
-    <title>@yield('title', 'My Website')</title>
+    <title>@yield('title', 'SSM')</title>
 
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" property="stylesheet" href="/css/app.css">
@@ -55,7 +55,7 @@
     <div class="bg-img">
         <div class="menu">
             <div class="topnav">
-                <a href="{{ url('/createAssignment') }}">Crear práctica</a>
+                <a href="{{ url('/teacherassignment') }}">Administrar práctica</a>
                 <a href="{{ url('/showSubjects') }}">Mostrar prácticas</a>
                 <a href="{{ url('/usuariosInstructor') }}">Alumnos</a>
                 <a href="{{ url('/subjects') }}">Asignaturas</a>

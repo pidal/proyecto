@@ -1,0 +1,243 @@
+<?php
+
+namespace pfg\Http\Controllers;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
+use pfg\Mail\UserCreateMail;
+use pfg\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+
+class AdminAlumnosController extends Controller
+{
+
+    private $request;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('CheckAdmin');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $alumnos = User::orderBy('id', 'DESC')->paginate(7);
+        return view('adminalumnos.index', compact('alumnos'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('adminalumnos.create');
+    }
+
+    private function validateForm(){
+        if ($this->request['numero'] == 'no') {
+
+            $messages = [
+                'surname.required' => 'El campo apellidos es obligatorio.'
+            ];
+
+            $this->request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'surname' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'dni' => ['required', 'string', 'max:255', 'unique:users'],
+            ], $messages);
+
+        }
+        if ($this->request['numero'] == 'si') {
+            $this->request->validate([
+                'file' => 'required|file|max:5000|mimes:xlsx,csv',
+            ]);
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+        $this->request = $request;
+        $this->validateForm();
+
+        $token = Str::random();
+        $request['password'] = self::random_password();
+
+        if ($request['numero'] == 'no') {
+
+            $user = User::create([
+                'name' => $request['name'],
+                'surname' => $request['surname'],
+                'email' => $request['email'],
+                'dni' => $request['dni'],
+                'roles_id' => $request['role'],
+                'password' => Hash::make($request['password']),
+                'token' => $token,
+            ]);
+
+            User::crearPdf($user);
+
+            Mail::to($user)->send(new UserCreateMail($user));
+
+            Session::flash('success', 'Usuario/s cargados correctamente');
+            return redirect()->route('adminalumnos.index')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
+        }
+        else {
+
+            if (is_uploaded_file($_FILES['file']['tmp_name'])) {
+
+                $extension = \File::extension($request['file']->getClientOriginalName());
+
+                if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
+
+                    $path = $request['file']->getRealPath();
+
+                    $items = \Excel::load($path, function ($reader) {
+                    })->get();
+
+                    if (!empty($items) && $items->count()) {
+                        $i = 1;
+                        $cantidad_usuarios_creados = 0;
+                        $usuarios_creados = array();
+                        $password = '1234';
+                        foreach ($items as $key => $value) {
+                            $email_exist = User::where('email', $value->email)->first();
+                            $dni_exist = User::where('dni', $value->dni)->first();
+                            $i++;
+                            if (empty($value->nombre)) {
+                                Session::flash('error', 'Usuario/s no cargado/s. El nombre de la columna: ' . $i . ' está vacío.');
+                                continue;
+                            }
+                            if (empty($value->apellidos)) {
+                                Session::flash('error', 'Usuario/s no cargado/s. Los apellidos de la columna: ' . $i . ' están vacíos.');
+                                continue;
+                            }
+                            if (empty($value->email)) {
+                                Session::flash('error', 'Usuario/s no cargado/s. El email de la columna: ' . $i . ' está vacío.');
+                                continue;
+                            }
+                            if (empty($value->dni)) {
+                                Session::flash('error', 'Usuario/s no cargado/s. El dni de la columna: ' . $i . ' está vacío.');
+                                continue;
+                            }
+                            if (empty($value->rol)) {
+                                Session::flash('error', 'Usuario/s no cargado/s. El rol de la columna: ' . $i . ' está vacío.');
+                                continue;
+                            }
+                            if ($email_exist) {
+                                Session::flash('error', 'Usuario/s no cargado/s. El e-mail: ' . $email_exist['email'] . ' ya existe.');
+                                continue;
+                            }
+                            if ($dni_exist) {
+                                Session::flash('error', 'Usuario/s no cargado/s. El dni: ' . $dni_exist['dni'] . ' ya existe.');
+                                continue;
+                            }
+
+                            $token = Str::random();
+                            $user = User::create([
+                                'name' => $value->nombre,
+                                'surname' => $value->apellidos,
+                                'email' => $value->email,
+                                'dni' => $value->dni,
+                                'roles_id' => $value->rol,
+                                'password' => Hash::make($password),
+                                'token' => $token
+                            ]);
+                            $cantidad_usuarios_creados++;
+                            $usuarios_creados[] = $user->id;
+                            User::crearPdf($user);
+
+                            Mail::to($user)->send(new UserCreateMail($user));
+
+                        }
+
+                        Session::flash('success', $cantidad_usuarios_creados . ' Usuario/s cargados correctamente');
+                    }
+
+                    return redirect()->route('adminalumnos.index')->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
+                }
+            }
+
+        }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \pfg\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $alumnno = User::find($id);
+        return view('adminalumnos.show', compact('alumno'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \pfg\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $alumno = User::find($id);
+        return view('adminalumnos.edit', compact('alumno'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \pfg\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => [
+                'required',
+                'email',
+                Rule::unique('users')->ignore($request->id)
+            ],
+            'dni' => [
+                'required',
+                'numeric',
+                Rule::unique('users')->ignore($request->id)
+            ],
+            'surname' => 'required',
+            'roles_id' => 'required|numeric'
+        ]);
+        User::find($id)->update($request->all());
+        return redirect()->route('adminalumnos.index')->with('success', 'Registro Actualizado satisfactoriamente');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \pfg\Models\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        User::find($id)->delete();
+        return redirect()->route('adminalumnos.index')->with('success', 'Registro eliminado satisfactoriamente');
+    }
+}
