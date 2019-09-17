@@ -9,6 +9,7 @@ use pfg\Mail\UserCreateMail;
 use pfg\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Session;
 
 class AdminAlumnosController extends Controller
 {
@@ -239,5 +240,12 @@ class AdminAlumnosController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('adminalumnos.index')->with('success', 'Registro eliminado satisfactoriamente');
+    }
+
+    function random_password($length = 8)
+    {
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
+        $password = substr(str_shuffle($chars), 0, $length);
+        return $password;
     }
 }
