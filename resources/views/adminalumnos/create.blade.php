@@ -144,7 +144,7 @@
                     <div class="form-group row">
 
                         <a href="{{ route('adminalumnos.index') }}"
-                           class="btn btn-info col-sm-2 link"> <- {{__('alumnos.back')}}</a>
+                           class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
 
                         <div class="si box">
                             <button type="submit" class="btn btn-primary button-loading" data-loading-text="Loading...">

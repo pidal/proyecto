@@ -69,7 +69,7 @@
 
                                     <div class="form-group row">
                                         <a href="{{ route('adminalumnos.index') }}"
-                                           class="btn btn-primary col-sm-2 link"> <- {{__('alumnos.back')}}</a>
+                                           class="btn btn-primary col-sm-2 link"> {{__('alumnos.back')}}</a>
                                             <input type="submit" value="{{__('alumnos.update')}}" class="col-sm-2 btn btn-success btn-block"/>
                                     </div>
                                 </form>

@@ -9,4 +9,5 @@ return [
     'new' => 'Nuevo',
     'back' => 'Atras',
     'save' => 'Guardar',
+    'update' => 'Actualizar'
 ];

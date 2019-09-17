@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <a href="{{ route('adminasignaturas.index') }}"
-                                           class="btn btn-primary col-sm-2 link"> <- {{__('subjects.back')}}</a>
+                                           class="btn btn-primary col-sm-2 link"> {{__('subjects.back')}}</a>
 
                                             <input type="submit" value="{{__('subjects.save')}}" class="col-sm-2 btn btn-success btn-block"/>
 

@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <a href="{{ route('subjects.index') }}"
-                                           class="btn btn-info col-sm-2 link"> <- {{__('subjects.back')}}</a>
+                                           class="btn btn-info col-sm-2 link"> {{__('subjects.back')}}</a>
 
                                             <input type="submit" value="{{__('subjects.save')}}" class="col-sm-2 btn btn-success btn-block"/>
 
