@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class RelUsersSubject
@@ -23,7 +23,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class RelUsersSubject extends Authenticatable
+class RelUsersSubject extends Model
 {
 	protected $table = 'rel_users_subject';
 

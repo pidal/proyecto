@@ -19,7 +19,7 @@
                     {!! csrf_field() !!}
 
                     <div class="form-group">
-                        <label for="dni">Introduce tu correo electrónico para recuperar la contraseña</label>
+                        <label for="email">Introduce tu correo electrónico para recuperar la contraseña</label>
                         <input type="email" class="form-control" id="email" placeholder="Correo electrónico" name="email" required>
                     </div>
 

@@ -105,7 +105,7 @@ class AdminSubjectsController extends Controller
     public function relateSubjects($subject_id)
     {
         $users = RelUsersSubject::join('users', 'users.id', '=', 'rel_users_subject.users_id')
-            ->select('rel_users_subject.id', 'users.name', 'users.email', 'users.dni')
+            ->select('rel_users_subject.id', 'users.name', 'users.email')
             ->where('rel_users_subject.subject_id', $subject_id)
             ->orderBy('users.id', 'DESC')
             ->paginate(7);

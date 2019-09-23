@@ -2,6 +2,8 @@
 
 namespace pfg\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use pfg\Models\Subject;
 use pfg\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -22,10 +24,20 @@ class AlumnosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $alumnos = User::where('roles_id', User::ROLE_ALUMNO)->orderBy('id', 'DESC')->paginate(7);
-        return view('alumnos.index', compact('alumnos'));
+        $alumnos = User::select('users.*')
+            ->where('users.roles_id', User::ROLE_ALUMNO)
+            ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
+            ->orderBy('users.id')
+        ->paginate(8);
+
+        if (isset($request->subject)) {
+            $alumnos->where('rel_users_subject.subject_id', $request->subject);
+        }
+
+        $subjects = Subject::get();
+        return view('alumnos.index', compact('alumnos','subjects'));
     }
 
     /**
@@ -54,7 +66,6 @@ class AlumnosController extends Controller
                 'email',
                 Rule::unique('users')->ignore($request->id)
             ],
-            'dni' => 'required|numeric',
             'surname' => 'required',
             'roles_id' => 'required|numeric'
         ]);
@@ -101,9 +112,8 @@ class AlumnosController extends Controller
             'email' => [
                 'required',
                 'email',
-                Rule::unique('users')->ignore($request->id)
+                Rule::unique('users')->ignore($id)
             ],
-            'dni' => 'required|numeric',
             'surname' => 'required',
             'roles_id' => 'required|numeric'
         ]);

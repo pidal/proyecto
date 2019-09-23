@@ -7,10 +7,8 @@ return [
     'surname' => 'Alias',
     'add' => 'Nuevo',
     'new' => 'Nuevo',
-    'edit' => 'Actualizar el alumno ',
     'back' => 'Atras',
     'save' => 'Guardar',
     'update' => 'Actualizar',
-    'edit' => 'Modificando al alumno',
-    'rol' => 'Rol'
+    'edit' => 'Modificando al alumno'
 ];

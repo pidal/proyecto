@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class RelUsersGroup
@@ -23,7 +23,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class RelUsersGroup extends Authenticatable
+class RelUsersGroup extends Model
 {
 	protected $casts = [
 		'users_id' => 'int',

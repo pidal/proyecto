@@ -14,7 +14,6 @@ return [
     'selectone' => 'Selecciones una Asignatura',
     'relatedList' => 'Usuario de esta asignatura',
     'email' => 'Email',
-    'dni' => 'Dni',
     'addRelatedUser' => 'Agregar Usuario a esta asignatura',
     'selectUser' => 'Seleccion Un usuario',
     'selectAUser' => 'Seleccion Un usuario'

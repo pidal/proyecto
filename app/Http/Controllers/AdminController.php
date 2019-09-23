@@ -219,8 +219,7 @@ class AdminController extends Controller
 			$request->validate([
 				'name' => ['required', 'string', 'max:255'],
 				'surname' => ['required', 'string', 'max:255'],
-				'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-				'dni' => ['required', 'string', 'max:255', 'unique:users'],
+				'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
 			], $messages);
 
 		}
@@ -238,7 +237,6 @@ class AdminController extends Controller
 				'name' => $request['name'],
 				'surname' => $request['surname'],
 				'email' => $request['email'],
-				'dni' => $request['dni'],
 				'roles_id' => $request['role'],
 				'password' => Hash::make($request['password']),
 				'token' => $token,
@@ -270,7 +268,6 @@ class AdminController extends Controller
 						$password = '1234';
 						foreach ($items as $key => $value) {
 							$email_exist = User::where('email', $value->email)->first();
-							$dni_exist = User::where('dni', $value->dni)->first();
 							$i++;
 							if (empty($value->nombre)) {
 								Session::flash('error', 'Usuario/s no cargado/s. El nombre de la columna: ' . $i . ' está vacío.');
@@ -284,10 +281,6 @@ class AdminController extends Controller
 								Session::flash('error', 'Usuario/s no cargado/s. El email de la columna: ' . $i . ' está vacío.');
 								continue;
 							}
-							if (empty($value->dni)) {
-								Session::flash('error', 'Usuario/s no cargado/s. El dni de la columna: ' . $i . ' está vacío.');
-								continue;
-							}
 							if (empty($value->rol)) {
 								Session::flash('error', 'Usuario/s no cargado/s. El rol de la columna: ' . $i . ' está vacío.');
 								continue;
@@ -296,17 +289,12 @@ class AdminController extends Controller
 								Session::flash('error', 'Usuario/s no cargado/s. El e-mail: ' . $email_exist['email'] . ' ya existe.');
 								continue;
 							}
-							if ($dni_exist) {
-								Session::flash('error', 'Usuario/s no cargado/s. El dni: ' . $dni_exist['dni'] . ' ya existe.');
-								continue;
-							}
 
 							$token = Str::random();
 							$user = User::create([
 								'name' => $value->nombre,
 								'surname' => $value->apellidos,
 								'email' => $value->email,
-								'dni' => $value->dni,
 								'roles_id' => $value->rol,
 								'password' => Hash::make($password),
 								'token' => $token

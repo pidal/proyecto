@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Role
@@ -23,7 +23,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class Role extends Authenticatable
+class Role extends Model
 {
 	protected $fillable = [
 		'name'

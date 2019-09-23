@@ -49,7 +49,7 @@
         <td>
             <div class="padre" style="overflow: hidden; ">
 
-                <p>Su usuario de SSM ha sido creado. El acceso será a través de su DNI </p>
+                <p>Su usuario de SSM ha sido creado. El acceso será a través de su Email </p>
                 <p>Correo: <?php echo $email?></p>
                 <p>Introduzca la contraseña para su usario a través del siguiente link</p>
                 <p>URL: <?php echo $url?></p>

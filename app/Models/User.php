@@ -22,7 +22,6 @@ use Illuminate\Notifications\Notifiable;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property string $surname
- * @property string $dni
  * @property int $roles_id
  * 
  * @property \pfg\Models\Role $role
@@ -54,7 +53,6 @@ class User extends Authenticatable
 		'password',
 		'remember_token',
 		'surname',
-		'dni',
 		'roles_id',
         'token'
 	];
@@ -95,7 +93,7 @@ class User extends Authenticatable
 		if ($archivo == false) {
 			throw new \Exception("Error al crear el archivo");
 		} else {
-			fwrite($archivo, "Su usuario de SSM ha sido creado. El acceso será a través de su DNI\r\n\r\n");
+			fwrite($archivo, "Su usuario de SSM ha sido creado. El acceso será a través de su Email\r\n\r\n");
 			fwrite($archivo, "Correo: ".$user->email."\r\n\r\n");
 			fwrite($archivo, "Introduzca la contraseña para su usario a través del siguiente link\r\n");
 			fwrite($archivo, "URL: $url\r\n");

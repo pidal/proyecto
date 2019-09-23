@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class GroupAssignment
@@ -24,7 +24,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class GroupAssignment extends Authenticatable
+class GroupAssignment extends Model
 {
 	protected $table = 'group_assignment';
 
@@ -48,4 +48,14 @@ class GroupAssignment extends Authenticatable
 	{
 		return $this->hasMany(\pfg\Models\RelUsersGroup::class);
 	}
+
+	public function delete()
+    {
+        $rels = RelUsersGroup::where('group_assignment_id',$this->id);
+        foreach ($rels as $r)
+        {
+            RelUsersGroup::find($r)->delete();
+        }
+        parent::delete();
+    }
 }

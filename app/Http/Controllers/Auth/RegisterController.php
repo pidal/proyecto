@@ -69,8 +69,7 @@ class RegisterController extends Controller
 			$rules = [
 				'name' => ['required', 'string', 'max:255'],
 				'surname' => ['required', 'string', 'max:255'],
-				'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-				'dni' => ['required', 'string', 'max:255', 'unique:users'],
+				'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
 			];
 			return Validator::make($data, $rules,$messages);
 		}
@@ -97,7 +96,6 @@ class RegisterController extends Controller
 				'name' => $data['name'],
 				'surname' => $data['surname'],
 				'email' => $data['email'],
-				'dni' => $data['dni'],
 				'roles_id' => $data['role'],
 				'password' => Hash::make($data['password']),
 			]);
@@ -109,13 +107,11 @@ class RegisterController extends Controller
 			$url = $path . $token;
 			$email = $data['email'];
 			$archivo = fopen(storage_path(DIRECTORY_SEPARATOR."txt".DIRECTORY_SEPARATOR."cambioInicial_$email.txt"), "w");
-			$dni = $data['dni'];
-			$user = DB::table('users')->where('dni', $dni)->get();
 			if ($archivo == false) {
 				echo "Error al crear el archivo";
 			} else {
 				// Escribir en el archivo:
-				fwrite($archivo, "Su usuario de SSM ha sido creado. El acceso será a través de su DNI\r\n\r\n");
+				fwrite($archivo, "Su usuario de SSM ha sido creado. El acceso será a través de su Email\r\n\r\n");
 				fwrite($archivo, "Correo: $email\r\n\r\n");
 				fwrite($archivo, "Introduzca la contraseña para su usario a través del siguiente link\r\n");
 				fwrite($archivo, "URL: $url\r\n");
@@ -154,7 +150,6 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 						$i = 1;
 						foreach ($items as $key => $value) {
 							$email_exist = User::where('email', $value->email)->first();
-							$dni_exist = User::where('dni', $value->dni)->first();
 							$i++;
 							$user = User::where('email', 'mateos.joaquin@gamaphone.com')->first();
 							if (empty($value->nombre)) {
@@ -169,10 +164,6 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 								Session::flash('error', 'Usuario/s no cargado/s. El email de la columna: ' . $i . ' está vacío.');
 								return $user;
 							}
-							if (empty($value->dni)) {
-								Session::flash('error', 'Usuario/s no cargado/s. El dni de la columna: ' . $i . ' está vacío.');
-								return $user;
-							}
 							if (empty($value->rol)) {
 								Session::flash('error', 'Usuario/s no cargado/s. El rol de la columna: ' . $i . ' está vacío.');
 								return $user;
@@ -181,10 +172,6 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 								Session::flash('error', 'Usuario/s no cargado/s. El e-mail: ' . $email_exist['email'] . ' ya existe.');
 								return $email_exist;
 							}
-							if ($dni_exist) {
-								Session::flash('error', 'Usuario/s no cargado/s. El dni: ' . $dni_exist['dni'] . ' ya existe.');
-								return $dni_exist;
-							}
 						}
 						foreach ($items as $key => $value) {
 							$value->password = '1234';
@@ -192,7 +179,6 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 								'name' => $value->nombre,
 								'surname' => $value->apellidos,
 								'email' => $value->email,
-								'dni' => $value->dni,
 								'roles_id' => $value->rol,
 								'password' => Hash::make($value->password),
 							]);

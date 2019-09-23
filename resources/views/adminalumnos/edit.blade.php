@@ -23,7 +23,7 @@
 
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-                            <h3 class="panel-title">{{__('adminalumnos.new')}}</h3>
+                            <h3 class="panel-title">{{__('adminalumnos.edit')}} {{$alumno->name}}</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
@@ -49,12 +49,6 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.surname')}} </label>
                                         <input type="text" name="surname" id="surname" value="{{$alumno->surname}}"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('alumnos.surname')}}">
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.dni')}} </label>
-                                        <input type="text" name="dni" id="dni" value="{{$alumno->dni}}"
-                                               class="col-sm-6 form-control input-sm" placeholder="{{__('alumnos.dni')}}">
                                     </div>
 
                                     <div class="form-group row">

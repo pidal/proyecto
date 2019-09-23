@@ -4,18 +4,11 @@ namespace pfg\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use pfg\Mail\UserCreateMail;
+use pfg\Models\Assignment;
 use pfg\Models\Practica;
-use pfg\Models\User;
 use Illuminate\Support\Facades\DB;
-use pfg\Http\Requests\StorePracticaRequest;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 use Session;
 use PDF;
-use Illuminate\Support\Facades\Mail;
 
 class TeacherAssigmentController extends Controller
 {
@@ -95,6 +88,9 @@ class TeacherAssigmentController extends Controller
         return view('TeacherAssigment.create.createAssignment', compact('subjects', 'student', 'users'));
     }
 
-    public function destroy(Request $request){}
+    public function destroy($id){
+	    Assignment::find($id)->delete();
+        return redirect()->route('teacherassignment.index')->with('success', 'Registro eliminado satisfactoriamente');
+	}
 
 }

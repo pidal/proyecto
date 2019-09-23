@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class StudentFile
@@ -29,7 +29,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class StudentFile extends Authenticatable
+class StudentFile extends Model
 {
 	protected $casts = [
 		'weight' => 'float',

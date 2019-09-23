@@ -294,13 +294,13 @@
                       enctype="multipart/form-data">
                     @csrf
                     <div class="row setup-content justify-content-center" id="step-1">
-                        @include('TeacherAssigment.createAssignment-Step1')
+                        @include('TeacherAssigment.create.createAssignment-Step1')
                     </div>
                     <div class="row setup-content justify-content-center" id="step-2">
-                        @include('TeacherAssigment.createAssignment-Step2')
+                        @include('TeacherAssigment.create.createAssignment-Step2')
                     </div>
                     <div class="row setup-content justify-content-center" id="step-3">
-                        @include('TeacherAssigment.createAssignment-Step3')
+                        @include('TeacherAssigment.create.createAssignment-Step3')
                     </div>
                 </form>
             </div>

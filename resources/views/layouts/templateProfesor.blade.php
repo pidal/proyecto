@@ -57,7 +57,7 @@
             <div class="topnav">
                 <a href="{{ url('/teacherassignment') }}">Administrar práctica</a>
                 <a href="{{ url('/showSubjects') }}">Mostrar prácticas</a>
-                <a href="{{ url('/usuariosInstructor') }}">Alumnos</a>
+                <a href="{{ url('/alumnos') }}">Alumnos</a>
                 <a href="{{ url('/subjects') }}">Asignaturas</a>
                 <a href="{{ url('/logout') }}">Salir</a>
             </div>

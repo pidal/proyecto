@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Assignment
@@ -31,7 +31,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class Assignment extends Authenticatable
+class Assignment extends Model
 {
 	protected $table = 'assignment';
 
@@ -68,4 +68,21 @@ class Assignment extends Authenticatable
 	{
 		return $this->hasMany(\pfg\Models\StudentFile::class);
 	}
+
+	public function delete()
+    {
+        $groupAssignments = GroupAssignment::where('assignment_id',$this->id)->pluck('id');
+        foreach ($groupAssignments as $groupAssignment)
+        {
+            GroupAssignment::find($groupAssignment)->delete();
+        }
+
+        $studenFiles = StudentFile::where('assignment_id',$this->id)->pluck('id');
+        foreach($studenFiles as $studenFile)
+        {
+            StudentFile::find($studenFile)->delete();
+        }
+
+        parent::delete();
+    }
 }

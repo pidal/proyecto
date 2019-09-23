@@ -7,7 +7,8 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+
 
 /**
  * Class ArchivosHistoricosFallado
@@ -20,7 +21,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class ArchivosHistoricosFallado extends Authenticatable
+class ArchivosHistoricosFallado extends Model
 {
 	public $timestamps = false;
 

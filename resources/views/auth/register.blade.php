@@ -74,17 +74,6 @@
                         </div>
                     </div>
                     <div class="no box">
-                    <div class="form-group">
-                        <label for="email">{{ __('DNI') }}</label>
-                            <input id="dni" type="text" class="form-control{{ $errors->has('dni') ? ' is-invalid' : '' }}" name="dni" value="{{ old('dni') }}" requisi>
-                            @if ($errors->has('dni'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('dni') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="no box">
                     <fieldset class="form-group">
                             <label for="role" >{{ __('Rol') }}</label>
                                 <div class="form-check">

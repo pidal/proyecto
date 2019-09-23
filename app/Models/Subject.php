@@ -7,7 +7,7 @@
 
 namespace pfg\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Subject
@@ -24,7 +24,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @package pfg\Models
  */
-class Subject extends Authenticatable
+class Subject extends Model
 {
 	protected $table = 'subject';
 
@@ -49,4 +49,22 @@ class Subject extends Authenticatable
 					->withPivot('id')
 					->withTimestamps();
 	}
+
+	public function delete(){
+
+	    //rel_user_subjects
+        $rel = RelUsersSubject::where('subject_id',$this->id)->pluck('id');
+        foreach($rel as $r){
+            RelUsersSubject::find($r)->delete();
+        }
+
+        //assignment
+        $assignments = Assignment::where('subject_id',$this->id)->pluck('id');
+        foreach($assignments as $assignment)
+        {
+            Assignment::find($assignment)->delete();
+        }
+
+	    parent::delete();
+    }
 }

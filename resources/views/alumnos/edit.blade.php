@@ -23,11 +23,11 @@
 
                     <div class="panel panel-default" >
                         <div class="panel-heading">
-                            <h3 class="panel-title">{{__('alumnos.new')}}</h3>
+                            <h3 class="panel-title">{{__('alumnos.edit')}} {{$alumno->name}}</h3>
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{ route('adminalumnos.update',$alumno->id) }}" role="form">
+                                <form method="POST" action="{{ route('alumnos.update',$alumno->id) }}" role="form">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <input name="roles_id" type="hidden" value="@php echo \pfg\Http\Controllers\AlumnosController::ROLE_ALUMNO @endphp">
@@ -48,12 +48,6 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.surname')}} </label>
                                         <input type="text" name="surname" id="surname" value="{{$alumno->surname}}"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('alumnos.surname')}}">
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.dni')}} </label>
-                                        <input type="text" name="dni" id="dni" value="{{$alumno->dni}}"
-                                               class="col-sm-6 form-control input-sm" placeholder="{{__('alumnos.dni')}}">
                                     </div>
 
                                     <div class="form-group row">
