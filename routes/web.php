@@ -105,7 +105,7 @@ Route::resource('alumnos', 'AlumnosController');
 
 Route::resource('teacherassignment','TeacherAssigmentController');
 Route::get('teacherassignmentadd','TeacherAssigmentController@add')->name('teacherassignmentadd');
-Route::get('teacherassignmentcreate','TeacherAssigmentController@create')->name('teacherassignmentcreate');
+Route::post('teacherassignmentcreate','TeacherAssigmentController@create')->name('teacherassignmentcreate');
 
 Route::resource('adminalumnos', 'AdminAlumnosController');
 Route::resource('adminasignaturas', 'AdminSubjectsController');
