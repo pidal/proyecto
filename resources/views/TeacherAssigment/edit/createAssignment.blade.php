@@ -63,7 +63,8 @@
             $number_students = 0,
             $users = [],
             inputMemeberNumber = $('#members_number'),
-            selectable = $(".selectable");
+            selectable = $(".selectable"),
+            FormFields2 = $("#FormFields2");
 
         allWells.hide();
 
@@ -106,6 +107,8 @@
                 $('#members_number').attr("required","required");
             } else {
                 gruposdiv.hide();
+                FormFields2.html('');
+                $('#members_number').val('');
                 $('#members_number').attr("required","false");
             }
         });
@@ -193,11 +196,11 @@
             }
         }
 
-        @if($assignment->subject_id)
+        @if(old('subject_id'))
             selectSubject.trigger('change');
         @endif
 
-        @if($assignment->type)
+        @if(old('type'))
             mytype.trigger('change');
         @endif
 
@@ -290,9 +293,10 @@
                     </div>
                 @endif
 
-                <form id="form_" class="form-horizontal was-validated" action="{{ route('teacherassignmentcreate') }}" method="post"
+                <form id="form_" class="form-horizontal was-validated" action="{{ route('teacherassignmentedit') }}" method="post"
                       enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="id" value="{{$assignment->id}}" />
                     <div class="row setup-content justify-content-center" id="step-1">
                         @include('TeacherAssigment.edit.createAssignment-Step1')
                     </div>

@@ -81,7 +81,7 @@
                         <input id="fileName_{{$i}}" type="text"
                                class="form-control" min="1" placeholder="Ej) practica.c"
                                name="fileName_{{$i}}"
-                               value="{{ $assignment->filename }}"
+                               value="{{ old($filename)}}"
                                required
                                requisi autofocus />
                         <label id="label2_{{$i}}"
@@ -89,7 +89,7 @@
                         <input id="weight_{{$i}}" type="number"
                                class="form-control" min="1" max="100" placeholder="100%"
                                name="weight_{{$i}}"
-                               value="{{ $assignment->$weight }}"
+                               value="{{ old($weight) }}"
                                required
                                requisi autofocus/>
                     </div>
@@ -124,9 +124,9 @@
             <label for="language">{{ __('Lenguaje de programación: ') }}</label>
             <div>
                 <select name="language" id="language" class="form-control" required="required">
-                    <option value="c" @if( $assignment->language == 'c') selected @endif>C</option>
-                    <option value="c#" @if( $assignment->language == 'c#') selected @endif>C#</option>
-                    <option value="java" @if( $assignment->language == 'java') selected @endif>Java</option>
+                    <option value="c" @if($assignment->language == 'c') selected @endif>C</option>
+                    <option value="c#" @if($assignment->language == 'c#') selected @endif>C#</option>
+                    <option value="java" @if($assignment->language == 'java') selected @endif>Java</option>
                 </select>
                 @if ($errors->has('language'))
                     <span class="invalid-feedback" role="alert">
@@ -140,8 +140,8 @@
             <label for="call">{{ __('Convocatoria: ') }}</label>
             <div>
                 <select name="call" id="call" class="form-control" required="required">
-                    <option value="ordinaria" @if ( $assignment->call == 'ordinaria') selected @endif>Ordinaria</option>
-                    <option value="extraordinaria" @if ( $assignment->call == 'extraordinaria') selected @endif>Extraordinaria</option>
+                    <option value="ordinaria" @if ($assignment->call == 'ordinaria') selected @endif>Ordinaria</option>
+                    <option value="extraordinaria" @if ($assignment->call == 'extraordinaria') selected @endif>Extraordinaria</option>
                 </select>
                 @if ($errors->has('call'))
                     <span class="invalid-feedback" role="alert">

@@ -63,7 +63,8 @@
             $number_students = 0,
             $users = [],
             inputMemeberNumber = $('#members_number'),
-            selectable = $(".selectable");
+            selectable = $(".selectable"),
+            FormFields2 = $("#FormFields2");
 
         allWells.hide();
 
@@ -106,6 +107,8 @@
                 $('#members_number').attr("required","required");
             } else {
                 gruposdiv.hide();
+                FormFields2.html('');
+                $('#members_number').val('');
                 $('#members_number').attr("required","false");
             }
         });
