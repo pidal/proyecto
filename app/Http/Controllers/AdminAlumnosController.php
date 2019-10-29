@@ -173,7 +173,7 @@ class AdminAlumnosController extends Controller
      */
     public function show($id)
     {
-        $alumnno = User::find($id);
+        $alumno = User::find($id);
         return view('adminalumnos.show', compact('alumno'));
     }
 
