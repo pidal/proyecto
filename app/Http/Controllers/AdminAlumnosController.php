@@ -72,10 +72,11 @@ class AdminAlumnosController extends Controller
     public function store(Request $request)
     {
 
+dd($request);
         $this->request = $request;
         $this->validateForm();
 
-        dd($request);
+
 
         $token = Str::random();
         $request['password'] = self::random_password();
