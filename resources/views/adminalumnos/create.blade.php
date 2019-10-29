@@ -59,7 +59,7 @@
                             <label for="name">{{ __('Nombre') }}</label>
                             <input id="name" type="text"
                                    class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
-                                   value="{{ old('name') }}" requisi autofocus>
+                                   value="{{ old('name') }}" required autofocus>
                             @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -72,7 +72,7 @@
                             <label for="surname">{{ __('Apellidos') }}</label>
                             <input id="surname" type="text"
                                    class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname"
-                                   value="{{ old('surname') }}" requisi autofocus>
+                                   value="{{ old('surname') }}" required autofocus>
                             @if ($errors->has('surname'))
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('surname') }}</strong>
@@ -85,7 +85,7 @@
                             <label for="email">{{ __('E-Mail') }}</label>
                             <input id="email" type="email"
                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                   value="{{ old('email') }}" requisi>
+                                   value="{{ old('email') }}" required>
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -120,7 +120,7 @@
 
                         <label for="file">El formato deberá ser .csv o .xlsx</label>
                         <input id="file" type="file" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}"
-                               name="file" value="{{ old('file') }}" requisi>
+                               name="file" value="{{ old('file') }}" required>
                         @if ($errors->has('file'))
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('file') }}</strong>
