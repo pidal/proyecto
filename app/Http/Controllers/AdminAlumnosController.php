@@ -75,6 +75,8 @@ class AdminAlumnosController extends Controller
         $this->request = $request;
         $this->validateForm();
 
+        dd($request);
+
         $token = Str::random();
         $request['password'] = self::random_password();
 
