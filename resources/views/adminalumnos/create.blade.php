@@ -115,7 +115,7 @@
                     <div class="si box" style="margin-top: 20px">
 
                         <div class="alert alert-success alert-dismissible" role="alert">
-                            <strong>Descargue archivo de muestra <a href="cargaUsuarios.xlsx">aqui</a></strong>
+                            <strong>Descargue archivo de muestra <a href="/cargaUsuarios.xlsx">aqui</a></strong>
                         </div>
 
                         <label for="file">El formato deberá ser .csv o .xlsx</label>
