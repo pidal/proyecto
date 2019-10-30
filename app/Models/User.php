@@ -59,7 +59,8 @@ class User extends Authenticatable
 
 	public function role()
 	{
-		return $this->belongsTo(\pfg\Models\Role::class, 'roles_id');
+		//return $this->belongsTo(\pfg\Models\Role::class, 'roles_id');
+		return $this->hasOne('\pfg\Models\Role', 'id', 'roles_id');
 	}
 
 	public function rel_users_groups()
