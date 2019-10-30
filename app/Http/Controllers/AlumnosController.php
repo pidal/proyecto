@@ -31,6 +31,8 @@ class AlumnosController extends Controller
             ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
             ->orderBy('users.id');
 
+            dd($alumnos);
+
         if (isset($request->subject)) {
             $alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
         }
