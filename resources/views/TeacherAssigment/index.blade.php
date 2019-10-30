@@ -8,7 +8,7 @@
                 <form method="get" action="{{action('TeacherAssigmentController@index')}}">
                     <div class="form-group row">
                         <label for="subjects" class="col-sm-3 col-form-label">{{__('subjects.selectone')}}</label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <select id="subject" name="subject" class="form-control">
                                 @foreach($subjects as $subject)
                                     <option value="{{$subject->id}}"
