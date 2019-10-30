@@ -9,7 +9,7 @@ use pfg\Mail\UserCreateMail;
 use pfg\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Validator;
+use Session;
 
 
 class AdminAlumnosController extends Controller
