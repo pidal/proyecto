@@ -47,7 +47,7 @@
                                 <input id="file{{$studentFile->id}}" style="height: 43px; line-height: 25px" type="file"
                                        class="form-control{{ $errors &&  array_key_exists('file'.$studentFile->id, $errors) ? ' is-invalid' : '' }}"
                                        name="file{{$studentFile->id}}" value="{{ old('file') }}" requisi>
-                                @if ($errors->has('file'.$studentFile->id))
+                                @if ($errors &&  array_key_exists('file'.$studentFile->id, $errors))
                                     <div class="alert alert-danger">
                                         <strong>{{ $errors->first('file'.$studentFile->id) }}</strong>
                                     </div>
