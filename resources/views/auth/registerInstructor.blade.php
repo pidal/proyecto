@@ -1,23 +1,5 @@
 @extends('layouts.templateProfesor')
 
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("select").change(function(){
-            $(this).find("option:selected").each(function(){
-                var optionValue = $(this).attr("value");
-                if(optionValue){
-                    $(".box").not("." + optionValue).hide();
-                    $("." + optionValue).show();
-                } else{
-                    $(".box").hide();
-                }
-            });
-        }).change();
-    });
-</script>
-
 @section('content')
 
     @php
@@ -138,4 +120,23 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("select").change(function(){
+            $(this).find("option:selected").each(function(){
+                var optionValue = $(this).attr("value");
+                if(optionValue){
+                    $(".box").not("." + optionValue).hide();
+                    $("." + optionValue).show();
+                } else{
+                    $(".box").hide();
+                }
+            });
+        }).change();
+    });
+</script>
 @endsection
