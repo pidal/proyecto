@@ -30,7 +30,9 @@ class AlumnosController extends Controller
             ->where('users.roles_id', User::ROLE_ALUMNO)
             //->join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')
             //->groupBy('users.id')
-            ->orderBy('users.id')->get()->dd();
+            ->orderBy('users.id')->toSql()->dd();
+
+
 
         if (isset($request->subject)) {
             //$alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
