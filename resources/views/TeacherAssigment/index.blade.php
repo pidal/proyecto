@@ -16,7 +16,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                             <input type="submit" class="btn btn-primary" value="{{__('Buscar')}}"/>
                         </div>
 
