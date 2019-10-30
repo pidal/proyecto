@@ -28,11 +28,16 @@ class AlumnosController extends Controller
     {
         $alumnos = User::select('users.*')
             ->where('users.roles_id', User::ROLE_ALUMNO)
-            ->leftJoin('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')
+            //->join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')
+            //->groupBy('users.id')
             ->orderBy('users.id');
 
         if (isset($request->subject)) {
-            $alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
+            //$alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
+
+            $alumnos = $alumnos->whereHas('subjects', function($q) use($request){
+                $q->where('subject_id', $request->subject);
+            });
         }
 
         $alumnos = $alumnos->paginate(8);
