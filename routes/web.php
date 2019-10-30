@@ -13,8 +13,8 @@
 
 Route::get('/', function () {
 
-	if (Session::has('errors')) {
-		dd(Session::all());
+	if (Session::has('errors') && Session::has('redirect')) {
+		return redirect()->to(Session::get('redirect'));
 	}
 
 
