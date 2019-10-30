@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 
+
 class AdminAlumnosController extends Controller
 {
 
@@ -50,7 +51,7 @@ class AdminAlumnosController extends Controller
                 'surname.required' => 'El campo apellidos es obligatorio.'
             ];
 
-            $validator = Validator::make($this->request->all(), [
+            $this->request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'surname' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
@@ -58,15 +59,10 @@ class AdminAlumnosController extends Controller
 
         }
         if ($this->request['numero'] == 'si') {
-            $validator = Validator::make($this->request->all(), [
+            $this->request->validate([
                 'file' => 'required|file|max:5000|mimes:xlsx,csv',
             ]);
         }
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
     }
 
     /**
