@@ -63,6 +63,7 @@ class AdminAlumnosController extends Controller
                 'file' => 'required|file|max:5000|mimes:xlsx,csv',
             ]);
         }
+        Session::flash('error', 'Falta campo');
     }
 
     /**
