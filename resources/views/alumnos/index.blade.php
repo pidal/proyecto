@@ -32,7 +32,7 @@
                                 <label for="subjects" class="col-sm-3 col-form-label">{{__('subjects.selectone')}}</label>
                                 <div class="col-sm-5">
                                     <select id="subject" name="subject" class="form-control">
-                                        <option value="">{{__('Seleccione una asignatura')}}</option>
+                                        <option value="">{{__('Seleccione una')}}</option>
                                         @foreach($subjects as $subject)
                                             <option value="{{$subject->id}}"
                                                     @if(Request::query('subject')==$subject->id) selected @endif >{{$subject->name}}</option>
