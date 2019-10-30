@@ -27,7 +27,7 @@
                                         {{Session::get('error')}}
                                     </div>
                                 @endif
-                            <div class="pull-left"><h3>{{__('subjects.relatedList')}}</h3></div>
+                            <div class="pull-left"><h3>{{__('subjects.relatedList')}}: {{ $subject->name }}</h3></div>
                             <div class="pull-right">
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
