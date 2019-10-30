@@ -63,8 +63,6 @@ class AdminAlumnosController extends Controller
                 'file' => 'required|file|max:5000|mimes:xlsx,csv',
             ]);
         }
-
-        dd($this->request);
     }
 
     /**
@@ -75,6 +73,8 @@ class AdminAlumnosController extends Controller
      */
     public function store(Request $request)
     {
+
+        Session::flash('redirect', 'adminalumnos/create');
 
         $this->request = $request;
         $this->validateForm();

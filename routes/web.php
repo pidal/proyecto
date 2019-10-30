@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
+
+	dd(Session::all());
 	return redirect()->to(url('/login'));
 });
 
