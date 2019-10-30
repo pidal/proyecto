@@ -2,6 +2,7 @@
 return [
     'lists' => 'Lista de Asignaturas',
     'name'   => 'Nombre',
+    'dni' => 'Dni',
     'add' => 'Nueva',
     'description' => 'Descripcion',
     'grade' => 'Grado',
