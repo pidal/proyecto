@@ -49,7 +49,7 @@
                                        name="file{{$studentFile->id}}" value="{{ old('file') }}" requisi>
                                 @if ($errors &&  array_key_exists('file'.$studentFile->id, $errors))
                                     <div class="alert alert-danger">
-                                        <strong>{{ $errors->first('file'.$studentFile->id) }}</strong>
+                                        <strong>{{ $errors['file'.$studentFile->id] }}</strong>
                                     </div>
                                 @endif
                             </div>
