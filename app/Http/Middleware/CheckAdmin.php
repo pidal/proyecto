@@ -19,7 +19,6 @@ class CheckAdmin
         if (Auth::user() &&  Auth::user()->roles_id == 1) {
                 return $next($request);
          }
-        die('test');
         return redirect('/');
     }
 }

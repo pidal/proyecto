@@ -14,7 +14,7 @@
 Route::get('/', function () {
 
 	if (Session::has('errors')) {
-		dd(Session::get('errors'));
+		dd(Session::all());
 	}
 
 
