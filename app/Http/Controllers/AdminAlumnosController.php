@@ -65,7 +65,8 @@ class AdminAlumnosController extends Controller
                 ]);
             }
         } catch (\Illuminate\Validation\ValidationException $e){
-            Session::flash('error', 'asdasdads');
+            Session::flash('error', 'rrrrr');
+            return redirect()->to('/test');
         }
     }
 
