@@ -158,6 +158,8 @@ class StudentController extends Controller
             ->union($studentsUnion)
             ->get();
 
+            dd($studentsFiles);
+
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
