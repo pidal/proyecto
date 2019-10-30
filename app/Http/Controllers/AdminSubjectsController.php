@@ -104,6 +104,8 @@ class AdminSubjectsController extends Controller
 
     public function relateSubjects($subject_id)
     {
+        $subject = Subject::find($subject_id);
+
         $users = RelUsersSubject::join('users', 'users.id', '=', 'rel_users_subject.users_id')
             ->select('rel_users_subject.id', 'rel_users_subject.users_id', 'users.name', 'users.email')
             ->where('rel_users_subject.subject_id', $subject_id)
@@ -120,7 +122,7 @@ class AdminSubjectsController extends Controller
                 ->distinct('users.id')
                 ->get();
 
-        return view('adminalumnos.subjects.relateSubjects', compact('users', 'subject_id','allUsers'));
+        return view('adminalumnos.subjects.relateSubjects', compact('subject', 'users', 'subject_id','allUsers'));
     }
 
     public function postrelateSubjects(Request $request)
