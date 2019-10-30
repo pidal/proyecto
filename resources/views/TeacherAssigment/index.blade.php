@@ -22,6 +22,7 @@
 
                         <a class="btn btn-primary btn-xs m-1"
                            href="{{route('teacherassignmentadd')}}">
+                           {{__('alumnos.add')}}
                             <span class="fa fa-plus"></span></a>
                     </div>
                 </form>

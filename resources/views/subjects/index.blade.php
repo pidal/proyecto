@@ -32,7 +32,7 @@
                             <div class="pull-left"><h3>{{__('subjects.lists')}}</h3></div>
                             <div class="pull-right">
                                 <div class="btn-group">
-                                    <a href="{{ route('subjects.create') }}" class="btn btn-info">{{__('subjects.add')}}
+                                    <a href="{{ route('subjects.create') }}" class="btn btn-info">{{__('alumnos.add')}}
                                         <span class="fa fa-plus"></span></a>
                                 </div>
                             </div>
