@@ -203,7 +203,7 @@ class StudentController extends Controller
             }
         }
         if(count($errors) > 0){
-            return back()->with('errors', $errors);
+            return redirect('showStudentsFiles/subject/'.$request->subject_id.'/assignment/'.$request->assignment_id)->with('errors', $errors);
         }
 
         foreach($studentsFiles as $studentFile){
