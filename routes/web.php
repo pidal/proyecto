@@ -12,8 +12,7 @@
 */
 
 Route::get('/', function () {
-	dd(Session::get('errors'));
-	return redirect()->to(url('/login'))->withErrors(Session::get('errors'))->withInput();;
+	return redirect()->to(url('/login'));
 });
 
 
