@@ -43,6 +43,9 @@ class AdminAlumnosController extends Controller
     }
 
     private function validateForm(){
+
+        dd($this->request);
+        
         if ($this->request['numero'] == 'no') {
 
             $messages = [
