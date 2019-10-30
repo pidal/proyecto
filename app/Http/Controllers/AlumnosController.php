@@ -33,6 +33,7 @@ class AlumnosController extends Controller
         ->paginate(8);
 
         if (isset($request->subject)) {
+            dd($alumnos);
             $alumnos->where('rel_users_subject.subject_id', $request->subject);
         }
 
