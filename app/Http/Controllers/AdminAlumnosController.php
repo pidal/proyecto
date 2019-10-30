@@ -43,16 +43,13 @@ class AdminAlumnosController extends Controller
     }
 
     private function validateForm(){
-
-        dd($this->request);
-        
         if ($this->request['numero'] == 'no') {
 
             $messages = [
                 'surname.required' => 'El campo apellidos es obligatorio.'
             ];
 
-            $this->request->validate([
+            $validator = Validator::make($this->request->all(), [
                 'name' => ['required', 'string', 'max:255'],
                 'surname' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
@@ -60,10 +57,15 @@ class AdminAlumnosController extends Controller
 
         }
         if ($this->request['numero'] == 'si') {
-            $this->request->validate([
+            $validator = Validator::make($this->request->all(), [
                 'file' => 'required|file|max:5000|mimes:xlsx,csv',
             ]);
         }
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
     }
 
     /**
