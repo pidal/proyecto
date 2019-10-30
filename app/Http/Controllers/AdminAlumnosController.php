@@ -11,8 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Session;
 
-use Illuminate\Support\Facades\Validator;
-
 
 class AdminAlumnosController extends Controller
 {
@@ -76,27 +74,8 @@ class AdminAlumnosController extends Controller
     public function store(Request $request)
     {
 
-        //$this->request = $request;
-        //$this->validateForm();
-
-        if ($request['numero'] == 'no') {
-
-            $messages = [
-                'surname.required' => 'El campo apellidos es obligatorio.'
-            ];
-
-            $validator = Validator::make($request, [
-                'name' => ['required', 'string', 'max:255'],
-                'surname' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
-            ], $messages);
-
-        }
-        if ($request['numero'] == 'si') {
-            $validator = Validator::make($request, [
-                'file' => 'required|file|max:5000|mimes:xlsx,csv',
-            ]);
-        }
+        $this->request = $request;
+        $this->validateForm();
 
         $token = Str::random();
         $request['password'] = self::random_password();
