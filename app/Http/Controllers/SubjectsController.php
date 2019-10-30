@@ -39,7 +39,7 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
-        Session::flash('redirect', 'teacherassignment');
+        Session::flash('redirect', 'subjects/create');
 
         $this->validate($request, [
             'name' => 'required',
