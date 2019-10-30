@@ -39,6 +39,8 @@ class AdminSubjectsController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('redirect', 'adminasignaturas/create');
+        
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
