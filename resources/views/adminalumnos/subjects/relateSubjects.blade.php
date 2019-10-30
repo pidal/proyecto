@@ -40,7 +40,7 @@
                                     <thead>
                                     <th>{{__('subjects.name')}}</th>
                                     <th>{{__('subjects.email')}}</th>
-                                    <th>{{__('subjects.dni')}}</th>
+                                    <th>{{__('subjects.rol')}}</th>
                                     <th></th>
                                     </thead>
                                     <tbody>
@@ -49,7 +49,7 @@
                                             <tr>
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
-                                                <td>{{$user->dni}}</td>
+                                                <td>{{$user->rol->name}}</td>
                                                 <td>
                                                     <div style="display: flex">
                                                         <form action="{{route('relatedUserdestroy', $user->id)}}"

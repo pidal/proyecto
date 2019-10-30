@@ -2,7 +2,7 @@
 return [
     'lists' => 'Lista de Asignaturas',
     'name'   => 'Nombre',
-    'dni' => 'Dni',
+    'rol' => 'Rol',
     'add' => 'Nueva',
     'description' => 'Descripcion',
     'grade' => 'Grado',
