@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+	dd( $errors->first('MessageBag') );
 	if ( isset($errors) ) {
 		Session::flash('error', 'ERROR: '.$errors->first());
 	}
