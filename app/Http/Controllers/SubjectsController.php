@@ -39,6 +39,8 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
+        Session::flash('redirect', 'teacherassignment');
+
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
