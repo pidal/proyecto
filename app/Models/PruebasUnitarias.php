@@ -20,6 +20,8 @@ class PruebasUnitarias
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
             return redirect('/showStudentsFiles');
         }
+        dd($path_completo.DIRECTORY_SEPARATOR.'CUnitAutomated-Results.xml');
+
         $xml = simplexml_load_file($path_completo.DIRECTORY_SEPARATOR.'CUnitAutomated-Results.xml');
         $studentFile->total = $xml->CUNIT_RUN_SUMMARY->CUNIT_RUN_SUMMARY_RECORD[2]->TOTAL;
         $studentFile->pass = $xml->CUNIT_RUN_SUMMARY->CUNIT_RUN_SUMMARY_RECORD[2]->SUCCEEDED;
