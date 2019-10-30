@@ -30,7 +30,7 @@
                         <form method="get" action="{{route('alumnos.index')}}">
                             <div class="form-group row">
                                 <label for="subjects" class="col-sm-3 col-form-label">{{__('subjects.selectone')}}</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <select id="subject" name="subject" class="form-control">
                                         <option value="">{{__('Seleccione una')}}</option>
                                         @foreach($subjects as $subject)
@@ -39,12 +39,13 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-sm-2">
+                                <div class="col-sm-3">
                                     <input type="submit" class="btn btn-primary" value="{{__('Buscar')}}"/>
                                 </div>
 
                                 <a class="btn btn-primary btn-xs m-1"
                                    href="{{route('registerInstructor')}}">
+                                   {{__('alumnos.add')}}
                                     <span class="fa fa-plus"></span></a>
                             </div>
                         </form>
