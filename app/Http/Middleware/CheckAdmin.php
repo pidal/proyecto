@@ -16,9 +16,10 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if ( Auth::user()->roles_id != 1 ) {
-            return redirect('/');
-        }
-        return $next($request);
+        if (Auth::user() &&  Auth::user()->roles_id == 1) {
+                return $next($request);
+         }
+
+        return redirect('/');
     }
 }
