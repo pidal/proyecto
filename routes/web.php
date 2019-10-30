@@ -13,7 +13,9 @@
 
 Route::get('/', function () {
 
-	dd(Session::get('errors'));
+	if (Session::has('errors')) {
+		dd(Session::get('errors'));
+	}
 
 
 	return redirect()->to(url('/login'));
