@@ -11,8 +11,6 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Session;
 
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
 class AdminAlumnosController extends Controller
 {
@@ -23,10 +21,6 @@ class AdminAlumnosController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('CheckAdmin');
-    }
-
-    protected function failedValidation(Validator $validator) {
-        throw new HttpResponseException(response()->json($validator->errors(), 422));
     }
 
     /**
