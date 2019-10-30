@@ -29,7 +29,6 @@ class AlumnosController extends Controller
         $alumnos = User::select('users.*')
             ->where('users.roles_id', User::ROLE_ALUMNO)
             ->join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')
-            ->join('profiles','profiles.id','=','users.id')
             ->orderBy('users.id')->toSql();
 
             dd($alumnos);
