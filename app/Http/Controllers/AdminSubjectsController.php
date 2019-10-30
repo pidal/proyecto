@@ -114,9 +114,8 @@ class AdminSubjectsController extends Controller
                     $join->on('users.id','=','rel_users_subject.users_id')
                         ->where('rel_users_subject.subject_id',$subject_id);
                 })
-                ->select('users.id','users.name','users.roles_id')
+                ->select('users.id','users.name')
                 ->where('rel_users_subject.subject_id',null)
-                ->where('users.roles_id', '!=', 1)
                 ->distinct('users.id')
                 ->get();
 
