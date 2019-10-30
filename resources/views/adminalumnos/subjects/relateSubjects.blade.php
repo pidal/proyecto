@@ -103,9 +103,7 @@
                         <select class="form-control" id="userSelect" name="users_id">
                             <option value="">{{ __('subjects.selectAUser')}}</option>
                             @foreach($allUsers as $user)
-                                @if($user->roles_id != 1)
-                                    <option value="{{$user->id}}" >{{$user->name}}</option>
-                                @endif
+                                <option value="{{$user->id}}" >{{$user->name}}</option>
                             @endforeach
                         </select>
                     </div>
