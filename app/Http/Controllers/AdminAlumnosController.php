@@ -65,7 +65,7 @@ class AdminAlumnosController extends Controller
                 ]);
             }
         } catch (\Illuminate\Validation\ValidationException $e){
-            return redirect()->to(url('adminalumnos/create'));
+            Session::flash('error', 'asdasdads');
         }
     }
 
