@@ -21,7 +21,6 @@ class AdminAlumnosController extends Controller
     {
         $this->middleware('auth');
         $this->middleware('CheckAdmin');
-        $this->redirect = url('view_article');
     }
 
     /**
