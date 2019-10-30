@@ -192,18 +192,18 @@ class StudentController extends Controller
             ->get();
 
 
-        $error = array();
+        $errors = array();
         foreach($studentsFiles as $studentsFile){
             $file = $request->file('file'.$studentsFile->id);
             if($file == null){
-                $error['file'.$studentsFile->id] = 'El archivo es requerido';
+                $errors['file'.$studentsFile->id] = 'El archivo es requerido';
             }
             if($file != null && $file->getClientOriginalName() != $studentsFile->fileName){
-                $error['file'.$studentsFile->id] = 'El nombre del archivo no corresponde al archivo solicitado.';
+                $errors['file'.$studentsFile->id] = 'El nombre del archivo no corresponde al archivo solicitado.';
             }
         }
         if(count($error) > 0){
-            return back()->withErrors($error);
+            return back()->with('errors', $errors);
         }
 
         foreach($studentsFiles as $studentFile){
