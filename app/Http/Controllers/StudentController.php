@@ -144,12 +144,12 @@ class StudentController extends Controller
 	public function showStudentsFiles(Request $request)
 	{
         $studentsUnion = Assignment::select('student_files.*')
-            //->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
+            ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->join('group_assignment', 'student_files.group_id', '=', 'group_assignment.id')
             ->join('rel_users_groups', 'group_assignment.id', '=', 'rel_users_groups.group_assignment_id')
             ->Where('rel_users_groups.users_id', auth()->id())
             ->where('assignment.id', $request->assignment_id);
-            //->where('student_files.users_id', auth()->id());
+            ->where('student_files.users_id', auth()->id());
 
         $studentsFiles = Assignment::select('student_files.*')
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
