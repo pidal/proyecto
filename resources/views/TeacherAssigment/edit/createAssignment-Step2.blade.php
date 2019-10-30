@@ -24,7 +24,7 @@
         >
             <label for="members_number">{{ __('¿Cuántas personas van a formar el grupo?') }}</label>
             <input disabled class="form-control{{ $errors->has('members_number') ? ' is-invalid' : '' }}" min='1'
-                   placeholder=">=1" id="members_number" name="members_number" value="{{ $group_assignment[0]->members_number}}" >
+                   placeholder=">=1" id="members_number" name="members_number" value="{{ @$group_assignment[0]->members_number}}" >
             @if ($errors->has('members_number'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('members_number') }}</strong>

@@ -104,7 +104,6 @@ class TeacherAssigmentController extends Controller
 			$relUser->students = $relUserGroup;
 			$group_assignment[] = $relUser;
 		}
-		dd($group_assignment);
 
         return view('TeacherAssigment.edit.createAssignment',
 			compact('subjects', 'student', 'users', 'assignment', 'group_assignment')
