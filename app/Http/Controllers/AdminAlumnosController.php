@@ -45,29 +45,26 @@ class AdminAlumnosController extends Controller
     }
 
     private function validateForm(){
-        try {
-            if ($this->request['numero'] == 'no') {
+        if ($this->request['numero'] == 'no') {
 
-                $messages = [
-                    'surname.required' => 'El campo apellidos es obligatorio.'
-                ];
+            $messages = [
+                'surname.required' => 'El campo apellidos es obligatorio.'
+            ];
 
-                $this->request->validate([
-                    'name' => ['required', 'string', 'max:255'],
-                    'surname' => ['required', 'string', 'max:255'],
-                    'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
-                ], $messages);
+            $this->request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'surname' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
+            ], $messages);
 
-            }
-            if ($this->request['numero'] == 'si') {
-                $this->request->validate([
-                    'file' => 'required|file|max:5000|mimes:xlsx,csv',
-                ]);
-            }
-        } catch (\Illuminate\Validation\ValidationException $e){
-            Session::flash('error', 'rrrrr');
-            return redirect()->to('/test');
         }
+        if ($this->request['numero'] == 'si') {
+            $this->request->validate([
+                'file' => 'required|file|max:5000|mimes:xlsx,csv',
+            ]);
+        }
+
+        dd($this->request);
     }
 
     /**
