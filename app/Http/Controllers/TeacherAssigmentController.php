@@ -117,6 +117,7 @@ class TeacherAssigmentController extends Controller
 
 	public function create(Request $request)
 	{
+		Session::flash('redirect', 'teacherassignmentadd');
 
 		$validatedData = $request->validate([
 			'name' => 'required',
@@ -138,17 +139,17 @@ class TeacherAssigmentController extends Controller
 
 			if ( $request->{'fileName_' . $i} == null ) {
 				Session::flash('error', 'El nombre del fichero ' . $i . ' está vacío');
-				return redirect('/teacherassignment')->withInput();
+				return redirect('/teacherassignmentadd')->withInput();
 			}
 			if ( $request->{'weight_' . $i} == null) {
 				Session::flash('error', 'La ponderación del fichero ' . $i . ' está vacío');
-				return redirect('/teacherassignment')->withInput();
+				return redirect('/teacherassignmentadd')->withInput();
 			}
 
 		}
 		if ($total != 100) {
 			Session::flash('error', 'La ponderación del fichero debe sumar 100% en total el valor actual es de ' . $total . '%');
-			return redirect('/teacherassignment')->withInput();
+			return redirect('/teacherassignmentadd')->withInput();
 		}
 
 		if($request->file('file'))
@@ -223,7 +224,7 @@ class TeacherAssigmentController extends Controller
 						if ($infoOK == null)
 						{
 							Session::flash('error', 'El nombre del alumno ' . $r . ' del grupo ' . $i . ' está vacío');
-							return redirect('/teacherassignment')->withInput();
+							return redirect('/teacherassignmentadd')->withInput();
 						}
 						$k++;
 					}
