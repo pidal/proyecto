@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+	Session::flash('error', 'ERROR: '.$errors->first());
 	return redirect()->to(url('/login'));
 });
 
