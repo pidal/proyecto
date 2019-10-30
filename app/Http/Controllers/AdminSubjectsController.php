@@ -116,6 +116,7 @@ class AdminSubjectsController extends Controller
                 })
                 ->select('users.id','users.name')
                 ->where('rel_users_subject.subject_id',null)
+                ->where('users.roles_id', '!=', 1)
                 ->distinct('users.id')
                 ->get();
 
