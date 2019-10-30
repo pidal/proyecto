@@ -154,11 +154,11 @@ class StudentController extends Controller
         $studentsFiles = Assignment::select('student_files.*')
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->where('assignment.id', $request->assignment_id)
-            //->where('student_files.users_id', auth()->id())
+            ->where('student_files.users_id', auth()->id())
             //->union($studentsUnion)
-            ->toSql();
+            ->get();
 
-            dd($studentsFiles);
+            //dd($studentsFiles);
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
