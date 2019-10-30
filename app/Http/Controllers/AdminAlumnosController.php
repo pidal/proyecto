@@ -98,8 +98,7 @@ class AdminAlumnosController extends Controller
             Mail::to($user)->send(new UserCreateMail($user));
 
             Session::flash('success', 'Usuario/s cargados correctamente');
-            return redirect('alumnos')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
-
+            return redirect()->route('adminalumnos.index')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
         }
         else {
 

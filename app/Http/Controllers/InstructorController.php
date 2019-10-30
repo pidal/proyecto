@@ -313,7 +313,7 @@ class InstructorController extends Controller
             Mail::to($user)->send(new UserCreateMail($user));
 
             Session::flash('success', 'Usuario/s cargados correctamente');
-            return redirect('registerInstructor')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
+            return redirect('alumnos')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
         } else {
 
             if (is_uploaded_file($_FILES['file']['tmp_name'])) {
