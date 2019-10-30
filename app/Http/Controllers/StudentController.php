@@ -202,7 +202,7 @@ class StudentController extends Controller
                 $errors['file'.$studentsFile->id] = 'El nombre del archivo no corresponde al archivo solicitado.';
             }
         }
-        if(count($error) > 0){
+        if(count($errors) > 0){
             return back()->with('errors', $errors);
         }
 
