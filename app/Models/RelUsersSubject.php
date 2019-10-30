@@ -44,6 +44,6 @@ class RelUsersSubject extends Model
 
 	public function user()
 	{
-		return $this->belongsTo(\pfg\Models\User::class);
+		return $this->belongsTo(\pfg\Models\User::class, 'users_id');
 	}
 }
