@@ -52,7 +52,7 @@ class AdminAlumnosController extends Controller
                 'surname.required' => 'El campo apellidos es obligatorio.'
             ];
 
-            $validator = Validator::make($request->all(), [
+            $validator = Validator::make($this->request->all(), [
                 'name' => ['required', 'string', 'max:255'],
                 'surname' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
@@ -60,7 +60,7 @@ class AdminAlumnosController extends Controller
 
         }
         if ($this->request['numero'] == 'si') {
-            $validator = Validator::make($request->all(), [
+            $validator = Validator::make($this->request->all(), [
                 'file' => 'required|file|max:5000|mimes:xlsx,csv',
             ]);
         }
