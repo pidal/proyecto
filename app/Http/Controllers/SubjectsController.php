@@ -107,7 +107,7 @@ class SubjectsController extends Controller
         $subject = Subject::find($subject_id);
 
         $users = RelUsersSubject::join('users', 'users.id', '=', 'rel_users_subject.users_id')
-            ->select('rel_users_subject.id', 'users.name', 'users.email')
+            ->select('rel_users_subject.id', 'rel_users_subject.users_id', 'users.name', 'users.email')
             ->where('rel_users_subject.subject_id', $subject_id)
             ->orderBy('users.id', 'DESC')
             ->paginate(7);
