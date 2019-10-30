@@ -99,6 +99,26 @@ class AdminAlumnosController extends Controller
 
             Session::flash('success', 'Usuario/s cargados correctamente');
             return redirect()->route('adminalumnos.index')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
+
+
+            $user = User::create([
+                'name' => $request['name'],
+                'surname' => $request['surname'],
+                'email' => $request['email'],
+                'roles_id' => $request['role'],
+                'password' => Hash::make($request['password']),
+                'token' => $token,
+            ]);
+
+            User::crearPdf($user);
+
+            Mail::to($user)->send(new UserCreateMail($user));
+
+            Session::flash('success', 'Usuario/s cargados correctamente');
+            return redirect('alumnos')->withCookie(cookie('pdfUser', json_encode([$user->id]), 60));
+
+
+
         }
         else {
 
