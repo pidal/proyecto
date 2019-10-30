@@ -29,7 +29,7 @@ class AlumnosController extends Controller
         $alumnos = User::select('users.*')
             ->where('users.roles_id', User::ROLE_ALUMNO)
             ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
-            ->orderBy('users.id')->get();
+            ->orderBy('users.id')->toSql();
 
             dd($alumnos);
 
