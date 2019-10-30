@@ -4,6 +4,7 @@ return [
     'name'   => 'Nombre',
     'email' => 'Email',
     'dni' => 'Dni',
+    'rol' => 'Rol',
     'surname' => 'Alias',
     'add' => 'Nuevo',
     'new' => 'Nuevo',
