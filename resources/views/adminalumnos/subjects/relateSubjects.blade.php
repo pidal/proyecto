@@ -49,7 +49,7 @@
                                             <tr>
                                                 <td>{{$user->name}}</td>
                                                 <td>{{$user->email}}</td>
-                                                <td></td>
+                                                <td>{{$user->user->role->name}}</td>
                                                 <td>
                                                     <div style="display: flex">
                                                         <form action="{{route('relatedUserdestroy', $user->id)}}"
