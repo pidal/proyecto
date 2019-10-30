@@ -274,6 +274,8 @@ class InstructorController extends Controller
      */
     protected function createUsers(Request $request)
     {
+        Session::flash('redirect', 'registerInstructor');
+        
         if ($request['numero'] == 'no') {
 
             $messages = [
