@@ -256,7 +256,7 @@ class TeacherAssigmentController extends Controller
 
 		}
 
-		Session::flash('success', 'Práctica creada correctamente');
+		Session::flash('success', 'Práctica creada correctamente');die();
 		return redirect('/teacherassignment');
 	}
 
