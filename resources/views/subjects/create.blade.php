@@ -1,8 +1,5 @@
 @extends ('layouts.templateProfesor')
 
-{{ $errors }}
-
-
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
