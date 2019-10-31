@@ -34,9 +34,8 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('subjects.new_name')}} </label>
                                         <input type="text" name="name" id="name"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_name')}}" value="{{ old('name') }}">
-
                                         @if( $errors->has('name') )
-                                            <span class="invalid-feedback" role="alert">
+                                            <span class="invalid-feedback" role="alert" style="display: unset;">
                                                 <strong>{{ $errors->first('name') }}</strong>
                                             </span>
                                         @endif
@@ -46,6 +45,11 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('subjects.new_grade')}} </label>
                                         <input type="number" name="grade" id="grade"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_grade')}}" value="{{ old('grade') }}">
+                                        @if( $errors->has('grade') )
+                                            <span class="invalid-feedback" role="alert" style="display: unset;">
+                                                <strong>{{ $errors->first('grade') }}</strong>
+                                            </span>
+                                        @endif
 
                                     </div>
 
@@ -53,6 +57,11 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('subjects.new_description')}} </label>
                                         <textarea name="description" class="col-sm-6 form-control input-sm"
                                                   placeholder="{{__('subjects.new_description')}}">{{ old('description') }}</textarea>
+                                        @if( $errors->has('description') )
+                                            <span class="invalid-feedback" role="alert" style="display: unset;">
+                                                <strong>{{ $errors->first('description') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="form-group row">
                                         <a href="{{ route('subjects.index') }}"
