@@ -291,7 +291,7 @@ class InstructorController extends Controller
         }
         if ($request['numero'] == 'si') {
             $request->validate([
-                'file' => 'required|file|max:5000|mimes:xlsx,csv',
+                'file' => 'required|file|max:5000|mimes:xlsx,csv,txt',
             ]);
         }
 
