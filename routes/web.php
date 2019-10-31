@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Input;
 
 Route::get('/', function (Request $request) {
 
-	dd(Input::flash());
+	dd(Request::old());
 
 	if (Session::has('errors') && Session::has('redirect')) {
 
