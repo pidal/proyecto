@@ -41,8 +41,6 @@ compilation terminated.
         $ejecutable = './' . $studentFile->fileName;
         $salida = $this->PsExecute($ejecutable);
 
-        dd($salida);
-
         if ($salida == false) {
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
             return redirect('/showStudentsFiles');
