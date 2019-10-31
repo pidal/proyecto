@@ -76,7 +76,7 @@ class AdminAlumnosController extends Controller
 
         Session::flash('redirect', 'adminalumnos/create');
 
-        dd(Request::file('file'));
+        dd($request->file('file'));
 
 
         $this->request = $request;
