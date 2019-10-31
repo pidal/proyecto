@@ -79,21 +79,21 @@ class AdminAlumnosController extends Controller
         //$this->request = $request;
         //$this->validateForm();
 
-        if ($this->request['numero'] == 'no') {
+        if ($request['numero'] == 'no') {
 
             $messages = [
                 'surname.required' => 'El campo apellidos es obligatorio.'
             ];
 
-            $this->request->validate([
+            $request->validate([
                 'name' => ['required', 'string', 'max:255'],
                 'surname' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
             ], $messages);
 
         }
-        if ($this->request['numero'] == 'si') {
-            $this->request->validate([
+        if ($request['numero'] == 'si') {
+            $request->validate([
                 'file' => 'required|file|max:5000|mimes:xlsx,csv',
             ]);
         }
