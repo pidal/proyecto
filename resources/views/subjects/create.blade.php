@@ -35,7 +35,6 @@
                                         <input type="text" name="name" id="name"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_name')}}" value="{{ old('name') }}">
 
-                                               {{ dd($errors->has('name')) }}
                                     </div>
 
                                     <div class="form-group row">
