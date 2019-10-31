@@ -15,7 +15,7 @@ Route::get('/', function (Request $request) {
 
 	if (Session::has('errors') && Session::has('redirect')) {
 
-		dd($request);
+		dd(Session::all());
 		return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
 		->withInput($request->input());
 	}
