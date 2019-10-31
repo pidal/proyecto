@@ -76,9 +76,6 @@ class AdminAlumnosController extends Controller
 
         Session::flash('redirect', 'adminalumnos/create');
 
-        dd($request->file('file'));
-
-
         $this->request = $request;
         $this->validateForm();
 
