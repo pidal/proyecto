@@ -247,10 +247,12 @@ class TeacherAssigmentController extends Controller
 					$path = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFileSave->id.'_'.$studentFileSave->left_attempts);
 					mkdir($path);
 
-					echo $path;
+					echo $path."<br>";
 
 					$path2 = DIRECTORY_SEPARATOR . $studentFileSave->id.'_'.$studentFileSave->left_attempts;
 					Storage::put($path2 .DIRECTORY_SEPARATOR. $file->getClientOriginalName() , file_get_contents($file));
+
+					echo $path2;
 				}
 			}
 
