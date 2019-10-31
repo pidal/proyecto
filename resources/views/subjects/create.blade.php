@@ -36,7 +36,9 @@
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_name')}}" value="{{ old('name') }}">
 
                                         @if( $errors->has('name') )
-                                        <h1>SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS</h1>>
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
                                         @endif
                                     </div>
 
