@@ -1,17 +1,13 @@
 @extends ('layouts.templateProfesor')
 
+{{ $errors }}
+
+
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8 col-sm-offset-2" style="margin-top: 140px">
                 <div>
-
-                    @if ($errors->has('name'))
-                                            <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('name') }}</strong>
-                                                </span>
-                                        @endif
-                                        
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Error!</strong> Revise los campos obligatorios.<br><br>
