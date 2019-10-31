@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 Route::get('/', function (Request $request) {
 
 	if (Session::has('errors') && Session::has('redirect')) {
+
+		dd($request);
 		return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
 		->withInput($request->input());
 	}
