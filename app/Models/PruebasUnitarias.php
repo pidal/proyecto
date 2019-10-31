@@ -63,6 +63,11 @@ compilation terminated.
         shell_exec($execCompileInstructor);
         $fileInstructorRun = basename($fileInstructor, ".java");
         $execRun = 'java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $fileInstructorRun . ' >output.txt';
+
+
+        dd($execRun);
+
+
         shell_exec($execRun);
         $myfile = fopen("output.txt", "r") or die("Unable to open file!");
         $lines = file("output.txt");
