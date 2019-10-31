@@ -47,7 +47,7 @@
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_grade')}}" value="{{ old('grade') }}">
                                         @if($errors->first('name'))
                                             <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('surname') }}</strong>
+                                                <strong>{{ $errors->first('name') }}</strong>
                                             </span>
                                         @endif
 
