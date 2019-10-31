@@ -13,15 +13,11 @@ use Illuminate\Support\Facades\Input;
 */
 
 Route::get('/', function (Request $request) {
-
 	if (Session::has('errors') && Session::has('redirect')) {
-
 		//dd(Session::all());
 		return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
 		->withInput(Session::getOldInput());
 	}
-
-
 	return redirect()->to(url('/login'));
 });
 
@@ -106,6 +102,7 @@ Route::resource('subjects', 'SubjectsController');
 Route::get('/relateSubjects/{subject_id}', 'SubjectsController@relateSubjects')->name('relateSubjects');
 Route::post('/postrelateSubjects/{subject_id}', 'SubjectsController@postrelateSubjects')->name('postrelateSubjects');
 Route::post('/relatedUserdestroy/{id}','SubjectsController@relatedUserdestroy')->name('relatedUserdestroy');
+Route::post('/adminRelatedUserdestroy/{id}','AdminSubjectsController@adminRelatedUserdestroy')->name('adminRelatedUserdestroy');
 
 
 Route::post('/newpassword','Controller@newpassword')->name('newpassword');

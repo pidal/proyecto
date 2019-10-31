@@ -137,10 +137,10 @@ class AdminSubjectsController extends Controller
         return redirect()->route('adminrelatedsubjects',$request->subject_id)->with('success', 'Registro insertado satisfactoriamente');
     }
 
-    public function relatedUserdestroy(Request $request)
+    public function adminRelatedUserdestroy(Request $request)
     {
         Session::flash('success', 'Asignatura eliminada correctamente.');
         RelUsersSubject::find($request->id)->delete();
-        return redirect()->route('adminrelatedsubjects',$request->subject_id)->with('success', 'Registro eliminado satisfactoriamente');
+        return redirect()->route('adminRelatedUserdestroy',$request->subject_id)->with('success', 'Registro eliminado satisfactoriamente');
     }
 }

@@ -52,7 +52,7 @@
                                                 <td>{{$user->user->role->name}}</td>
                                                 <td>
                                                     <div style="display: flex">
-                                                        <form action="{{route('relatedUserdestroy', $user->id)}}"
+                                                        <form action="{{route('adminRelatedUserdestroy', $user->id)}}"
                                                               method="post">
                                                             {{csrf_field()}}
                                                             <input type="hidden" value="{{$user->id}}" name="rel_subject_user_id" />
