@@ -1,10 +1,31 @@
 @extends ('layouts.templateProfesor')
 
+@if (count($errors) > 0)
+    {{ dd($errors) }}
+@endif
+
+
 @section('content')
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8 col-sm-offset-2" style="margin-top: 140px">
                 <div>
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <strong>Error!</strong> Revise los campos obligatorios.<br><br>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if(Session::has('success'))
+                        <div class="alert alert-info">
+                            {{Session::get('success')}}
+                        </div>
+                    @endif
+
                     <div class="panel panel-default" >
                         <div class="panel-heading">
                             <h3 class="panel-title">{{__('subjects.new')}}</h3>
