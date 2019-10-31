@@ -32,7 +32,8 @@ class AlumnosController extends Controller
             //->groupBy('users.id')
             ->orderBy('users.id');*/
 
-        $alumnos = User::orderBy('id', 'DESC');
+        $alumnos = User::orderBy('id', 'DESC')
+        ->where('roles_id', User::ROLE_ALUMNO);
 
 
         if (isset($request->subject)) {
