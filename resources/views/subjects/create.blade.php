@@ -34,12 +34,18 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('subjects.new_name')}} </label>
                                         <input type="text" name="name" id="name"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_name')}}" value="{{ old('name') }}">
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('name') }}</strong>
+                                                </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('subjects.new_grade')}} </label>
                                         <input type="number" name="grade" id="grade"
                                                class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_grade')}}" value="{{ old('grade') }}">
+
                                     </div>
 
                                     <div class="form-group row">
