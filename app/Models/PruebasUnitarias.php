@@ -26,7 +26,8 @@ class PruebasUnitarias
         gcc /var/www/html/proyecto/storage/TODO/391_10/suma.c -I/lib/include -lcunit  -o /var/www/html/proyecto/storage/TODO/391_10/suma.c
 
         gcc output
-
+        
+        este error sucede por que nombre los archivos iguales
         gcc: gcc: fatal error: input file '/var/www/html/proyecto/storage/TODO/391_10/suma.c' is the same as output file
 compilation terminated.
 fatal error: input file '/var/www/html/proyecto/storage/TODO/391_10/suma.c' is the same as output file
