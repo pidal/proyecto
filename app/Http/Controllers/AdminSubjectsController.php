@@ -141,6 +141,6 @@ class AdminSubjectsController extends Controller
     {
         Session::flash('success', 'Asignatura eliminada correctamente.');
         RelUsersSubject::find($request->id)->delete();
-        return redirect()->route('adminRelatedUserdestroy',$request->subject_id)->with('success', 'Registro eliminado satisfactoriamente');
+        return redirect()->route('adminrelatedsubjects',$request->subject_id)->with('success', 'Registro eliminado satisfactoriamente');
     }
 }
