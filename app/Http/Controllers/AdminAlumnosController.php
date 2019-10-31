@@ -60,7 +60,7 @@ class AdminAlumnosController extends Controller
         }
         if ($this->request['numero'] == 'si') {
             $this->request->validate([
-                'file' => 'required|file|max:5000|mimes:xlsx,csv',
+                'file' => 'required|file|max:5000|mimes:xlsx,csv,txt',
             ]);
         }
     }
