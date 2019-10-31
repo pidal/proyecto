@@ -107,7 +107,7 @@ class AdminAlumnosController extends Controller
 
                 $extension = \File::extension($request['file']->getClientOriginalName());
 
-                dd($extension);
+                dd(Request::file('file'));
 
                 if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
 
