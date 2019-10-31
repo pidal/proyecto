@@ -76,8 +76,27 @@ class AdminAlumnosController extends Controller
 
         Session::flash('redirect', 'adminalumnos/create');
 
-        $this->request = $request;
-        $this->validateForm();
+        //$this->request = $request;
+        //$this->validateForm();
+
+        if ($this->request['numero'] == 'no') {
+
+            $messages = [
+                'surname.required' => 'El campo apellidos es obligatorio.'
+            ];
+
+            $this->request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'surname' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
+            ], $messages);
+
+        }
+        if ($this->request['numero'] == 'si') {
+            $this->request->validate([
+                'file' => 'required|file|max:5000|mimes:xlsx,csv',
+            ]);
+        }
 
         $token = Str::random();
         $request['password'] = self::random_password();
