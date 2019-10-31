@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
 
 	if (Session::has('errors') && Session::has('redirect')) {
 		return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
