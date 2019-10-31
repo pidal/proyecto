@@ -75,7 +75,9 @@ class AdminAlumnosController extends Controller
     {
 
         Session::flash('redirect', 'adminalumnos/create');
-        //Session::flash('input', $request->input());
+
+        dd(Request::file('file'));
+
 
         $this->request = $request;
         $this->validateForm();
@@ -106,8 +108,6 @@ class AdminAlumnosController extends Controller
             if (is_uploaded_file($_FILES['file']['tmp_name'])) {
 
                 $extension = \File::extension($request['file']->getClientOriginalName());
-
-                dd(Request::file('file'));
 
                 if ($extension == "xlsx" || $extension == "xls" || $extension == "csv") {
 
