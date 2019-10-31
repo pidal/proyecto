@@ -376,7 +376,7 @@ class InstructorController extends Controller
                         Session::flash('success', $cantidad_usuarios_creados . ' Usuario/s cargados correctamente');
                     }
 
-                    return redirect('usuariosInstructor')->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
+                    return redirect('alumnos')->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }
 
