@@ -16,6 +16,25 @@ class PruebasUnitarias
         dd($exec);
         //gcc: error: /var/www/html/proyecto/storage/TODO/346_3/sum_test.c: No such file or directory
 
+        /*
+        desde subir archivo en profesor:
+
+        /var/www/html/proyecto/storage/TODO/391_10<br>/391_10/var/www/html/proyecto/storage/TODO/392_10<br>/392_10
+
+        gcc comando:
+
+        gcc /var/www/html/proyecto/storage/TODO/391_10/suma.c -I/lib/include -lcunit  -o /var/www/html/proyecto/storage/TODO/391_10/suma.c
+
+        gcc output
+
+        gcc: gcc: fatal error: input file '/var/www/html/proyecto/storage/TODO/391_10/suma.c' is the same as output file
+compilation terminated.
+fatal error: input file '/var/www/html/proyecto/storage/TODO/391_10/suma.c' is the same as output file
+compilation terminated.
+
+
+        */
+
         shell_exec($exec);
         //Ejecutamos el archivo creado de la compilación
         $ejecutable = './' . $studentFile->fileName;
