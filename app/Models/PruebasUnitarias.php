@@ -17,6 +17,7 @@ class PruebasUnitarias
         chmod($path_completo, 0777);
 
         //var_dump(shell_exec($exec.' 2>&1'));
+        var_dump("whoami")
         //die();
 
 
