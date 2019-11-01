@@ -69,7 +69,7 @@ compilation terminated.
 
 
 
-        echo $execCompileStudent."<br>";
+        echo $execCompileInstructor."<br>";
 
 
 
