@@ -37,6 +37,9 @@ class PruebasUnitarias
     }
     public function executeLanguageJava($fileInstructor,StudentFile $studentFile)
     {
+        $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
+        chdir($path_completo);
+        
         $execCompileStudent = 'sudo javac ' . $studentFile->fileName;
         shell_exec($execCompileStudent);
         echo $execCompileStudent."</br>";
