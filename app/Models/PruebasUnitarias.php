@@ -75,7 +75,12 @@ compilation terminated.
         $lines = file($path_completo."output.txt");
         $KO = 'Failures:';
         $OK = 'OK';
+
+        dd($lines);
         foreach ($lines as $line) {
+
+
+
             if (strpos($line, $KO) !== false) {
                 $line = preg_split('/[^\d]/', $line, -1, PREG_SPLIT_NO_EMPTY);
                 $studentFile->total = $line[0];
