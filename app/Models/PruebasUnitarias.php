@@ -61,28 +61,14 @@ compilation terminated.
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
         $execCompileStudent = 'javac ' . $path_completo.DIRECTORY_SEPARATOR.$studentFile->fileName;
 
-        echo($execCompileStudent."<br>");
-
-
         shell_exec($execCompileStudent);
         $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $path_completo.DIRECTORY_SEPARATOR.$fileInstructor;
-
-
-
-        echo $execCompileInstructor."<br>";
-
-
 
         shell_exec($execCompileInstructor);
 
         $fileInstructorRun = basename($fileInstructor, ".java");
 
         $execRun = 'java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $fileInstructorRun . ' > output.txt';
-
-
-        echo($execRun);
-        dd();
-
 
         shell_exec($execRun);
         $myfile = fopen("output.txt", "r") or die("Unable to open file!");
