@@ -12,6 +12,7 @@ class PruebasUnitarias
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
+        chmod($path_completo.'/'.$fileInstructor, 0777);
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
 
         //var_dump(shell_exec($exec.' 2>&1'));
