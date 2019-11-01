@@ -12,9 +12,9 @@ class PruebasUnitarias
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
-        shell_exec($exec);
+        $cmd = shell_exec($exec);
 
-        dd("revisar si compilo");
+        dd($cmd);
         //Ejecutamos el archivo creado de la compilación
         //1. el problema es que no compila.
 
