@@ -30,7 +30,7 @@ class AdminAlumnosController extends Controller
      */
     public function index()
     {
-        $alumnos = User::orderBy('id', 'DESC')->paginate(7);
+        $alumnos = User::orderBy('id', 'DESC')->paginate(8);
         return view('adminalumnos.index', compact('alumnos'));
     }
 
