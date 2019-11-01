@@ -8,6 +8,8 @@ class PruebasUnitarias
         chdir($path_completo);
         $exec = 'gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
+        dd($exec);
+
         shell_exec($exec);
         //Ejecutamos el archivo creado de la compilación
         $ejecutable = './' . $studentFile->fileName;
