@@ -16,19 +16,11 @@ class PruebasUnitarias
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
         chmod($path_completo, 0777);
 
-        var_dump(shell_exec($exec.' 2>&1'));
+        //var_dump(shell_exec($exec.' 2>&1'));die();
         //var_dump(shell_exec("whoami"));die();
-        //die();
-
 
         //Ejecutamos el archivo creado de la compilación
         //1. el problema es que no compila.
-
-
-
-
-
-
 
         $ejecutable = './' . $studentFile->fileName;
         $salida = $this->PsExecute($ejecutable);
