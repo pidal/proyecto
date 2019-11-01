@@ -113,14 +113,21 @@
                     </div>
                 </div>
 
+                <div class="no box" style="margin-top: 20px">
+                    <div class="form-group">
+                        <label for="grade">{{__('subjects.new_description')}}</label>
+                        <textarea name="description" class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_description')}}">{{ old('description') }}</textarea>
+                        @if ($errors->has('description'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('description') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
                  <div class="form-group row">
                     <a href="{{ url('/subjects') }}"
                            class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
-                    <div class="si box">
-                        <button type="submit" class="btn btn-primary button-loading" data-loading-text="Loading...">
-                            {{ __('Registrar') }}
-                        </button>
-                    </div>
                     <div class="no box">
                         <button type="submit" class="btn btn-primary">
                             {{ __('Registrar') }}
