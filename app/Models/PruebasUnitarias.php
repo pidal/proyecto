@@ -16,7 +16,8 @@ class PruebasUnitarias
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
         chmod($path_completo, 0777);
 
-        var_dump(shell_exec($exec.' 2>&1'));
+        //var_dump(shell_exec($exec.' 2>&1'));
+        var_dump(shell_exec('echo $PATH'));
         die();
 
 
