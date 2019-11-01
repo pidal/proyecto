@@ -13,6 +13,8 @@ class PruebasUnitarias
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
         shell_exec($exec);
+
+        dd("revisar si compilo");
         //Ejecutamos el archivo creado de la compilación
         $ejecutable = './' . $studentFile->fileName;
         $salida = $this->PsExecute($ejecutable);
