@@ -59,14 +59,15 @@ compilation terminated.
     public function executeLanguageJava($fileInstructor,StudentFile $studentFile)
     {
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
-
         $execCompileStudent = 'javac ' . $path_completo.DIRECTORY_SEPARATOR.$studentFile->fileName;
-
-        dd($execCompileStudent);
-
         shell_exec($execCompileStudent);
 
+
+
+
         $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $fileInstructor;
+
+        dd($execCompileInstructor);
 
         shell_exec($execCompileInstructor);
 
