@@ -83,13 +83,14 @@ compilation terminated.
                 $studentFile->fails = $line[1];
                 $studentFile->pass = $studentFile->total - $studentFile->fails;
                 $studentFile->score = @($studentFile->pass / $studentFile->total) * 10;
+                $studentFile->score = $studentFile->score ? $studentFile->score : 0;
             } elseif (strpos($line, $OK) !== false) {
                 $line = preg_split('/[^\d]/', $line, -1, PREG_SPLIT_NO_EMPTY);
                 $studentFile->total = $line[0];
                 $studentFile->fails = '0';
                 $studentFile->pass = $studentFile->total - $studentFile->fails;
                 $studentFile->score = @($studentFile->pass / $studentFile->total) * 10;
-
+                $studentFile->score = $studentFile->score ? $studentFile->score : 0;
                 dd($studentFile);
             }
         }
