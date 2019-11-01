@@ -104,7 +104,7 @@
                 <div class="no box" style="margin-top: 20px">
                     <div class="form-group">
                         <label for="grade">{{__('subjects.new_grade')}}</label>
-                        <input id="grade" type="text" class="form-control{{ $errors->has('grade') ? ' is-invalid' : '' }}" name="grade" value="{{ old('grade') }}" autofocus>
+                        <input id="grade" type="number" class="form-control{{ $errors->has('grade') ? ' is-invalid' : '' }}" name="grade" value="{{ old('grade') }}" autofocus>
                         @if ($errors->has('grade'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('grade') }}</strong>
