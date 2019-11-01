@@ -239,7 +239,7 @@ class StudentController extends Controller
 
 			chdir($path);
 			$newPath = $studentFile->id . '_' . $studentFile->left_attempts;
-			Storage::move(storage_path(DIRECTORY_SEPARATOR.'TODO/'.$path_save . DIRECTORY_SEPARATOR . $fileInstructor), storage_path(DIRECTORY_SEPARATOR.'TODO/'.$newPath . DIRECTORY_SEPARATOR . $fileInstructor));
+			Storage::move('/'.storage_path(DIRECTORY_SEPARATOR.'TODO/'.$path_save . DIRECTORY_SEPARATOR . $fileInstructor), '/'.storage_path(DIRECTORY_SEPARATOR.'TODO/'.$newPath . DIRECTORY_SEPARATOR . $fileInstructor));
 			$studentFile->save();
 
 		}
