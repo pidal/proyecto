@@ -158,6 +158,7 @@ class StudentController extends Controller
             ->union($studentsUnion)
             ->get();
 
+            //dd($studentsFiles);
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
@@ -192,18 +193,18 @@ class StudentController extends Controller
             ->get();
 
 
-        $error = array();
+        $errors = array();
         foreach($studentsFiles as $studentsFile){
             $file = $request->file('file'.$studentsFile->id);
             if($file == null){
-                $error['file'.$studentsFile->id] = 'El archivo es requerido';
+                $errors['file'.$studentsFile->id] = 'El archivo es requerido';
             }
             if($file != null && $file->getClientOriginalName() != $studentsFile->fileName){
-                $error['file'.$studentsFile->id] = 'El nombre del archivo no corresponde al archivo solicitado.';
+                $errors['file'.$studentsFile->id] = 'El nombre del archivo no corresponde al archivo solicitado.';
             }
         }
-        if(count($error) > 0){
-            return back()->withErrors($error);
+        if(count($errors) > 0){
+            return redirect('showStudentsFiles/subject/'.$request->subject_id.'/assignment/'.$request->assignment_id)->with('errors', $errors);
         }
 
         foreach($studentsFiles as $studentFile){
