@@ -91,7 +91,7 @@ compilation terminated.
                 $studentFile->pass = $studentFile->total - $studentFile->fails;
                 $studentFile->score = @($studentFile->pass / $studentFile->total) * 10;
                 $studentFile->score = $studentFile->score ? $studentFile->score : 0;
-                dd($studentFile);
+                //dd($studentFile);
             }
         }
         return $studentFile;
