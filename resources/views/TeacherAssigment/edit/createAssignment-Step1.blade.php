@@ -7,7 +7,7 @@
                 <input id="name" type="text"
                        required
                        class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                       name="name" value="{{ $assignment->name }}" requisi autofocus />
+                       name="name" value="{{ $assignment->name }}" required autofocus />
                     @if ($errors->has('name'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -27,7 +27,7 @@
                            min="1" placeholder=">=1"
                            name="number_files_delivered"
                            required="required"
-                           value="{{ $assignment->number_files_delivered }}" requisi autofocus />
+                           value="{{ $assignment->number_files_delivered }}" required autofocus />
 
                         @if ($errors->has('number_files_delivered'))
                             <span class="invalid-feedback" role="alert">
@@ -59,7 +59,7 @@
                            id="number_files_delivered" type="number" class="form-control"
                            min="1" placeholder=">=1" name="number_files_delivered"
                            required="required"
-                           value="{{ $assignment->number_files_delivered }}" requisi autofocus/>
+                           value="{{ $assignment->number_files_delivered }}" required autofocus/>
 
                     @if ($errors->has('number_files_delivered'))
                         <span class="invalid-feedback" role="alert">
@@ -83,7 +83,7 @@
                                name="fileName_{{$i}}"
                                value="{{ old($filename)}}"
                                required
-                               requisi autofocus />
+                               required autofocus />
                         <label id="label2_{{$i}}"
                                for="weight_{{$i}}">{{ __('Ponderación del archivo '.$i .':') }}</label>
                         <input id="weight_{{$i}}" type="number"
@@ -91,7 +91,7 @@
                                name="weight_{{$i}}"
                                value="{{ old($weight) }}"
                                required
-                               requisi autofocus/>
+                               required autofocus/>
                     </div>
                 @endfor
             </div>
@@ -111,7 +111,7 @@
                        class="form-control {{ $errors->has('attempts') ? ' is-invalid' : '' }}"
                        min='1' placeholder=">=1" name="attempts" value="{{ $assignment->attempts }}"
                        required="required"
-                       requisi>
+                       required>
                 @if ($errors->has('attempts'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('attempts') }}</strong>

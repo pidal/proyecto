@@ -6,7 +6,7 @@
             <label for="delivered_date">{{ __('Fecha de entrega') }}</label>
             <input disabled id="delivered_date" type="datetime-local" min="<?php echo date("Y-m-d\TH:i");?>"
                    class="form-control{{ $errors->has('delivered_date') ? ' is-invalid' : '' }}"
-                   name="delivered_date" value="{{ strftime('%Y-%m-%dT%H:%M:%S', strtotime($assignment->delivered_date))  }}" requisi required>
+                   name="delivered_date" value="{{ strftime('%Y-%m-%dT%H:%M:%S', strtotime($assignment->delivered_date))  }}" required>
             @if ($errors->has('delivered_date'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('delivered_date') }}</strong>
