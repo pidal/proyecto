@@ -41,7 +41,7 @@ compilation terminated.
 
         */
 
-        //shell_exec($exec);
+        shell_exec($exec);
 
         //Ejecutamos el archivo creado de la compilación
         $ejecutable = $path_completo.'/' . $studentFile->fileName;
@@ -52,7 +52,6 @@ compilation terminated.
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
             return redirect('/showStudentsFiles');
         }
-        //dd($path_completo.DIRECTORY_SEPARATOR.'CUnitAutomated-Results.xml');
 
         $xml = simplexml_load_file($path_completo.DIRECTORY_SEPARATOR.'CUnitAutomated-Results.xml');
         $studentFile->total = $xml->CUNIT_RUN_SUMMARY->CUNIT_RUN_SUMMARY_RECORD[2]->TOTAL;
@@ -69,21 +68,11 @@ compilation terminated.
         shell_exec($execCompileStudent);
         $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $path_completo.DIRECTORY_SEPARATOR.$fileInstructor;
 
-
-
-
-
-
-
         shell_exec($execCompileInstructor);
 
         $fileInstructorRun = basename($fileInstructor, ".java");
 
         $execRun = 'java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $fileInstructorRun . ' >output.txt';
-
-
-        //dd($execRun);
-
 
         shell_exec($execRun);
         $myfile = fopen("output.txt", "r") or die("Unable to open file!");
