@@ -12,6 +12,10 @@ class PruebasUnitarias
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
+        if(function_exists('shell_exec')) {
+    dd("exec is enabled");
+}
+dd("is not");
         $cmd = shell_exec($exec);
 
         dd($cmd);
