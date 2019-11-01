@@ -10,6 +10,7 @@ class PruebasUnitarias
     public function executeLanguageC($fileInstructor, StudentFile $studentFile)
     {
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
+
         chdir($path_completo);
         $exec = 'gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
@@ -57,7 +58,9 @@ compilation terminated.
 
     public function executeLanguageJava($fileInstructor,StudentFile $studentFile)
     {
-        $execCompileStudent = 'javac ' . $studentFile->fileName;
+        $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
+
+        $execCompileStudent = 'javac ' . $path_completo.DIRECTORY_SEPARATOR.$studentFile->fileName;
 
         dd($execCompileStudent);
 
@@ -68,7 +71,7 @@ compilation terminated.
         shell_exec($execCompileInstructor);
 
         $fileInstructorRun = basename($fileInstructor, ".java");
-        
+
         $execRun = 'java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $fileInstructorRun . ' >output.txt';
 
 
