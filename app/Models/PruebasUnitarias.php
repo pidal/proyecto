@@ -41,7 +41,7 @@ compilation terminated.
 
         */
 
-        shell_exec($exec);
+        //shell_exec($exec);
 
         //Ejecutamos el archivo creado de la compilación
         $ejecutable = $path_completo.'/' . $studentFile->fileName;
