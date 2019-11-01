@@ -89,6 +89,8 @@ compilation terminated.
                 $studentFile->fails = '0';
                 $studentFile->pass = $studentFile->total - $studentFile->fails;
                 $studentFile->score = @($studentFile->pass / $studentFile->total) * 10;
+
+                dd($studentFile);
             }
         }
         return $studentFile;
