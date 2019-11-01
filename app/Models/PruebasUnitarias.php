@@ -6,8 +6,11 @@ class PruebasUnitarias
     {
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
         chdir($path_completo);
+        chmod($path_completo, 0777);
         $exec = '/usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
+        
+        dd("ver si cambiaron los permisos");
         //hasta aqui se sube y guarda el archivo en la carpeta correspondiente (codigo fuente)
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
