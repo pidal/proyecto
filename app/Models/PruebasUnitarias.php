@@ -72,7 +72,7 @@ compilation terminated.
 
         shell_exec($execRun);
         $myfile = fopen($path_completo."output.txt", "r") or die("Unable to open file!");
-        $lines = file("output.txt");
+        $lines = file($path_completo."output.txt");
         $KO = 'Failures:';
         $OK = 'OK';
         foreach ($lines as $line) {
