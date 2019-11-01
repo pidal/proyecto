@@ -79,4 +79,44 @@
             </div>
         </div>
     </div>
+
+
+ <div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-sm-4 col-sm-offset-4" style="margin-top: 100px">
+            <h2>Crear asignatura</h2>
+            <form class="form-horizontal" method="POST" action="{{ route('subjects.store') }}" role="form">
+                @csrf
+
+
+                <div class="no box" style="margin-top: 20px">
+                    <div class="form-group">
+                        <label for="name">{{__('subjects.new_name')}}</label>
+                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" autofocus>
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="no box" style="margin-top: 20px">
+                    <div class="form-group">
+                        <label for="grade">{{__('subjects.new_grade')}}</label>
+                        <input id="grade" type="text" class="form-control{{ $errors->has('grade') ? ' is-invalid' : '' }}" name="grade" value="{{ old('grade') }}" autofocus>
+                        @if ($errors->has('grade'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('grade') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
 @endsection
