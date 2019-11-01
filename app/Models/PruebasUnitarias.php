@@ -16,6 +16,14 @@ class PruebasUnitarias
 
         dd("revisar si compilo");
         //Ejecutamos el archivo creado de la compilación
+        //1. el problema es que no compila.
+
+
+
+
+
+
+
         $ejecutable = './' . $studentFile->fileName;
         $salida = $this->PsExecute($ejecutable);
         if ($salida == false) {
