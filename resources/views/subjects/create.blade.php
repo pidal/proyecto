@@ -1,11 +1,11 @@
 @extends ('layouts.templateProfesor')
 
 @section('content')
-    <div class="container-fluid">
+    <!--<div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-sm-8 col-sm-offset-2" style="margin-top: 140px">
                 <div>
-                    <!--@if (count($errors) > 0)
+                    @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <strong>Error!</strong> Revise los campos obligatorios.<br><br>
                             <ul>
@@ -14,7 +14,7 @@
                                 @endforeach
                             </ul>
                         </div>
-                    @endif-->
+                    @endif
                     @if(Session::has('success'))
                         <div class="alert alert-info">
                             {{Session::get('success')}}
@@ -78,7 +78,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
 
  <div class="container-fluid">
@@ -116,7 +116,7 @@
                 <div class="no box" style="margin-top: 20px">
                     <div class="form-group">
                         <label for="grade">{{__('subjects.new_description')}}</label>
-                        <textarea name="description" class="col-sm-6 form-control input-sm" placeholder="{{__('subjects.new_description')}}">{{ old('description') }}</textarea>
+                        <textarea name="description" class="col-sm-12 form-control input-sm" placeholder="{{__('subjects.new_description')}}">{{ old('description') }}</textarea>
                         @if ($errors->has('description'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('description') }}</strong>
