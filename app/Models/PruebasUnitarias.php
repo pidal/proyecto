@@ -61,13 +61,13 @@ compilation terminated.
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
         $execCompileStudent = 'javac ' . $path_completo.DIRECTORY_SEPARATOR.$studentFile->fileName;
         shell_exec($execCompileStudent);
-
-
-
-
         $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $path_completo.DIRECTORY_SEPARATOR.$fileInstructor;
 
-        dd($execCompileInstructor);
+
+
+
+
+
 
         shell_exec($execCompileInstructor);
 
