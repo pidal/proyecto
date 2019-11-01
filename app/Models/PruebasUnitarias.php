@@ -8,7 +8,9 @@ class PruebasUnitarias
         chdir($path_completo);
         $exec = 'gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
-        dd($exec);
+        //hasta aqui se sube y guarda el archivo en la carpeta correspondiente (codigo fuente)
+
+        //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
         shell_exec($exec);
         //Ejecutamos el archivo creado de la compilación
