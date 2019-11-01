@@ -113,7 +113,20 @@
                     </div>
                 </div>
 
-
+                 <div class="form-group row">
+                    <a href="{{ url('/subjects') }}"
+                           class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
+                    <div class="si box">
+                        <button type="submit" class="btn btn-primary button-loading" data-loading-text="Loading...">
+                            {{ __('Registrar') }}
+                        </button>
+                    </div>
+                    <div class="no box">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Registrar') }}
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
