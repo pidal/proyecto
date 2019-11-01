@@ -14,6 +14,8 @@ class PruebasUnitarias
         chdir($path_completo);
         $exec = 'gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
+        dd($exec);
+
         //dd($exec);
         //gcc: error: /var/www/html/proyecto/storage/TODO/346_3/sum_test.c: No such file or directory
 
