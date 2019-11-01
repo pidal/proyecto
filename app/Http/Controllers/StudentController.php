@@ -216,7 +216,6 @@ class StudentController extends Controller
 			$studentFile->delivered = 1;
             $file = $request->file('file'.$studentFile->id);
 			Storage::put($path_save . DIRECTORY_SEPARATOR . $file->getClientOriginalName(), file_get_contents($file));
-			chmod($path_save . DIRECTORY_SEPARATOR . $file->getClientOriginalName(), 0777);
 
 			$pruebasUnitarias = new PruebasUnitarias();
 
