@@ -14,8 +14,8 @@ class PruebasUnitarias
 
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
 
-        var_dump(shell_exec($exec.' 2>&1'));
-        die();
+        //var_dump(shell_exec($exec.' 2>&1'));
+        die($exec);
 
 
         //Ejecutamos el archivo creado de la compilación
