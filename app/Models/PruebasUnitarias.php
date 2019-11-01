@@ -65,7 +65,7 @@ compilation terminated.
 
 
 
-        $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $fileInstructor;
+        $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $path_completo.DIRECTORY_SEPARATOR.$fileInstructor;
 
         dd($execCompileInstructor);
 
