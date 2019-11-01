@@ -41,14 +41,14 @@ class PruebasUnitarias
 
         $execCompileStudent = 'sudo javac ' . $path_completo.'/'.$studentFile->fileName;
         shell_exec($execCompileStudent);
-        echo $execCompileStudent."</br>";
+        //echo $execCompileStudent."</br>";
         $execCompileInstructor = 'sudo javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $path_completo.'/'.$fileInstructor;
         shell_exec($execCompileInstructor);
-        echo $execCompileInstructor."</br>";
+        //echo $execCompileInstructor."</br>";
         $fileInstructorRun = basename($fileInstructor, ".java");
         $execRun = 'sudo java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $path_completo.'/'.$fileInstructorRun . ' > output.txt';
         shell_exec($execRun);
-        echo $execRun;die();
+        //echo $execRun;die();
         $myfile = fopen("output.txt", "r") or die("Unable to open file!");
         $lines = file("output.txt");
         $KO = 'Failures:';
