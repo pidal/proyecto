@@ -76,7 +76,7 @@ compilation terminated.
         $execRun = 'java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $fileInstructorRun . ' >output.txt';
 
 
-        //dd($execRun);
+        dd($execRun);
 
 
         shell_exec($execRun);
