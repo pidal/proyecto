@@ -81,6 +81,7 @@ compilation terminated.
 
 
         echo($execRun);
+        dd();
 
 
         shell_exec($execRun);
