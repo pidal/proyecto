@@ -6,19 +6,14 @@ class PruebasUnitarias
     {
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
         chdir($path_completo);
-        $exec = 'gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
+        $exec = '/usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
         //hasta aqui se sube y guarda el archivo en la carpeta correspondiente (codigo fuente)
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
-        if(function_exists('shell_exec')) {
-    dd("exec is enabled");
-}
-dd("is not");
-        $cmd = shell_exec($exec);
+        shell_exec($exec);
 
-        dd($cmd);
         //Ejecutamos el archivo creado de la compilación
         //1. el problema es que no compila.
 
