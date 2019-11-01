@@ -45,7 +45,7 @@ compilation terminated.
 
         //Ejecutamos el archivo creado de la compilación
         $ejecutable = $path_completo.'/' . $studentFile->fileName;
-        dd($ejecutable);
+        //dd($ejecutable);
         $salida = $this->PsExecute($ejecutable);
 
         if ($salida == false) {
