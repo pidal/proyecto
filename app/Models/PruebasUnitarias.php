@@ -41,7 +41,8 @@ compilation terminated.
 
         shell_exec($exec);
         //Ejecutamos el archivo creado de la compilación
-        $ejecutable = './' . $studentFile->fileName;
+        $ejecutable = '.'.$path_completo.'/' . $studentFile->fileName;
+        dd($ejecutable);
         $salida = $this->PsExecute($ejecutable);
 
         if ($salida == false) {
