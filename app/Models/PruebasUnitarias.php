@@ -58,10 +58,17 @@ compilation terminated.
     public function executeLanguageJava($fileInstructor,StudentFile $studentFile)
     {
         $execCompileStudent = 'javac ' . $studentFile->fileName;
+
+        dd($execCompileStudent);
+
         shell_exec($execCompileStudent);
+
         $execCompileInstructor = 'javac -cp '.public_path(DIRECTORY_SEPARATOR.'junit.jar:. '). $fileInstructor;
+
         shell_exec($execCompileInstructor);
+
         $fileInstructorRun = basename($fileInstructor, ".java");
+        
         $execRun = 'java -cp .:'.public_path().'/junit.jar:'.public_path().'/hamcrest.jar org.junit.runner.JUnitCore ' . $fileInstructorRun . ' >output.txt';
 
 
