@@ -138,7 +138,8 @@ class AdminAlumnosController extends Controller
                                 continue;
                             }
                             if ($email_exist) {
-                                Session::flash('error', 'Usuario/s no cargado/s. El e-mail: ' . $email_exist['email'] . ' ya existe.');
+                                Session::flash('error', 'Usuario/s no cargado/s correctamente');
+                                $users_errors[] = $email_exist['email'];
                                 continue;
                             }
 
@@ -164,6 +165,7 @@ class AdminAlumnosController extends Controller
                     Session::flash('success', $cantidad_usuarios_creados. ' usuarios creador correctamente');
                     return redirect()->route('adminalumnos.index')
                     ->with('users_success', $users_success)
+                    ->with('users_errors', $users_errors)
                     ->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }

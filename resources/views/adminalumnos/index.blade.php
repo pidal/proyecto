@@ -13,6 +13,13 @@
                             <span class="sr-only">Close</span>
                         </button>
                         <strong>{{ Session::get('error') }}</strong>
+                        @if( Session::has('users_errors'))
+                            <ul>
+                            @foreach(Session::get('users_errors') as $e_user)
+                                <li>{{ $e_user }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                     </div>
                 @endif
 
