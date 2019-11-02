@@ -77,7 +77,7 @@ class PruebasUnitarias
         //Create the solution
         $exec = "dotnet new classlib --force -o ".$path_completo;
 
-        echo $exec."<br>";die();
+        //echo $exec."<br>";die();
 
 
         $env = array('DOTNET_CLI_HOME' => '/var/www','HOME'=>'/var/www');
