@@ -35,7 +35,8 @@ class AlumnosController extends Controller
         /*$alumnos = User::orderBy('id', 'DESC')
         ->where('roles_id', User::ROLE_ALUMNO);*/
 
-        $alumnos = User::orderBy('id', 'DESC');
+        $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
+            orderBy('id', 'DESC');
 
         //hay que mostrar alumnos de este profesor
 
