@@ -37,7 +37,7 @@ class AlumnosController extends Controller
         ->where('roles_id', User::ROLE_ALUMNO);*/
 
         $my_subjects = Subject::whereHas('users', function($q){
-            $q->where('id', Auth::user()->id);
+            $q->where('users.id', Auth::user()->id);
         })->get();
 
         $my_subjects->dd();
