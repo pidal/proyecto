@@ -41,11 +41,17 @@ class SubjectsController extends Controller
     {
         Session::flash('redirect', 'subjects/create');
 
+        $messages = [
+            'name.required' => 'El campo nombre es obligatorio.',
+            'name.required' => 'El campo grado es obligatorio.',
+            'name.required' => 'El campo nombre es descripción.',
+        ];
+
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
             'grade' => 'required'
-        ]);
+        ], $messages);
         Subject::create($request->all());
         return redirect()->route('subjects.index')->with('success', 'Registro creado satisfactoriamente');
     }

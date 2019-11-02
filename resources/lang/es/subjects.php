@@ -9,7 +9,7 @@ return [
     'new' => 'Nuevo',
     'new_name' => 'Nombre',
     'new_grade' => 'Grado',
-    'new_description' => 'Description',
+    'new_description' => 'Descripción',
     'back' => 'Atras',
     'save' => 'Guardar',
     'selectone' => 'Selecciones una Asignatura',
