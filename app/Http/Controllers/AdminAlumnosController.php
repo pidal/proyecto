@@ -118,7 +118,6 @@ class AdminAlumnosController extends Controller
                         $cantidad_usuarios_creados = 0;
                         $usuarios_creados = array();
                         $password = '1234';
-                        $success = '';
                         foreach ($items as $key => $value) {
                             $email_exist = User::where('email', $value->email)->first();
                             $i++;
@@ -154,16 +153,18 @@ class AdminAlumnosController extends Controller
                             ]);
                             $cantidad_usuarios_creados++;
                             $usuarios_creados[] = $user->id;
+                            $success[] = $iser->email;
                             User::crearPdf($user);
 
                             Mail::to($user)->send(new UserCreateMail($user));
 
                         }
-                        $success .= 'Usuario/s '.$user->email.' cargado(s) correctamente.<br>';
                     }
 
-                    Session::flash('success', $success);
-                    return redirect()->route('adminalumnos.index')->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
+                    Session::flash('success', $cantidad_usuarios_creados. ' usuarios creador correctamente');
+                    return redirect()->route('adminalumnos.index')
+                    ->with('success', $success)
+                    ->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }
 

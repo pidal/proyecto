@@ -34,6 +34,11 @@
                             <span class="sr-only">Close</span>
                         </button>
                         <strong>{{ Session::get('success') }}</strong>
+                        @if( isset($success) && is_array($success) )
+                            @foreach($success as $user)
+                                <p>Usuario {{ $user }} creado correctamente</p>
+                            @endforeach
+                        @endif
                     </div>
                 @endif
 
