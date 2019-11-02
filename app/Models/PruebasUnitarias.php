@@ -75,7 +75,7 @@ class PruebasUnitarias
         $project_name = $studentFile->id . '_' . $studentFile->left_attempts;
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $project_name.DIRECTORY_SEPARATOR);
         //Create the solution
-        $exec = "dotnet new classlib --force -o ".$path_completo;
+        $exec = "dotnet new classlib --force -o ".$path_completo.' 2>&1';
 
         $env = array('DOTNET_CLI_HOME' => '/var/www','HOME'=>'/var/www');
         $result = $this->shellExecute($exec, $env);
