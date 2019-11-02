@@ -158,10 +158,10 @@ class AdminAlumnosController extends Controller
                             Mail::to($user)->send(new UserCreateMail($user));
 
                         }
-
-                        Session::flash('success', $cantidad_usuarios_creados . ' Usuario/s cargados correctamente');
+                        $success .= 'Usuario/s '.$user->email.' cargado(s) correctamente.<br>';
                     }
 
+                    Session::flash('success', $success);
                     return redirect()->route('adminalumnos.index')->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }
