@@ -42,7 +42,8 @@ class AlumnosController extends Controller
         $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
-            join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')->get()->dd();
+            join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')->
+            whereIn('subject_id', $my_subjects->implode(', '))->get()->dd();
 
 
         if (isset($request->subject)) {
