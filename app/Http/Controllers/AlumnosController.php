@@ -38,19 +38,16 @@ class AlumnosController extends Controller
 
         $my_subjects = Subject::whereHas('users', function($q){
             $q->where('users.id', Auth::user()->id);
-        })->get();
-
-        $my_subjects->dd();
+        })->pluck('id');
+        $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
-            orderBy('id', 'DESC');
-
-        //hay que mostrar alumnos de este profesor
-
+            whereHas('subjects', function($q) use($my_subjects){
+                $q->orderByRaw(\DB::raw("FIELD(id, ".$my_subjects->implode(', ').") ".$flag));
+            });
 
         if (isset($request->subject)) {
             //$alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
-
             $alumnos = $alumnos->whereHas('subjects', function($q) use($request){
                 $q->where('subject_id', $request->subject);
             });
