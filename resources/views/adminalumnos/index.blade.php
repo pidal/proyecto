@@ -33,12 +33,8 @@
                             <span aria-hidden="true">&times;</span>
                             <span class="sr-only">Close</span>
                         </button>
-                        <strong>{{ Session::get('success') }}</strong>
-                        @if( isset($users_success) && is_array($users_success) )
-                            @foreach($users_success as $user)
-                                <p>Usuario {{ $user }} creado correctamente</p>
-                            @endforeach
-                        @endif
+                        <strong>{{ Session::get('success') }} </strong>
+                        {{ implode(", ", $users_success) }}
                     </div>
                 @endif
 
