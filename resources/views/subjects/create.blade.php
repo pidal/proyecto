@@ -118,7 +118,7 @@
                         <label for="grade">{{__('subjects.new_description')}}</label>
                         <textarea name="description" class="col-sm-12 form-control input-sm" placeholder="{{__('subjects.new_description')}}">{{ old('description') }}</textarea>
                         @if ($errors->has('description'))
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback" role="alert" style="display: unset;">
                                 <strong>{{ $errors->first('description') }}</strong>
                             </span>
                         @endif
