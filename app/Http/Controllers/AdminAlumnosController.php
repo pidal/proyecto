@@ -153,7 +153,7 @@ class AdminAlumnosController extends Controller
                             ]);
                             $cantidad_usuarios_creados++;
                             $usuarios_creados[] = $user->id;
-                            $success[] = $iser->email;
+                            $success[] = $user->email;
                             User::crearPdf($user);
 
                             Mail::to($user)->send(new UserCreateMail($user));
