@@ -36,7 +36,7 @@ class AlumnosController extends Controller
         /*$alumnos = User::orderBy('id', 'DESC')
         ->where('roles_id', User::ROLE_ALUMNO);*/
 
-        $my_subjects = Subject::whereHas('users', function($q){
+        $my_subjects = Subject::where('users', function($q){
             $q->where('id', Auth::user()->id);
         })->get();
 
