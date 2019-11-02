@@ -43,7 +43,7 @@ class AlumnosController extends Controller
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
             whereHas('subjects', function($q) use($my_subjects){
-                $q->orderByRaw(\DB::raw("FIELD(id, ".$my_subjects->implode(', ').") ".$flag));
+                $q->orderByRaw(\DB::raw("FIELD(id, ".$my_subjects->implode(', ').") "));
             });
 
         if (isset($request->subject)) {
