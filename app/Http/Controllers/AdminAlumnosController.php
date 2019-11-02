@@ -153,7 +153,7 @@ class AdminAlumnosController extends Controller
                             ]);
                             $cantidad_usuarios_creados++;
                             $usuarios_creados[] = $user->id;
-                            $success[] = $user->email;
+                            $users_success[] = $user->email;
                             User::crearPdf($user);
 
                             Mail::to($user)->send(new UserCreateMail($user));
@@ -163,7 +163,7 @@ class AdminAlumnosController extends Controller
 
                     Session::flash('success', $cantidad_usuarios_creados. ' usuarios creador correctamente');
                     return redirect()->route('adminalumnos.index')
-                    ->with('success', $success)
+                    ->with('users_success', $users_success)
                     ->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }
