@@ -43,8 +43,8 @@ class SubjectsController extends Controller
 
         $messages = [
             'name.required' => 'El campo nombre es obligatorio.',
-            'name.required' => 'El campo grado es obligatorio.',
-            'name.required' => 'El campo nombre es descripción.',
+            'grade.required' => 'El campo grado es obligatorio.',
+            'description.required' => 'El campo descripción es obligatorio.',
         ];
 
         $this->validate($request, [
