@@ -37,6 +37,8 @@ class AlumnosController extends Controller
 
         $alumnos = User::orderBy('id', 'DESC');
 
+        //hay que mostrar alumnos de este profesor
+
 
         if (isset($request->subject)) {
             //$alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
