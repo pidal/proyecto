@@ -35,9 +35,11 @@
                         </button>
                         <strong>{{ Session::get('success') }}</strong>
                         @if( Session::has('users_success'))
+                            <ul>
                             @foreach(Session::get('users_success') as $user)
                                 <li>{{ $user }} creado correctamente</li>
                             @endforeach
+                            </ul>
                         @endif
                     </div>
                 @endif
