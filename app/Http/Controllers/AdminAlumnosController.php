@@ -118,6 +118,7 @@ class AdminAlumnosController extends Controller
                         $cantidad_usuarios_creados = 0;
                         $usuarios_creados = array();
                         $password = '1234';
+                        $success = '';
                         foreach ($items as $key => $value) {
                             $email_exist = User::where('email', $value->email)->first();
                             $i++;
