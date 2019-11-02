@@ -38,7 +38,7 @@ class AlumnosController extends Controller
 
         $my_subjects = Subject::whereHas('users', function($q){
             $q->where('users.id', Auth::user()->id);
-        })->pluck('id');
+        })->pluck('subjects.id');
         $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
