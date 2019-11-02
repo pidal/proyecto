@@ -36,7 +36,7 @@
                         <strong>{{ Session::get('success') }}</strong>
                         @if( Session::has('users_success'))
                             @foreach(Session::get('users_success') as $user)
-                                <div>{{ $user }} creado correctamente</div>
+                                <li>{{ $user }} creado correctamente</li>
                             @endforeach
                         @endif
                     </div>
