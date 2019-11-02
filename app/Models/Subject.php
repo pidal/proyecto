@@ -46,7 +46,7 @@ class Subject extends Model
 	public function users()
 	{
 		return $this->belongsToMany(\pfg\Models\User::class, 'rel_users_subject', 'subject_id', 'users_id')
-					->withPivot('id')
+					//->withPivot('id')
 					->withTimestamps();
 	}
 
