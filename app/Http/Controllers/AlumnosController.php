@@ -38,12 +38,12 @@ class AlumnosController extends Controller
 
         $my_subjects = Subject::whereHas('users', function($q){
             $q->where('users.id', Auth::user()->id);
-        })->pluck('id')->dd();
+        })->pluck('id');
         $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
             whereHas('subjects', function($q) use($my_subjects){
-                $q->orderByRaw(\DB::raw("FIELD(id, ".$my_subjects->implode(', ').") "));
+                $q->orderByRaw(\DB::raw("FIELD(subjects.id, ".$my_subjects->implode(', ').") "));
             });
 
         if (isset($request->subject)) {
