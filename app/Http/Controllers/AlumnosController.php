@@ -2,6 +2,7 @@
 
 namespace pfg\Http\Controllers;
 
+use Auth;
 use Illuminate\Support\Facades\DB;
 use pfg\Models\Subject;
 use pfg\Models\User;
