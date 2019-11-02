@@ -42,9 +42,8 @@ class AlumnosController extends Controller
         $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
-            whereHas('subjects', function($q) use($my_subjects){
-                $q->orderByRaw(\DB::raw("FIELD(subjects.id, ".$my_subjects->implode(', ').") "));
-            });
+            join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')->get()->dd();
+
 
         if (isset($request->subject)) {
             //$alumnos = $alumnos->where('rel_users_subject.subject_id', $request->subject);
