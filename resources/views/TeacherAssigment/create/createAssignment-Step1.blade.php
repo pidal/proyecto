@@ -83,14 +83,13 @@
                                name="fileName_{{$i}}"
                                value="{{ old($filename)}}"
                                required
-                               required autofocus />
+                               autofocus />
                         <label id="label2_{{$i}}"
                                for="weight_{{$i}}">{{ __('Ponderación del archivo '.$i .':') }}</label>
                         <input id="weight_{{$i}}" type="number"
                                class="form-control" min="1" max="100" placeholder="100%"
                                name="weight_{{$i}}"
                                value="{{ old($weight) }}"
-                               required
                                required autofocus/>
                     </div>
                 @endfor
