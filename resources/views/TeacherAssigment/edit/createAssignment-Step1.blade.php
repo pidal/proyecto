@@ -71,7 +71,7 @@
 
             <div class="hidden">
                 @php $i = 1; @endphp
-                @foreach($user_files as $file)
+                @foreach($files as $file)
 
                 <div id="hideShow" class="form-group">
 
