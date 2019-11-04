@@ -266,6 +266,8 @@ class TeacherAssigmentController extends Controller
 
 	public function saveedit(Request $request){
 
+		dd($request);
+
 		$validatedData = $request->validate([
 			'id' => 'required',
 			'name' => 'required',
