@@ -56,6 +56,8 @@
                         </div>
                     </div>
 
+                    <input type="hidden" name="subject_id" value="{{ $subject->id }}">
+                    <input type="hidden" name="assignment_id" value="{{ $assignment->id }}">
                     <input type="hidden" name="files_id[]" value="{{$studentFile->id}}">
                     <input type="hidden" name="files_name[]" value="{{$studentFile->fileName}}">
                     <input type="hidden" name="group_assignment_id" value="<?php echo $studentFile->group_id?>">
