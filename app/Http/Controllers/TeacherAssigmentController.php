@@ -73,7 +73,7 @@ class TeacherAssigmentController extends Controller
 
 		$assignment = Assignment::find($id);
 
-		//dd($assignment);
+		dd($assignment);
 
         $subjects = DB::table('rel_users_subject')
             ->join('subject', 'rel_users_subject.subject_id', '=', 'subject.id')
