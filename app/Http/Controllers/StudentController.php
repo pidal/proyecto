@@ -165,7 +165,7 @@ class StudentController extends Controller
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
 
-		$studentsFiles = StudentFile::where('users_id', auth()->id)->
+		$studentsFiles = StudentFile::where('users_id', auth()->id())->
 			get();
 
 		dd($studentsFiles);
