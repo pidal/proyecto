@@ -177,6 +177,10 @@ class StudentController extends Controller
 	{
 		//Session::flash('redirect', 'showSubjectsStudent');
 
+		$assignment = Assignment::where('id', $request->assignment_id)->first();
+
+		dd($request);
+
 
         $studentsUnion = StudentFile::select('student_files.*')
             ->join('assignment', 'assignment.id', '=', 'student_files.assignment_id')
@@ -204,8 +208,9 @@ class StudentController extends Controller
                 $error['file'.$studentsFile->id] = 'El nombre del archivo no corresponde al archivo solicitado.';
             }
         }
+
         if(count($error) > 0){
-            return redirect()->back()->withErrors($error);
+            return redirect()->to('showAssignmentsStudent/subject/'..'/assignment/'.)->withErrors($error);
         }
 
         foreach($studentsFiles as $studentFile){
