@@ -210,7 +210,7 @@ class StudentController extends Controller
         }
 
         if(count($error) > 0){
-            return redirect()->to('showStudentsFiles/subject/'.$request['subject_id'].'/assignment/'.$request['assignment_id'])->withErrors($error);
+            return redirect()->to('showStudentsFiles/subject/'.$request['subject_id'].'/assignment/'.$request['assignment_id'])->with('errors', $error);
         }
 
         foreach($studentsFiles as $studentFile){
