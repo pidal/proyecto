@@ -167,20 +167,13 @@ class StudentController extends Controller
 		$subject = Subject::where('id', $request->subject_id)->first();
 
 		if ($request->type == 'grupo') {
-
 			$studentsFiles = StudentFile::where('assignment_id', $assignment->id)->
 				get();
-
-
-
 		}else{
 			$studentsFiles = StudentFile::where('users_id', auth()->id())->
 				where('assignment_id', $assignment->id)->
 				get();
 		}
-
-		
-
 		//dd($studentsFiles);
 
 		return view('layouts.showStudentsFiles', compact('assignment', 'studentsFiles', 'subject'));
