@@ -13,7 +13,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     /**
@@ -23,6 +22,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Session::has('errors') && Session::has('redirect')) {
+            //dd(Session::all());
+            return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
+            ->withInput(Session::getOldInput());
+        }
+        return redirect()->to(url('/login'));
     }
 }
