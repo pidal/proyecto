@@ -116,6 +116,10 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
             RelUsersSubject::where('users_id',$this->id)->delete();
             StudentFile::where('users_id',$this->id)->delete();
         }
+        //Solo para alumnos
+        if($this->role->id == 2){
+            RelUsersSubject::where('users_id',$this->id)->delete();
+        }
 
 	    parent::delete();
     }
