@@ -70,7 +70,7 @@
             </div>
 
             <div class="hidden">
-                @php $i = 1; @endphp
+                @php $i = 1; dd($files); @endphp
                 @foreach($files as $file)
 
                 <div id="hideShow" class="form-group">
