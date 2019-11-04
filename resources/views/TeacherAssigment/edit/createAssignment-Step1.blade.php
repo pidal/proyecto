@@ -70,7 +70,6 @@
             </div>
 
             <div class="hidden">
-                {{ dd($user_files) }}
                 @php $i = 1; @endphp
                 @foreach($user_files as $file)
 
