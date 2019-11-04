@@ -40,6 +40,9 @@
                         @csrf
                         <input type="hidden" name="subject_id" value="<?php echo $subject->id;?>">
                         <input type="hidden" name="assignment_id" value="<?php echo $assignment->id;?>">
+
+                        <input type="hidden" name="type" value="<?php echo $assignment->type;?>">
+
                         <button type="submit" class="btn btn-info">
                             <a class="edit" data-toggle="tooltip">
                                 <i style="vertical-align: middle;" class="material-icons">Ver archivos</i>
