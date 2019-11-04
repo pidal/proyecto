@@ -166,9 +166,20 @@ class StudentController extends Controller
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
 
-		$studentsFiles = StudentFile::where('users_id', auth()->id())->
-			where('assignment_id', $assignment->id)->
-			get();
+		if ($request->type == 'grupo') {
+
+			$studentFiles = StudentFile::where('assignment_id', $assignment->id)->
+				get();
+
+
+
+		}else{
+			$studentsFiles = StudentFile::where('users_id', auth()->id())->
+				where('assignment_id', $assignment->id)->
+				get();
+		}
+
+		
 
 		//dd($studentsFiles);
 
