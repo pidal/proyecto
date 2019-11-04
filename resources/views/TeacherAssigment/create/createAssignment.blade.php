@@ -230,6 +230,7 @@
             $field.id = 'fileName.' + $i;
             $field.type = 'text';
             $field.placeholder = 'Ej) practica.c';
+            $field.required = true;
             $item.appendChild($field);
 
             $field = document.createElement('label');
@@ -243,6 +244,7 @@
             $field.min = '1'
             $field.max = '100'
             $field.placeholder = '100%';
+            $field.required = true;
             $item.appendChild($field);
             $container.appendChild($item);
         }
