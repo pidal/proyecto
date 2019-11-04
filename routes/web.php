@@ -12,14 +12,14 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
-/*Route::get('/', function (Request $request) {
+Route::get('/', function (Request $request) {
 	if (Session::has('errors') && Session::has('redirect')) {
 		//dd(Session::all());
 		return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
 		->withInput(Session::getOldInput());
 	}
 	return redirect()->to(url('/login'));
-});*/
+});
 
 
 
