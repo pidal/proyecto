@@ -175,6 +175,8 @@ class StudentController extends Controller
 
 	public function sendStudentFiles(Request $request)
 	{
+		Session::flash('redirect', 'showSubjectsStudent');
+
 
         $studentsUnion = StudentFile::select('student_files.*')
             ->join('assignment', 'assignment.id', '=', 'student_files.assignment_id')
