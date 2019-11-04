@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="hidden">
+            <!--<div class="hidden">
                 @for($i = 1; $i<= $assignment->number_files_delivered; $i++)
                     @php
                         $filename = "fileName_$i";
@@ -94,7 +94,7 @@
                                required autofocus/>
                     </div>
                 @endfor
-            </div>
+            </div>-->
 
             <div id="FormFields">
                 @if ($errors->has('fileName'))
