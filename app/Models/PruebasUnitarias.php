@@ -14,8 +14,6 @@ class PruebasUnitarias
 
         $exec = 'sudo /usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit  -o ' . $path_completo.'/'.$studentFile->fileName;
 
-        dd($exec);
-
         //hasta aqui se sube y guarda el archivo en la carpeta correspondiente (codigo fuente)
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
@@ -27,11 +25,14 @@ class PruebasUnitarias
         //1. el problema es que no compila.
 
         $ejecutable = './' . $studentFile->fileName;
-        $salida = $this->PsExecute($ejecutable);
+        $salida = $this->PsExecute($ejecutable.' 2>&1');
         if ($salida == false) {
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
             return redirect('/showStudentsFiles');
         }
+        dd($salida);
+
+
         $xml = simplexml_load_file($path_completo.DIRECTORY_SEPARATOR.'CUnitAutomated-Results.xml');
         $studentFile->total = $xml->CUNIT_RUN_SUMMARY->CUNIT_RUN_SUMMARY_RECORD[2]->TOTAL;
         $studentFile->pass = $xml->CUNIT_RUN_SUMMARY->CUNIT_RUN_SUMMARY_RECORD[2]->SUCCEEDED;
