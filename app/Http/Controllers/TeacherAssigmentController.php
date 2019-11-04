@@ -75,7 +75,7 @@ class TeacherAssigmentController extends Controller
 
 		$files = StudentFile::where('assignment_id', $assignment->id)->get();
 
-		dd($files);
+		dd($files->groupBy('fileName'));
 
 		//dd($assignment);
 
