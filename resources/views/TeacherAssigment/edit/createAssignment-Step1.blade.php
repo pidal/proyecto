@@ -94,7 +94,7 @@
                                required
                                required autofocus/>
                     </div>
-                @endfor
+                @endforeach
             </div>
 
             <div id="FormFields">
