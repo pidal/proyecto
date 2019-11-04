@@ -71,8 +71,16 @@
 
             <div class="hidden">
                 @foreach($files as $file)
-                @endforeach
 
+                <div id="hideShow" class="form-group">
+                    <label id="lavel">
+                        
+                    </label>
+                    
+                </div>
+
+                @endforeach
+                <!--
                 @for($i = 1; $i<= $assignment->number_files_delivered; $i++)
                     @php
                         $filename = "fileName_$i";
@@ -96,7 +104,7 @@
                                required
                                required autofocus/>
                     </div>
-                @endfor
+                @endfor -->
             </div>
 
             <div id="FormFields">
