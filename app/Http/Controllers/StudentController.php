@@ -81,7 +81,7 @@ class StudentController extends Controller
 			->where('student_files.delivered',  1)
 			->select('subject.name', 'subject.id')
             ->distinct('subject.id')
-            ->paginate(1);
+            ->get();
 
 		return view('layouts.showResultsStudentSubjects', compact('subjects'));
 	}
