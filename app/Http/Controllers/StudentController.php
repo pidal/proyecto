@@ -175,7 +175,7 @@ class StudentController extends Controller
 
 	public function sendStudentFiles(Request $request)
 	{
-		Session::flash('redirect', 'showSubjectsStudent');
+		//Session::flash('redirect', 'showSubjectsStudent');
 
 
         $studentsUnion = StudentFile::select('student_files.*')
@@ -205,7 +205,7 @@ class StudentController extends Controller
             }
         }
         if(count($error) > 0){
-            return back()->withErrors($error);
+            return redirect()->back()->withErrors($error);
         }
 
         foreach($studentsFiles as $studentFile){
