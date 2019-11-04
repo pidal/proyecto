@@ -7,7 +7,7 @@ class PruebasUnitarias
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
         chdir($path_completo);
 
-        $exec = 'sudo /usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit -o ' . $path_completo.'/'.$studentFile->fileName;
+        $exec = '/usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit -o ' . $path_completo.'/'.$studentFile->fileName;
 
         chmod($path_completo.'/'.$fileInstructor, 0777);
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
@@ -18,7 +18,7 @@ class PruebasUnitarias
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
         //var_dump(shell_exec($exec.' 2>&1'));die();
-        var_dump(shell_exec("whoami"));die();
+        //var_dump(shell_exec("whoami"));die();
 
         //Ejecutamos el archivo creado de la compilación
         //1. el problema es que no compila.
