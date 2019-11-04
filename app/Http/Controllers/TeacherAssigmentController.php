@@ -268,8 +268,6 @@ class TeacherAssigmentController extends Controller
 
 		Session::flash('redirect', 'teacherassignment');
 
-		$
-
 		$validatedData = $request->validate([
 			'id' => 'required',
 			'name' => 'required',
