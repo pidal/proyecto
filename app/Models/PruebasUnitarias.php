@@ -7,11 +7,14 @@ class PruebasUnitarias
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
         chdir($path_completo);
 
-        $exec = '/usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit -o ' . $path_completo.'/'.$studentFile->fileName;
+        $exec = ' sudo /usr/bin/gcc ' . $path_completo.DIRECTORY_SEPARATOR.$fileInstructor . ' -I/lib/include -lcunit -o ' . $path_completo.'/'.$studentFile->fileName;
+
 
         chmod($path_completo.'/'.$fileInstructor, 0777);
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
         chmod($path_completo, 0777);
+
+        dd($exec);
 
         //hasta aqui se sube y guarda el archivo en la carpeta correspondiente (codigo fuente)
 
