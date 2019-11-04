@@ -20,7 +20,7 @@ class PruebasUnitarias
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
-        var_dump(shell_exec($exec.' 2>&1'));die();
+        //var_dump(shell_exec($exec.' 2>&1'));die();
         //var_dump(shell_exec("whoami"));die();
 
         //Ejecutamos el archivo creado de la compilación
