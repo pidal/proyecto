@@ -145,6 +145,7 @@ class StudentController extends Controller
 	{
 		//dd($request);
 
+        /*
         $studentsUnion = Assignment::select('student_files.*')
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->join('group_assignment', 'student_files.group_id', '=', 'group_assignment.id')
@@ -159,10 +160,15 @@ class StudentController extends Controller
             ->where('student_files.users_id', auth()->id())
             ->union($studentsUnion)
             ->get();
-
+        */
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
+
+		$studentsFiles = StudentFile::where('users_id', Auth::user()->id)->
+			get();
+
+		dd($studentsFiles);
 
 		return view('layouts.showStudentsFiles', compact('assignment', 'studentsFiles', 'subject'));
 	}
