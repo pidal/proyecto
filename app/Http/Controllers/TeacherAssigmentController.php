@@ -266,6 +266,8 @@ class TeacherAssigmentController extends Controller
 
 	public function saveedit(Request $request){
 
+		Session::flash('redirect', 'teacherassignment');
+
 		$validatedData = $request->validate([
 			'id' => 'required',
 			'name' => 'required',
