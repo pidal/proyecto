@@ -179,7 +179,7 @@ class StudentController extends Controller
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 
-		dd($request);
+		//dd($request);
 
 
         $studentsUnion = StudentFile::select('student_files.*')
