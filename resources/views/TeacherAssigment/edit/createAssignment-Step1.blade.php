@@ -84,8 +84,7 @@
                 </div>
 
                 @endforeach
-                <!--
-                @for($i; $i<= $assignment->number_files_delivered; $i++)
+                @for($i = 1; $i<= $assignment->number_files_delivered; $i++)
                     @php
                         $filename = "fileName_$i";
                         $weight = "weight_$i"
@@ -108,7 +107,7 @@
                                required
                                required autofocus/>
                     </div>
-                @endfor -->
+                @endfor
             </div>
 
             <div id="FormFields">
