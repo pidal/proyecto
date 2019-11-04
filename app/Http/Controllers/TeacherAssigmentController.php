@@ -75,6 +75,8 @@ class TeacherAssigmentController extends Controller
 
 		$files = StudentFile::where('assignment_id', $assignment->id)->get()->unique('fileName');
 
+		dd($files);
+
         $subjects = DB::table('rel_users_subject')
             ->join('subject', 'rel_users_subject.subject_id', '=', 'subject.id')
             ->where('rel_users_subject.users_id', auth()->id())
