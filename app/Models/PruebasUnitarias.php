@@ -131,7 +131,6 @@ EOF;
     {
         // First, execute the process, get the process ID
         $pid = $this->PsExec($command);
-        dd($pid);
         if ($pid === false)
             return false;
         $cur = 0;
