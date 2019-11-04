@@ -23,7 +23,7 @@ class PruebasUnitarias
         //Ejecutamos el archivo creado de la compilación
         //1. el problema es que no compila.
 
-        $ejecutable = './' . $studentFile->fileName;
+        $ejecutable = $path_completo.'/' . $studentFile->fileName;
         $salida = $this->PsExecute($ejecutable);
         if ($salida == false) {
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
