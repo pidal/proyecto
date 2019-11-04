@@ -70,10 +70,11 @@
             </div>
 
             <div class="hidden">
+                @php $i = 1; @endphp
                 @foreach($files as $file)
 
                 <div id="hideShow" class="form-group">
-                    <label id="lavel">
+                    <label id="">
                         
                     </label>
                     
@@ -81,7 +82,7 @@
 
                 @endforeach
                 <!--
-                @for($i = 1; $i<= $assignment->number_files_delivered; $i++)
+                @for($i; $i<= $assignment->number_files_delivered; $i++)
                     @php
                         $filename = "fileName_$i";
                         $weight = "weight_$i"
