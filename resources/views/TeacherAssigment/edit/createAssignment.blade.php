@@ -1,7 +1,5 @@
 @extends('layouts.templateProfesor')
 
-{{ dd('aqui') }}
-
 @section('styles')
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -300,6 +298,8 @@
                     @csrf
                     <input type="hidden" name="id" value="{{$assignment->id}}" />
                     <div class="row setup-content justify-content-center" id="step-1">
+                        {{ dd('aqui') }}
+
                         @include('TeacherAssigment.edit.createAssignment-Step1')
                     </div>
                     <div class="row setup-content justify-content-center" id="step-2">
