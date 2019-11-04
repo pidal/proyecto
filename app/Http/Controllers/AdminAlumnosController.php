@@ -82,6 +82,9 @@ class AdminAlumnosController extends Controller
         $token = Str::random();
         $request['password'] = self::random_password();
 
+        $users_success = [];
+        $users_errors = [];
+
         if ($request['numero'] == 'no') {
 
             $user = User::create([
@@ -164,8 +167,15 @@ class AdminAlumnosController extends Controller
 
                     Session::flash('success', $cantidad_usuarios_creados. ' Usuario/s no cargado/s correctamente ');
                     return redirect()->route('adminalumnos.index')
+
+
+
+
                     ->with('users_success', $users_success)
                     ->with('users_errors', $users_errors)
+
+
+
                     ->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }
