@@ -70,7 +70,6 @@
             </div>
 
             <div class="hidden">
-                @endforeach
                 @for($i = 1; $i<= $assignment->number_files_delivered; $i++)
                     @php
                         $filename = "fileName_$i";
