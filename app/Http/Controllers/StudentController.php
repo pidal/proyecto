@@ -168,7 +168,7 @@ class StudentController extends Controller
 
 		if ($request->type == 'grupo') {
 
-			$studentFiles = StudentFile::where('assignment_id', $assignment->id)->
+			$studentsFiles = StudentFile::where('assignment_id', $assignment->id)->
 				get();
 
 
