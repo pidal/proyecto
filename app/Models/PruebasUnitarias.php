@@ -25,7 +25,7 @@ class PruebasUnitarias
         //1. el problema es que no compila.
 
         $ejecutable = './' . $studentFile->fileName;
-        $salida = $this->PsExecute($ejecutable.' 2>&1');
+        $salida = $this->PsExecute($ejecutable);
         if ($salida == false) {
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
             return redirect('/showStudentsFiles');
