@@ -74,9 +74,12 @@
                 @foreach($files as $file)
 
                 <div id="hideShow" class="form-group">
-                    <label id="">
-                        
-                    </label>
+
+                    <label id="label1_{{$i}}" for="filename_{{ $id }}">{{ __('Nombre de archivo '.$i .' a entregar y extensión:') }}</label>
+                    <input id="fileName_{{ $id }}" type="text" class="form-control" min="1" placeholder="Ej) practica.c" name="fileName_{{ $i }}" value="{{ $file->fileName }}" required autofocus>
+
+                    <label id="label2_{{ $id }}" for="weight_{{$i}}">{{ __('Ponderación del archivo '.$i .':') }}</label>
+                    <input id="weight_{{ $i }}" type="number" class="form-control" min="1" max="100" placeholder="100%" name="weight_{{ $i }}" value="{{ $file->weight }}" required autofocus>
                     
                 </div>
 
