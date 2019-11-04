@@ -266,8 +266,6 @@ class TeacherAssigmentController extends Controller
 
 	public function saveedit(Request $request){
 
-		dd($request);
-
 		$validatedData = $request->validate([
 			'id' => 'required',
 			'name' => 'required',
@@ -281,7 +279,15 @@ class TeacherAssigmentController extends Controller
 		]);
 
 		$assignment = Assignment::find($request->id);
+
+		dd($assignment);
+
+
 		$assignment->fill($validatedData);
+
+
+
+
 		$assignment->save();
 
 		Session::flash('success', 'Práctica editada correctamente');
