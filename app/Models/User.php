@@ -110,16 +110,13 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 
 	public function delete(){
 
-		dd($this);
 
 	    //Solo para alumnos
         if($this->roles_id == 3){
-        	dd("aad");
 
             RelUsersGroup::where('users_id',$this->id)->delete();
             RelUsersSubject::where('users_id',$this->id)->delete();
             StudentFile::where('users_id',$this->id)->delete();
-
             
         }
 
