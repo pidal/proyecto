@@ -73,7 +73,7 @@ class TeacherAssigmentController extends Controller
 
 		$assignment = Assignment::find($id);
 
-		$files = StudentFile::where('assignment_id', $assignment->id)->unique('fileName')->get();
+		$files = StudentFile::where('assignment_id', $assignment->id)->get()->unique('fileName');
 
 		dd($files);
 
