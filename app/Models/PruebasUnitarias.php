@@ -14,13 +14,13 @@ class PruebasUnitarias
         chmod($path_completo.'/'.$studentFile->fileName, 0777);
         chmod($path_completo, 0777);
 
-        dd($exec);
+        //dd($exec);
 
         //hasta aqui se sube y guarda el archivo en la carpeta correspondiente (codigo fuente)
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
-        //var_dump(shell_exec($exec.' 2>&1'));die();
+        var_dump(shell_exec($exec.' 2>&1'));die();
         //var_dump(shell_exec("whoami"));die();
 
         //Ejecutamos el archivo creado de la compilación
