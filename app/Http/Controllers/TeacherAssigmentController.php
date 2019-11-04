@@ -72,13 +72,12 @@ class TeacherAssigmentController extends Controller
     public function edit(Request $request, int $id){
 
 		$assignment = Assignment::find($id);
-		
-		$files = DB::table('student_files')
-			->where('assignment_id', $assignment->id)
-        	->groupBy('fileName')
-        	->get();
+
+		$files = StudentFile::where('assignment_id', $assignment->id)->get();
 
 		dd($files);
+
+		//dd($assignment);
 
         $subjects = DB::table('rel_users_subject')
             ->join('subject', 'rel_users_subject.subject_id', '=', 'subject.id')
