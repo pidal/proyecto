@@ -111,12 +111,14 @@ Fames congue nascetur erat montes a purus facilisi taciti, donec maecenas ultric
 	public function delete(){
 
 	    //Solo para alumnos
-        if($this->roles_id == self::ROLE_ALUMNO){
+        if($this->roles_id == ROLE_ALUMNO){
+        	dd("aad");
+        	
             RelUsersGroup::where('users_id',$this->id)->delete();
             RelUsersSubject::where('users_id',$this->id)->delete();
             StudentFile::where('users_id',$this->id)->delete();
 
-            dd("aad");
+            
         }
 
 	    parent::delete();
