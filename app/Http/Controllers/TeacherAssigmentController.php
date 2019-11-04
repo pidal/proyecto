@@ -268,6 +268,8 @@ class TeacherAssigmentController extends Controller
 
 		Session::flash('redirect', 'teacherassignment');
 
+		$
+
 		$validatedData = $request->validate([
 			'id' => 'required',
 			'name' => 'required',
@@ -276,20 +278,13 @@ class TeacherAssigmentController extends Controller
 			'subject_id' => 'required',
 			'language' => 'required',
 			'call' => 'required',
-			'type' => 'required',
-			'delivered_date' => 'required'
+			/*'type' => 'required',
+			'delivered_date' => 'required'*/
 		]);
 
 		$assignment = Assignment::find($request->id);
 
-		dd($assignment);
-
-
 		$assignment->fill($validatedData);
-
-
-
-
 		$assignment->save();
 
 		Session::flash('success', 'Práctica editada correctamente');
