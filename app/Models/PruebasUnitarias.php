@@ -20,14 +20,15 @@ class PruebasUnitarias
 
         //dd($exec); esto compila el del profesor y lo almacena en el estudiante (por que?)
 
-        var_dump(shell_exec($exec.' 2>&1'));die();
+        //var_dump(shell_exec($exec.' 2>&1'));die();
         //var_dump(shell_exec("whoami"));die();
 
         //Ejecutamos el archivo creado de la compilación
         //1. el problema es que no compila.
 
-        $ejecutable = './' . $studentFile->fileName;
+        $ejecutable = 'sudo ./' . $studentFile->fileName;
         $salida = $this->PsExecute($ejecutable);
+
         if ($salida == false) {
             Session::flash('error', 'ERROR: El archivo adjunto puede contener bucles infinitos');
             return redirect('/showStudentsFiles');
