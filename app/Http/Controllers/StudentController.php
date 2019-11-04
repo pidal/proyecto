@@ -143,6 +143,8 @@ class StudentController extends Controller
 
 	public function showStudentsFiles(Request $request)
 	{
+		dd($request);
+
         $studentsUnion = Assignment::select('student_files.*')
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->join('group_assignment', 'student_files.group_id', '=', 'group_assignment.id')
