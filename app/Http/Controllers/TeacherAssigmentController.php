@@ -73,7 +73,7 @@ class TeacherAssigmentController extends Controller
 
 		$assignment = Assignment::find($id);
 
-		$files = StudentFile::where('assignment_id', $assignment->id)->get()->unique('fileName');
+		$user_files = StudentFile::where('assignment_id', $assignment->id)->get()->unique('fileName');
 
         $subjects = DB::table('rel_users_subject')
             ->join('subject', 'rel_users_subject.subject_id', '=', 'subject.id')
@@ -108,7 +108,7 @@ class TeacherAssigmentController extends Controller
 		}
 
         return view('TeacherAssigment.edit.createAssignment',
-			compact('files', 'subjects', 'student', 'users', 'assignment', 'group_assignment')
+			compact('user_files', 'subjects', 'student', 'users', 'assignment', 'group_assignment')
 		);
     }
 

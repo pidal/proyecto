@@ -70,9 +70,9 @@
             </div>
 
             <div class="hidden">
-                {{ dd($files) }}
+                {{ dd($user_files) }}
                 @php $i = 1; @endphp
-                @foreach($files as $file)
+                @foreach($user_files as $file)
 
                 <div id="hideShow" class="form-group">
 
