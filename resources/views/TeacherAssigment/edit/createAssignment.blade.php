@@ -298,9 +298,6 @@
                     @csrf
                     <input type="hidden" name="id" value="{{$assignment->id}}" />
                     <div class="row setup-content justify-content-center" id="step-1">
-                        {{ dd('aqui') }}
-
-                        @include('TeacherAssigment.edit.createAssignment-Step1')
                     </div>
                     <div class="row setup-content justify-content-center" id="step-2">
                         @include('TeacherAssigment.edit.createAssignment-Step2')
