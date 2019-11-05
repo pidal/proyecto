@@ -180,6 +180,7 @@
                         $field.type = 'text';
                         $field.onchange = recalculateUsersSelect;
                         $field.value = '';
+                        $field.required = true;
                         $item.appendChild($field);
 
                         //first option
