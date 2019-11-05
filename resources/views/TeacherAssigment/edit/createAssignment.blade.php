@@ -210,6 +210,8 @@
         var $container = document.getElementById('FormFields');
         $container.class = "form-group";
 
+        $container.innerHTML = '';
+
         $item = document.createElement('div');
         $item.class = 'form-group';
         $item.style = 'margin-top:20px';
