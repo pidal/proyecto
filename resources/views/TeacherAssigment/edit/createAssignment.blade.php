@@ -205,6 +205,7 @@
         @endif
 
 
+        {{ dd($files) }}
         @foreach($files as $file)
 
         var
