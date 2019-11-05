@@ -89,13 +89,14 @@
                 curInputs = curStep.find("input[type='text'],input[type='url']"),
                 isValid = true;
 
-            console.log(curStep);
-
             $(".form-group").removeClass("has-error");
+
+
+
+            console.log(curInputs);
+
+
             for (var i = 0; i < curInputs.length; i++) {
-
-
-                console.log(curInputs[i]);
 
                 if (!curInputs[i].validity.valid) {
                     isValid = false;
