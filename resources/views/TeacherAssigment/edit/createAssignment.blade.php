@@ -208,6 +208,7 @@
         @foreach($files as $file)
 
         var $container = document.getElementById('FormFields');
+        $container.class = "form-group";
 
         $item = document.createElement('div');
         $item.class = 'form-group';
@@ -216,6 +217,8 @@
         $field = document.createElement('label');
         $field.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
         $item.appendChild($field);
+
+        $container.appendChild($item);
             
 
         $i++;
