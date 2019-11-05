@@ -218,6 +218,15 @@
         $field.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
         $item.appendChild($field);
 
+        $field = document.createElement('input');
+        $field.className = 'form-control';
+        $field.name = 'fileName.' + $i;
+        $field.id = 'fileName.' + $i;
+        $field.type = 'text';
+        $field.placeholder = 'Ej) practica.c';
+        $field.value = '{{ $file->fileName }}';
+        $item.appendChild($field);
+
         $container.appendChild($item);
             
 
