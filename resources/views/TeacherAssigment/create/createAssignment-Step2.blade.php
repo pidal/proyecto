@@ -19,7 +19,7 @@
 
         <div class="form-group" id="gruposdiv" style="margin-top: 20px; display:none;">
             <label for="members_number">{{ __('¿Cuántas personas van a formar el grupo?') }}</label>
-            <input type="number" class="form-control{{ $errors->has('members_number') ? ' is-invalid' : '' }}" min='1'
+            <input class="form-control{{ $errors->has('members_number') ? ' is-invalid' : '' }}" min='1'
                    placeholder=">=1" id="members_number" name="members_number" value="{{ old('members_number')}}" >
             @if ($errors->has('members_number'))
                 <span class="invalid-feedback" role="alert">
