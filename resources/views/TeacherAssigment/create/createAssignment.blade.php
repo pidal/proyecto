@@ -91,11 +91,6 @@
 
             $(".form-group").removeClass("has-error");
 
-
-
-            console.log(curInputs);
-
-
             for (var i = 0; i < curInputs.length; i++) {
 
                 if (!curInputs[i].validity.valid) {
@@ -149,6 +144,9 @@
 
             if($(this).val() <= 0) return;
             $amount = parseInt($(this).val());
+
+            console.log($amount);
+
             var alumno = $number_students;
             var groups = Math.ceil(alumno / $amount );
 
