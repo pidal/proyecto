@@ -205,7 +205,7 @@
         @endif
 
 
-        @foreach($files)
+        @foreach($files as $file)
 
         var
             $container = document.getElementById('FormFields'),
