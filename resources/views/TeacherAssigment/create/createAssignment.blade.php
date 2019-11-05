@@ -185,7 +185,7 @@
 
                         //first option
                         $option = document.createElement('option');
-                        $option.value = null;
+                        $option.value = '';
                         $option.text = "{{__("Seleccione un Estudiante")}}";
                         $field.appendChild($option);
 
