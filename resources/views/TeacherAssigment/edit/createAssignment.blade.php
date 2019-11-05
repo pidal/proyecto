@@ -227,6 +227,20 @@
         $field.value = '{{ $file->fileName }}';
         $item.appendChild($field);
 
+        $field = document.createElement('label');
+        $field.innerHTML = 'Ponderación del archivo ' + $i + ':';
+        $item.appendChild($field);
+
+        $field = document.createElement('input');
+        $field.className = 'form-control';
+        $field.name = 'weight.' + $i + '';
+        $field.type = 'number';
+        $field.min = '1'
+        $field.max = '100'
+        $field.placeholder = '100%';
+        $field.value = '{{ $file->weight }}'
+        $item.appendChild($field);
+
         $container.appendChild($item);
             
 
