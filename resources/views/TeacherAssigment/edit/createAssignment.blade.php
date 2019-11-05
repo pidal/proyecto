@@ -204,11 +204,10 @@
             mytype.trigger('change');
         @endif
 
-
+        var $i = 1;
         @foreach($files as $file)
 
         var $container = document.getElementById('FormFields');
-        var $i = 1;
 
         $item = document.createElement('div');
         $item.class = 'form-group';
