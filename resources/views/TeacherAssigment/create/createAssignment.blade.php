@@ -93,6 +93,10 @@
 
             $(".form-group").removeClass("has-error");
             for (var i = 0; i < curInputs.length; i++) {
+
+
+                console.log(curInputs[i]);
+
                 if (!curInputs[i].validity.valid) {
                     isValid = false;
                     $(curInputs[i]).closest(".form-group").addClass("has-error");
