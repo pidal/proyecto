@@ -207,9 +207,9 @@
 
         @foreach($files as $file)
 
-        var $container = document.getElementById('FormFields'),
+        var $container = document.getElementById('FormFields');
             
-        console.log($container)
+        console.log($container);
 
         @endforeach
 
