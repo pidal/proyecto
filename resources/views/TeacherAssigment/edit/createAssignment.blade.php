@@ -204,6 +204,40 @@
             mytype.trigger('change');
         @endif
 
+
+        @foreach($files)
+
+        var
+            $container = document.getElementById('FormFields'),
+            $item, $field, $i;
+        $container.class = "form-group";
+
+        $i = 1;
+
+        $container.innerHTML = '';
+
+        $item = document.createElement('div');
+        $item.class = 'form-group';
+        $item.style = 'margin-top:20px';
+
+        $field = document.createElement('label');
+        $field.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
+        $item.appendChild($field);
+
+        $field = document.createElement('input');
+        $field.className = 'form-control';
+        $field.name = 'fileName.' + $i;
+        $field.id = 'fileName.' + $i;
+        $field.type = 'text';
+        $field.placeholder = 'Ej) practica.c';
+        $field.value = '{{ $file->fileName }}';
+        $item.appendChild($field);
+
+
+        @endforeach
+
+
+
     });
 
     function BuildFormFields($amount) {
