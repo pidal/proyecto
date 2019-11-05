@@ -144,11 +144,10 @@
 
             if($(this).val() <= 0) return;
             $amount = parseInt($(this).val());
-
-            console.log($amount);
-
             var alumno = $number_students;
             var groups = Math.ceil(alumno / $amount );
+
+            console.log(alumno);
 
             var
                 $container = document.getElementById('FormFields2'),
