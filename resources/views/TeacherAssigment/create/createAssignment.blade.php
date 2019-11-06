@@ -4,9 +4,7 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.es.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.0-rc.1/jquery-ui.js"></script>
 
 <style>
 
@@ -325,15 +323,8 @@
 
 @section('scripts')
 
-<script type="text/javascript">
-  $('#delivered_date').datepicker({
-    format: 'dd/mm/yyyy',
-    language: 'es',
-    clearBtn: true,
-    startView: 'years',
-    maxViewMode: "years",
-    autoclose: true,
-  });
+<script>
+$( "#delivered_date" ).datepicker();
 </script>
 
 @endsection
