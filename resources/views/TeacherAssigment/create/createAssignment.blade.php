@@ -4,6 +4,9 @@
 
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/salsa-calendar@1.0.19/build/SalsaCalendar.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/salsa-calendar@1.0.19/build/SalsaCalendar.min.css">
+
 
 
 <style>
@@ -324,7 +327,16 @@
 @section('scripts')
 
 <script>
-$( "#delivered_date" ).datepicker();
+var calendar_from = new SalsaCalendar({
+    inputId: 'delivered_date',
+    lang: 'en',
+    range: {
+        min: 'today'
+    },
+    calendarPosition: 'right',
+    fixed: false,
+    connectCalendar: true
+});
 </script>
 
 @endsection
