@@ -331,4 +331,4 @@
                 $('#delivered_date').datetimepicker();
             });
         </script>
-@endsenction
+@endsection
