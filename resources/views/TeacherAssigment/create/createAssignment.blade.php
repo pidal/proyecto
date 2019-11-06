@@ -4,10 +4,9 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.es.min.js"></script>
 
 <style>
 
@@ -325,17 +324,16 @@
 @endsection
 
 @section('scripts')
-<script>
-$(function() {
-  $('#delivered_date').daterangepicker({
-    singleDatePicker: true,
-    showDropdowns: true,
-    minYear: 1901,
-    maxYear: parseInt(moment().format('YYYY'),10)
-  }, function(start, end, label) {
-    var years = moment().diff(start, 'years');
-    alert("You are " + years + " years old!");
+
+<script type="text/javascript">
+  $('#delivered_date').datepicker({
+    format: 'dd/mm/yyyy',
+    language: 'es',
+    clearBtn: true,
+    startView: 'years',
+    maxViewMode: "years",
+    autoclose: true,
   });
-});
 </script>
+
 @endsection
