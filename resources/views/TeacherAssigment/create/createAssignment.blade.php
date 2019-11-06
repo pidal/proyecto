@@ -5,9 +5,6 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js" integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rome/3.0.2/rome.standalone.min.js" integrity="sha256-CeeU7wICjHvDBVSbnwo4gsOQz+dTxG2UQ/E3L4XT0yo=" crossorigin="anonymous"></script>
-
 <style>
 
     .stepwizard-row {
@@ -326,8 +323,16 @@
 @section('scripts')
 
 <script>
-rome('#dt');
-
+var calendar_from = new SalsaCalendar({
+    inputId: 'delivered_date',
+    lang: 'en',
+    range: {
+        min: 'today'
+    },
+    calendarPosition: 'right',
+    fixed: false,
+    connectCalendar: true
+});
 </script>
 
 @endsection
