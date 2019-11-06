@@ -324,3 +324,11 @@
     </div>
 
 @endsection
+
+@section('scripts')
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+@endsenction
