@@ -7,6 +7,11 @@
             <input id="delivered_date" type="text" min="<?php echo date("Y-m-d\TH:i");?>"
                    class="form-control{{ $errors->has('delivered_date') ? ' is-invalid' : '' }}"
                    name="delivered_date" value="{{ old('delivered_date') }}" required>
+                   <pre>
+      <code>
+rome(input);
+      </code>
+    </pre>
             @if ($errors->has('delivered_date'))
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $errors->first('delivered_date') }}</strong>
