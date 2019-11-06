@@ -3,6 +3,8 @@
 @section('styles')
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
 <style>
 
@@ -317,4 +319,12 @@
         </div>
     </div>
 
+@endsection
+
+@section('scripts')
+<script>
+        $('#delivered_date').datepicker({
+            uiLibrary: 'bootstrap4'
+        });
+    </script>
 @endsection
