@@ -326,18 +326,6 @@
 @section('scripts')
 
 <script>
-var calendar_from = new SalsaCalendar({
-    inputId: 'delivered_date',
-    lang: 'en',
-    range: {
-        min: 'today'
-    },
-    calendarPosition: 'right',
-    fixed: false,
-    connectCalendar: true
-});
-
-
 rome(delivered_date);
 
 </script>
