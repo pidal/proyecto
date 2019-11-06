@@ -136,8 +136,6 @@ class TeacherAssigmentController extends Controller
 
 		$validatedData['delivered_date'] = Carbon::createFromFormat("d/m/Y G:i", $validatedData['delivered_date']);
 
-		//dd($validatedData['delivered_date']);
-
 		$assignment = new Assignment();
 		$assignment->fill($validatedData);
 		$total = 0;
