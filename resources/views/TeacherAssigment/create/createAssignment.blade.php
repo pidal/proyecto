@@ -335,6 +335,10 @@ var calendar_from = new SalsaCalendar({
     fixed: false,
     connectCalendar: true
 });
+
+
+rome('#delivered_date');
+
 </script>
 
 @endsection
