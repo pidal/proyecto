@@ -326,7 +326,7 @@
 @section('scripts')
 
 <script>
-rome(delivered_date);
+rome('#delivered_date');
 
 </script>
 
