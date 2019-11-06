@@ -329,7 +329,7 @@
 <script>
 var calendar_from = new SalsaCalendar({
     inputId: 'delivered_date',
-    lang: 'en',
+    lang: 'es',
     range: {
         min: 'today'
     },
