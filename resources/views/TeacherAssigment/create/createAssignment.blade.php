@@ -328,7 +328,7 @@
 @section('scripts')
 <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker();
+                $('#delivered_date').datetimepicker();
             });
         </script>
 @endsenction
