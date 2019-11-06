@@ -337,7 +337,7 @@ var calendar_from = new SalsaCalendar({
 });
 
 
-rome('#delivered_date');
+rome(delivered_date);
 
 </script>
 
