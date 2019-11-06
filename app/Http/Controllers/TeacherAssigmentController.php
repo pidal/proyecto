@@ -11,6 +11,7 @@ use pfg\Models\Practica;
 use Illuminate\Support\Facades\DB;
 use pfg\Models\RelUsersGroup;
 use pfg\Models\StudentFile;
+use Carbon\Carbon;
 use Session;
 use PDF;
 
@@ -132,6 +133,8 @@ class TeacherAssigmentController extends Controller
 			'file' => 'required',
 			'delivered_date' => 'required'
 		]);
+
+		$validatedData['delivered_date'] = Carbon::createFromFormat("d/m/Y G:i", $validatedData['delivered_date']);
 
 		dd($validatedData['delivered_date']);
 
