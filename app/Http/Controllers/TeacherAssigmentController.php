@@ -133,6 +133,8 @@ class TeacherAssigmentController extends Controller
 			'delivered_date' => 'required'
 		]);
 
+		dd($validatedData['delivered_date']);
+
 		$assignment = new Assignment();
 		$assignment->fill($validatedData);
 		$total = 0;
