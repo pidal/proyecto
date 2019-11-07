@@ -4,7 +4,7 @@
 
         <div class="form-group" style="margin-top: 20px">
             <label for="delivered_date">{{ __('Fecha de entrega') }}</label>
-            <input id="delivered_date" type="text" min="<?php echo date("Y-m-d\TH:i");?>"
+            <input id="delivered_date" type="text" min="<?php echo date("d/m/Y G:i");?>"
                    class="form-control{{ $errors->has('delivered_date') ? ' is-invalid' : '' }}"
                    name="delivered_date" value="{{ $assignment->delivered_date->format('d/m/Y G:i')  }}" required>
             @if ($errors->has('delivered_date'))
