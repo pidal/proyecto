@@ -269,6 +269,8 @@ class TeacherAssigmentController extends Controller
 
 	public function saveedit(Request $request){
 
+		dd($request);
+
 		Session::flash('redirect', 'teacherassignment');
 
 		$validatedData = $request->validate([
@@ -299,11 +301,15 @@ class TeacherAssigmentController extends Controller
 				->get();
 		}
 
+		$k = 1;
 		if($request->file('file'))
 		{
 			$assignment->correction_file = $request->file('file')->getClientOriginalName();
 
 			if ($assignment->type == 'group') {
+
+				//TOTAL DE ALUMNOS DE LA ASIGNATURA DE LA PRÁCTICA / TOTAL MIEMBROS POR GRUPO
+				$grupos = ceil(count($alumnos) / $request->members_number);
 				
 			}else{
 				$file = $request->file('file');
