@@ -289,6 +289,36 @@ class TeacherAssigmentController extends Controller
 		$assignment = Assignment::find($request->id);
 
 		$assignment->fill($validatedData);
+
+		$alumnos = 0;
+		if ($request->subject_id) {
+			$alumnos = DB::table('users')
+				->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
+				->select('users.id', 'users.name')
+				->where('rel_users_subject.subject_id',$request->subject_id)
+				->get();
+		}
+
+		if($request->file('file'))
+		{
+			$assignment->correction_file = $request->file('file')->getClientOriginalName();
+
+			if ($assignment->type == 'group') {
+				
+			}else{
+				$file = $request->file('file');
+				foreach ($alumnos as $user){
+
+					$studentFilesSave = StudentFile::where('assignment_id', $assignment->id)->where('users_id', $user->id)->get();
+					foreach ($studentFilesSave as $studentFileSave) {
+						$path2 = DIRECTORY_SEPARATOR . $studentFileSave->id.'_'.$studentFileSave->left_attempts;
+						Storage::put($path2 .DIRECTORY_SEPARATOR. $file->getClientOriginalName() , file_get_contents($file));
+					}	
+				}
+			}
+
+		}
+
 		$assignment->save();
 
 		Session::flash('success', 'Práctica editada correctamente');
