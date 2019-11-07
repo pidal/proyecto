@@ -54,6 +54,8 @@ class Assignment extends Model
         'created_by'
 	];
 
+	protected $dates = ['delivered_date'];
+
 	public function subject()
 	{
 		return $this->belongsTo(\pfg\Models\Subject::class);
