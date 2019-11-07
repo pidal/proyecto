@@ -309,7 +309,7 @@ class TeacherAssigmentController extends Controller
 			if ($assignment->type == 'group') {
 
 				//TOTAL DE ALUMNOS DE LA ASIGNATURA DE LA PRÁCTICA / TOTAL MIEMBROS POR GRUPO
-				$grupos = ceil(count($alumnos) / $request->members_number);
+				$grupos = GroupAssignment::where('assignment_id',$assignment->id)->count();
 				
 			}else{
 				$file = $request->file('file');
