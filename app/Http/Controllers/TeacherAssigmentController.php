@@ -279,9 +279,12 @@ class TeacherAssigmentController extends Controller
 			'subject_id' => 'required',
 			'language' => 'required',
 			'call' => 'required',
-			/*'type' => 'required',
-			'delivered_date' => 'required'*/
+			/*'type' => 'required',*/
+			'delivered_date' => 'required'
 		]);
+
+		$validatedData['delivered_date'] = Carbon::createFromFormat("d/m/Y G:i", $validatedData['delivered_date']);
+
 
 		$assignment = Assignment::find($request->id);
 
