@@ -309,7 +309,21 @@ class TeacherAssigmentController extends Controller
 			if ($assignment->type == 'group') {
 
 				//TOTAL DE ALUMNOS DE LA ASIGNATURA DE LA PRÁCTICA / TOTAL MIEMBROS POR GRUPO
-				$grupos = GroupAssignment::where('assignment_id',$assignment->id)->count();
+				$grupos = GroupAssignment::where('assignment_id',$assignment->id)->get();
+				foreach ($grupos as $grupos)
+				{
+					$studentFilesSave = StudentFile::where('assignment_id', $assignment->id)->where('group_id', $grupos->id)->get();
+					foreach ($studentFilesSave as $studentFileSave) {
+						$path2 = DIRECTORY_SEPARATOR . $studentFileSave->id.'_'.$studentFileSave->left_attempts;
+						Storage::put($path2 .DIRECTORY_SEPARATOR. $file->getClientOriginalName() , file_get_contents($file));
+					}
+	
+				}
+
+
+
+				//create files per group
+				$file = $request->file('file');
 				
 			}else{
 				$file = $request->file('file');
