@@ -3,6 +3,9 @@
 @section('styles')
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" type="text/css" />
+
 
 <style>
 
@@ -359,5 +362,16 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('scripts')
+
+<script>
+jSuites.calendar(document.getElementById('delivered_date'), {
+    time:true,
+    format:'DD/MM/YYYY HH24:MI',
+});
+</script>
 
 @endsection
