@@ -345,8 +345,7 @@
                     </div>
                 @endif
 
-                <form id="form_" class="form-horizontal was-validated" action="{{ route('teacherassignmentedit') }}" method="post"
-                      enctype="multipart/form-data">
+                <form id="form_" class="form-horizontal was-validated" action="{{ route('teacherassignmentedit') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" value="{{$assignment->id}}" />
                     <div class="row setup-content justify-content-center" id="step-1">
