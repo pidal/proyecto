@@ -331,6 +331,7 @@
 jSuites.calendar(document.getElementById('delivered_date'), {
     time:true,
     format:'DD/MM/YYYY HH24:MI',
+    today:0,
 });
 </script>
 
