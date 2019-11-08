@@ -51,7 +51,7 @@
         line-height: 1.428571429;
         border-radius: 15px;
     }
-    #delivered_date::placeholder[readonly]{
+    .form-control[readonly] #delivered_date::placeholder{
         color: white !important;
         background-color: white !important;
     }
