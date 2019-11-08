@@ -294,7 +294,7 @@ class TeacherAssigmentController extends Controller
 
 		if ($validatedData['delivered_date'] < Carbon::now()) {
 			Session::flash('error', 'La fecha no puede ser menor que la fecha y hora actuales.');
-			return redirect('/teacherassignmentadd')->withInput();
+			return redirect('teacherassignment/'.$request->id.'/edit')->withInput();
 		}
 
 		$assignment = Assignment::find($request->id);
