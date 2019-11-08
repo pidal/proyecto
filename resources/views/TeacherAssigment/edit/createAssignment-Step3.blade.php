@@ -15,7 +15,7 @@
         </div>
 
         <div style="margin-top: 20px">
-            <label for="file">Archivo de corrección</label>
+            <label for="file">Archivo de corrección (actual: {{ $assignment->correction_file }})</label>
             <input id="file" type="file" class="form-control {{ $errors->has('file') ? ' is-invalid' : '' }}"
                    name="file" value="{{ $assignment->correction_file }}" >
             @if ($errors->has('file'))
