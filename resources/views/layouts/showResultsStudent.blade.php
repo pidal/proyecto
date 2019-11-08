@@ -45,7 +45,7 @@
                 <?php endforeach;?>
                 <div style="overflow: hidden; border: 2px solid #ccc;   text-align: left; background-color: #fafafa;">
                     <h3><b><u>Nota total: {{$score}}</u></b></h3>
-                    <h4>Intentos restantes: {{$left_attempts}} </h4>
+                    <h4>Intentos restantes: {{@$left_attempts}} </h4>
                 </div>
 
             </div>
