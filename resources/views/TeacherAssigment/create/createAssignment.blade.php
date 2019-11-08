@@ -53,6 +53,7 @@
     }
     #delivered_date::placeholder{
         color: white !important;
+        background-color: white !important;
     }
 </style>
 
