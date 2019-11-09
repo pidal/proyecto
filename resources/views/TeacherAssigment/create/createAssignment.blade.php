@@ -335,10 +335,12 @@ jSuites.calendar(document.getElementById('delivered_date'), {
     onclose:function() {
         if ( new Date(this.value) <=  new Date('{{ Carbon\Carbon::now() }}')) {
             document.getElementById('delivered_date').value = '';
+            document.getElementById('delivered_date').setAttribute("isvalid", "false");
             document.getElementById('invalid-date').style.display = "initial";
             //alert('la fecha debe ser mayor a la hora y fecha actual.');
         }else{
             document.getElementById('invalid-date').style.display = "none";
+            document.getElementById('delivered_date').setAttribute("isvalid", "true");
         }
     }
 });
