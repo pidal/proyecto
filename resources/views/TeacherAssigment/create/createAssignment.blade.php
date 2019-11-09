@@ -333,7 +333,9 @@ jSuites.calendar(document.getElementById('delivered_date'), {
     format:'DD/MM/YYYY HH24:MI',
     today:0,
     onclose:function() {
-        console.log( this.value );
+        if ( new Date(this.value) <=  new Date('{{ Carbon\Carbon::now() }}')) {
+            alert('aqui');
+        }
     }
 });
 </script>
