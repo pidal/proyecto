@@ -11,8 +11,8 @@
                     <strong>{{ $errors->first('delivered_date') }}</strong>
                 </span>
             @endif
-            <span id="date_invalid" class="invalid-feedback" role="alert" style="display: none;">
-                <strong></strong>
+            <span id="invalid-date" class="invalid-feedback" role="alert" style="display: none;">
+                <strong>La fecha debe ser mayor a la fecha y hora actuales.</strong>
             </span>
         </div>
 
