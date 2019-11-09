@@ -333,7 +333,7 @@ jSuites.calendar(document.getElementById('delivered_date'), {
     format:'DD/MM/YYYY HH24:MI',
     today:0,
     onclose:function() {
-        console.log( this );
+        console.log( this.value );
     }
 });
 </script>
