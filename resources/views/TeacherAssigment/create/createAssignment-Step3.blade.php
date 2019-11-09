@@ -11,6 +11,9 @@
                     <strong>{{ $errors->first('delivered_date') }}</strong>
                 </span>
             @endif
+            <span id="date_invalid" class="invalid-feedback" role="alert" style="display: none;">
+                <strong></strong>
+            </span>
         </div>
 
         <div style="margin-top: 20px">
