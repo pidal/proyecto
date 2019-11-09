@@ -334,6 +334,7 @@ jSuites.calendar(document.getElementById('delivered_date'), {
     today:0,
     onclose:function() {
         if ( new Date(this.value) <=  new Date('{{ Carbon\Carbon::now() }}')) {
+            document.getElementById('delivered_date').value = '';
             alert('la fecha debe ser mayor a la hora y fecha actual.');
         }
     }
