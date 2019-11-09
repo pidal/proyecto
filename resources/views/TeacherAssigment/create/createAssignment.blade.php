@@ -337,7 +337,6 @@ jSuites.calendar(document.getElementById('delivered_date'), {
             document.getElementById('delivered_date').value = '';
             document.getElementById('delivered_date').classList.add("is-invalid");
             document.getElementById('invalid-date').style.display = "initial";
-            //alert('la fecha debe ser mayor a la hora y fecha actual.');
         }else{
             document.getElementById('invalid-date').style.display = "none";
             document.getElementById('delivered_date').classList.remove("is-invalid");
