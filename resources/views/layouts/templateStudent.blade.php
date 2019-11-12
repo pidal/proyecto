@@ -49,7 +49,7 @@
     </style>
 
 </head>
-<body background="/image/background.jpg" bgcolor="FFCECB" style="background-position: center">
+<body background="/image/background.jpg" bgcolor="FFCECB" style="background-repeat: no-repeat;background-size: cover;">
 @yield('header')
     <div class="bg-img">
         <div class="menu">

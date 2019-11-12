@@ -17,7 +17,8 @@
     @yield('styles')
     @yield('head')
 </head>
-<body background="/image/background.jpg" bgcolor="FFCECB" style="background-position: center">
+<body background="/image/background.jpg" bgcolor="FFCECB" style="background-repeat: no-repeat;
+background-size: cover;">
 @section('header')
 @show
 

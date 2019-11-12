@@ -28,7 +28,7 @@
                     <?php   $idRol = DB::table('profesor')->where('users_id',auth()->id())->value('roles_id');
                     if($idRol == null){
                         $idRol = DB::table('alumno')->where('users_id',auth()->id())->value('roles_id');
--                    };?>
+                    }?>
 
                     @if($idRol == null)
                             <a class="navbar-brand" href="{{ url('/register') }}">
