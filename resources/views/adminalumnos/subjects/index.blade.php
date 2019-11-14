@@ -63,14 +63,47 @@
                                                            href="{{action('AdminSubjectsController@edit', $subject->id)}}">
                                                             <span class="fa fa-pencil"></span></a>
 
-                                                        <form action="{{action('AdminSubjectsController@destroy', $subject->id)}}"
+                                                        <!--<form action="{{action('AdminSubjectsController@destroy', $subject->id)}}"
                                                               method="post">
                                                             {{csrf_field()}}
                                                             <input name="_method" type="hidden" value="DELETE">
                                                             <button class="btn btn-danger btn-xs m-1"
                                                                     type="submit"><span
                                                                         class="fa fa-trash"></span></button>
-                                                        </form>
+                                                        </form>-->
+                                                        <!-- Modal -->
+
+                                                        <button type="button" class="btn btn-danger btn-xs m-1" data-toggle="modal" data-target="#exampleModalCenter_{{$subject->id}}">
+                                                            <span class="fa fa-trash"></span>
+                                                        </button>
+                                                        
+                                                        <div class="modal fade" id="exampleModalCenter_{{$subject->id}}" tabindex="-1" role="dialog"
+                                                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                <div class="modal-content">
+                                                                    <form method="post" action="{{action('AdminSubjectsController@destroy', $subject->id)}}">
+                                                                        @csrf
+                                                                        <div class="modal-header bg-danger" style="color: white">
+                                                                            <h5 class="modal-title" id="exampleModalLongTitle">{{__('Advertencia')}}</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <p>Esta a punto de eliminar la Asignatura <b>{{$subject->name}}</b></p>
+                                                                            <p>Se eliminaran todos los registros asociados a esta asignatura</p>
+                                                                            <p>Incluyendo practicas y alumnos relacionados</p>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <input name="_method" type="hidden" value="DELETE">
+                                                                            <input type="hidden" name="subject_id" value="{{$subject->id}}"/>
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                 </td>
