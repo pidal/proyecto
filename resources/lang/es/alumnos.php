@@ -5,7 +5,7 @@ return [
     'email' => 'Email',
     'dni' => 'Dni',
     'rol' => 'Rol',
-    'surname' => 'Alias',
+    'surname' => 'Apellidos',
     'add' => 'Nuevo',
     'new' => 'Nuevo',
     'edit' => 'Actualizar el alumno ',

@@ -204,6 +204,11 @@ class AdminAlumnosController extends Controller
     public function edit($id)
     {
         $alumno = User::find($id);
+
+        if ($alumno->roles_id == 1 ) {
+            return redirect()->back();
+        }
+        
         return view('adminalumnos.edit', compact('alumno'));
     }
 
