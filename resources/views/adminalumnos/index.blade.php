@@ -64,8 +64,9 @@
                             <thead>
                             <tr style="background: #02365e; color: white">
                                 <th>{{__('alumnos.name')}}</th>
-                                <th>{{__('alumnos.email')}}</th>
                                 <th>{{__('alumnos.surname')}}</th>
+                                <th>{{__('alumnos.email')}}</th>
+                                
                                 <th></th>
                             </tr>
                             </thead>
@@ -74,8 +75,8 @@
                                 @foreach($alumnos as $alumno)
                                     <tr>
                                         <td>{{$alumno->name}}</td>
-                                        <td>{{$alumno->email}}</td>
                                         <td>{{$alumno->surname}}</td>
+                                        <td>{{$alumno->email}}</td>
                                         <td>
                                             <div style="display: flex">
                                                 <a class="btn btn-primary btn-xs m-1"
