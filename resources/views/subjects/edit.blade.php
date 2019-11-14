@@ -45,8 +45,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('subjects.new_description')}} </label>
                                         <textarea name="description" class="col-sm-6 form-control input-sm"
-                                                  placeholder="{{__('subjects.new_description')}}">
-                                            {{$subject->description}}
+                                                  placeholder="{{__('subjects.new_description')}}">{{$subject->description}}
                                         </textarea>
                                     </div>
                                     <div class="form-group row">
