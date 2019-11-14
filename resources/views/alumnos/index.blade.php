@@ -45,7 +45,7 @@
 
                                 <a class="btn btn-primary btn-xs m-1"
                                    href="{{route('registerInstructor')}}">
-                                   {{__('alumnos.add')}}
+                                   {{__('Nuevo alumno')}}
                                     <span class="fa fa-plus"></span></a>
                             </div>
                         </form>
