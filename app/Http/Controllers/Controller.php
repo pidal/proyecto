@@ -36,6 +36,8 @@ class Controller extends BaseController
 
 	public function remember(request $req)
 	{
+		Session::flash('redirect', 'teacherassignment');
+		
 		$path = $req->input('path');
 		$userId = intval($req->input('user'));
 		$pass = $req->input('password');
