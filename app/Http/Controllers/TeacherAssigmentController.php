@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use pfg\Models\Assignment;
 use pfg\Models\GroupAssignment;
 use pfg\Models\Practica;
+use pfg\Models\Subject;
 use Illuminate\Support\Facades\DB;
 use pfg\Models\RelUsersGroup;
 use pfg\Models\StudentFile;
