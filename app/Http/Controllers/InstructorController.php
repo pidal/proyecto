@@ -275,7 +275,7 @@ class InstructorController extends Controller
     protected function createUsers(Request $request)
     {
         Session::flash('redirect', 'registerInstructor');
-        
+    
         if ($request['numero'] == 'no') {
 
             $messages = [
@@ -297,6 +297,10 @@ class InstructorController extends Controller
 
         $token = Str::random();
         $request['password'] = self::random_password();
+
+        $users_success = [];
+        $users_errors = [];
+
         if ($request['numero'] == 'no') {
 
             $user = User::create([
@@ -353,6 +357,7 @@ class InstructorController extends Controller
                             }
                             if ($email_exist) {
                                 Session::flash('error', 'Usuario/s no cargado/s. El e-mail: ' . $email_exist['email'] . ' ya existe.');
+                                $users_errors[] = $email_exist['email'];
                                 continue;
                             }
 
@@ -367,16 +372,18 @@ class InstructorController extends Controller
                             ]);
                             $cantidad_usuarios_creados++;
                             $usuarios_creados[] = $user->id;
+                            $users_success[] = $user->email;
                             User::crearPdf($user);
 
                             Mail::to($user)->send(new UserCreateMail($user));
 
                         }
-
-                        Session::flash('success', $cantidad_usuarios_creados . ' Usuario/s cargados correctamente');
                     }
-
-                    return redirect('alumnos')->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
+                    Session::flash('success', $cantidad_usuarios_creados. ' Usuario/s no cargado/s correctamente ');
+                    return redirect('alumnos')
+                    ->with('users_success', $users_success)
+                    ->with('users_errors', $users_errors)
+                    ->withCookie(cookie('pdfUser', json_encode($usuarios_creados), 60));
                 }
             }
 
