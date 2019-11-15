@@ -14,5 +14,5 @@ return [
     'throttle' => 'Demasiados intentos de acceso. Por favor intente nuevamente en :seconds segundos.',
     'Reset_Password' => 'Nuevo Password',
     'email' => 'E-Mail',
-    'send_password' => 'Enviar link de nuevo password a mi correo'
+    'send_password' => 'Enviar correo de restauración de contraseña'
 ];
