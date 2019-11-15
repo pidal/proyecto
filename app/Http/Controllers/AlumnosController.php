@@ -43,7 +43,8 @@ class AlumnosController extends Controller
 
         $alumnos = User::where('users.roles_id', User::ROLE_ALUMNO)->
             select('users.*')->
-            //join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')->
+            join('rel_users_subject', 'rel_users_subject.users_id', '=', 'users.id')->
+            distinct()->
             whereIn('subject_id', $my_subjects);
 
 
