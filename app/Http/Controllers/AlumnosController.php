@@ -56,7 +56,7 @@ class AlumnosController extends Controller
 
         $alumnos = $alumnos->paginate(8);
 
-        $subjects = Subject::get();
+        $subjects = Subject::whereIn('id', $my_subjects)->get();
         return view('alumnos.index', compact('alumnos','subjects'));
     }
 
