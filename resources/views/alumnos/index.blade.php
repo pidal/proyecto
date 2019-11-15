@@ -12,6 +12,24 @@
                             <span class="sr-only">Close</span>
                         </button>
                         <strong>{{ Session::get('error') }}</strong>
+                        @if( Session::has('users_errors'))
+                            <ul>
+                            @foreach(Session::get('users_errors') as $e_user)
+                                <li>{{ $e_user }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
+                    </div>
+                @endif
+
+                @if ( $errors->any() )
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            <span class="sr-only">Close</span>
+                        </button>
+                        <strong>{{$errors->first()}}</strong>
                     </div>
                 @endif
 
@@ -22,6 +40,13 @@
                             <span class="sr-only">Close</span>
                         </button>
                         <strong>{{ Session::get('success') }}</strong>
+                        @if( Session::has('users_success'))
+                            <ul>
+                            @foreach(Session::get('users_success') as $user)
+                                <li>{{ $user }}</li>
+                            @endforeach
+                            </ul>
+                        @endif
                     </div>
                 @endif
 
