@@ -379,7 +379,7 @@ class InstructorController extends Controller
 
                         }
                     }
-                    Session::flash('success', $cantidad_usuarios_creados. ' Usuario/s no cargado/s correctamente ');
+                    Session::flash('success', $cantidad_usuarios_creados. ' Usuario/s cargado/s correctamente ');
                     return redirect('alumnos')
                     ->with('users_success', $users_success)
                     ->with('users_errors', $users_errors)
