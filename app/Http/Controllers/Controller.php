@@ -37,7 +37,7 @@ class Controller extends BaseController
 	public function remember(request $req)
 	{
 		Session::flash('redirect', 'teacherassignment');
-		
+
 		$path = $req->input('path');
 		$userId = intval($req->input('user'));
 		$pass = $req->input('password');
@@ -50,7 +50,7 @@ class Controller extends BaseController
 				->where('id', $userId)
 				->update(array('password' => Hash::make($pass)));
 			Session::flash('success', 'Se ha realizado el cambio de contraseña correctamente');
-			return redirect('/');
+			return redirect('/login');
 		} else {
 			Session::flash('error', '¡Las contraseñas no coinciden!');
 			return redirect($path);
