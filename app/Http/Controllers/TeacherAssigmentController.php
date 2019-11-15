@@ -14,6 +14,7 @@ use pfg\Models\RelUsersGroup;
 use pfg\Models\StudentFile;
 use Carbon\Carbon;
 use Session;
+use Auth;
 use PDF;
 
 class TeacherAssigmentController extends Controller

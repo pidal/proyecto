@@ -7,6 +7,8 @@ use pfg\Models\Subject;
 use pfg\Models\User;
 use pfg\Models\RelUsersSubject;
 use Session;
+use Auth;
+
 
 class SubjectsController extends Controller
 {
@@ -21,7 +23,7 @@ class SubjectsController extends Controller
             $q->where('users.id', Auth::user()->id);
         })->pluck('id');
         $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
-        
+
         $subjects = Subject::whereIn('id', $my_subjects)->orderBy('id', 'DESC')->paginate(7);
 
         return view('subjects.index', compact('subjects'));
