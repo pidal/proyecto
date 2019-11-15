@@ -42,7 +42,12 @@ class TeacherAssigmentController extends Controller
 
         $assigments = $assigments->paginate(8);
 
-        $subjects = DB::table('subject')->get();
+        $my_subjects = Subject::whereHas('users', function($q){
+            $q->where('users.id', Auth::user()->id);
+        })->pluck('id');
+        $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
+
+        $subjects = DB::table('subject')->whereIn('id', $my_subjects)->get();
         return view('TeacherAssigment.index', compact('assigments', 'subjects'));
     }
 

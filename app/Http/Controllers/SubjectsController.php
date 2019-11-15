@@ -17,7 +17,13 @@ class SubjectsController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::orderBy('id', 'DESC')->paginate(7);
+        $my_subjects = Subject::whereHas('users', function($q){
+            $q->where('users.id', Auth::user()->id);
+        })->pluck('id');
+        $my_subjects = ($my_subjects->isEmpty()) ? collect([0]) : $my_subjects;
+        
+        $subjects = Subject::whereIn('id', $my_subjects)->orderBy('id', 'DESC')->paginate(7);
+
         return view('subjects.index', compact('subjects'));
     }
 
