@@ -123,7 +123,8 @@ class StudentController extends Controller
 			->where('student_files.left_attempts', '>=', 1)
 			->Where('rel_users_groups.users_id', auth()->id())
 			->where('assignment.subject_id', $request->subject_id)
-			->distinct('assignment.id');
+			->distinct('assignment.id')
+			->orderBy('delivered_date', 'asc');
 
 		$assignments = Assignment::select('assignment.*', 'student_files.group_id as group_assignment_id')
 			->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
