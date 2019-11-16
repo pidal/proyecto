@@ -50,7 +50,7 @@ class AdminController extends Controller
 		//$pdf->save('pdf/cambioInicial_'.$email.'.pdf');
 		//Session::flash('download', 'pdf/cambioInicial_'.$email.'.pdf');
 
-		//return $pdf->stream($nombrePDF);
+		return $pdf->stream($nombrePDF);
 	}
 
 

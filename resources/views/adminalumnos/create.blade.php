@@ -19,7 +19,7 @@
 
 @section('content')
 
-    @php
+    <?php /*
         $pdfUser = json_decode(\Cookie::get('pdfUser'));
         if(isset($pdfUser) && is_array($pdfUser)){
             echo '<script type="application/javascript">';
@@ -29,7 +29,7 @@
             echo '</script>';
             \Cookie::queue(\Cookie::forget('pdfUser'));
         }
-    @endphp
+    */ ?>
 
     <div class="container-fluid">
         <div class="row justify-content-center">
