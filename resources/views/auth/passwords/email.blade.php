@@ -9,6 +9,8 @@
                 <form method="POST" action="{{ route('newpassword') }}">
                     @csrf
 
+                    
+
                     <div class="form-group row">
                         <label for="email" class="col-md-2 col-form-label text-md-right">{{ __('auth.email') }}</label>
 
