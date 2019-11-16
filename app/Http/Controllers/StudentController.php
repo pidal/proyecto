@@ -115,7 +115,6 @@ class StudentController extends Controller
 
 	public function showAssignmentsStudent(Request $request)
 	{
-		dd('asdads');
 
 		$assignments = Assignment::select('assignment.*', 'group_assignment.id as group_assignment_id')
 			->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
@@ -134,6 +133,8 @@ class StudentController extends Controller
 			->distinct('assignment.id')
             ->union($assignments)
 			->paginate(1);
+
+			dd($assignments);
 
 		$subject = Subject::where('id', $request->subject_id)
             ->select('name','id')
