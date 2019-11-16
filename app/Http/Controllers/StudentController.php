@@ -132,9 +132,7 @@ class StudentController extends Controller
 			->where('assignment.subject_id', $request->subject_id)
 			->distinct('assignment.id')
             ->union($assignments)
-			->paginate(1);
-
-			dd($assignments);
+			->dd();
 
 		$subject = Subject::where('id', $request->subject_id)
             ->select('name','id')
