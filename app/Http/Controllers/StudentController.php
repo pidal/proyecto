@@ -127,11 +127,11 @@ class StudentController extends Controller
 			->distinct('assignment.id');
 
 		$assignments = Assignment::select('assignment.*', 'student_files.group_id as group_assignment_id')
+			->orderBy('assignment.delivered_date', 'asc')
 			->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
 			->where('student_files.users_id', auth()->id())
 			->where('student_files.left_attempts', '>=', 1)
 			->where('assignment.subject_id', $request->subject_id)
-			->orderBy('assignment.delivered_date', 'asc')
 			->distinct('assignment.id')
             ->union($assignments)
 			->paginate(1);
