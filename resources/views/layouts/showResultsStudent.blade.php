@@ -38,13 +38,13 @@
                     <p><b>Número de test ejecutados en el archivo:</b> <?php echo $studentFile->total;?></p>
                     <p><b>Número de test pasados:</b> <?php echo $studentFile->pass;?></p>
                     <p><b>Número de test fallidos:</b> <?php echo $studentFile->fails;?></p>
-                    <p><b>Nota del archivo:</b> <?php echo $studentFile->score;?></p>
+                    <p><b>Nota del archivo:</b> <?php echo round($studentFile->score, 2);?></p>
                 </div>
                 <?php $score = $studentFile->score + $score; ?>
                 <?php $left_attempts = $studentFile->left_attempts; ?>
                 <?php endforeach;?>
                 <div style="overflow: hidden; border: 2px solid #ccc;   text-align: left; background-color: #fafafa;">
-                    <h3><b><u>Nota total: {{$score}}</u></b></h3>
+                    <h3><b><u>Nota total: {{ round($score, 2) }}</u></b></h3>
                     <h4>Intentos restantes: {{@$left_attempts}} </h4>
                 </div>
 
