@@ -115,20 +115,18 @@ class StudentController extends Controller
 
 	public function showAssignmentsStudent(Request $request)
 	{
+		dd('asdads');
 
 		$assignments = Assignment::select('assignment.*', 'group_assignment.id as group_assignment_id')
-			->orderBy('assignment.delivered_date', 'asc')
 			->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
 			->join('group_assignment', 'student_files.group_id', '=', 'group_assignment.id')
 			->join('rel_users_groups', 'group_assignment.id', '=', 'rel_users_groups.group_assignment_id')
 			->where('student_files.left_attempts', '>=', 1)
 			->Where('rel_users_groups.users_id', auth()->id())
 			->where('assignment.subject_id', $request->subject_id)
-			->orderBy('assignment.delivered_date', 'asc')
 			->distinct('assignment.id');
 
 		$assignments = Assignment::select('assignment.*', 'student_files.group_id as group_assignment_id')
-			->orderBy('assignment.delivered_date', 'asc')
 			->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
 			->where('student_files.users_id', auth()->id())
 			->where('student_files.left_attempts', '>=', 1)
