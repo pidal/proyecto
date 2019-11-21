@@ -24,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        dd(Session::all());
+        
         if (Session::has('errors') && Session::has('redirect')) {
             dd(Session::all());
             return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
