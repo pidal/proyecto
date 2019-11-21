@@ -55,7 +55,7 @@
                                         <label class="col-sm-2 col-form-label" for="name"> {{__('alumnos.rol')}} </label>
                                         <select name="roles_id" id="roles_id" class="form-control col-sm-6 input-sm" required>
                                             <option value="">{{__('Seleccione un Rol')}}</option>
-                                            <option value="1" @if($alumno->roles_id == '1') selected @endif>{{__('Admin')}}</option>
+                                            <!--<option value="1" @if($alumno->roles_id == '1') selected @endif>{{__('Admin')}}</option>-->
                                             <option value="2" @if($alumno->roles_id == '2') selected @endif>{{__('Profesor')}}</option>
                                             <option value="3" @if($alumno->roles_id == '3') selected @endif>{{__('Alumno')}}</option>
                                         </select>
