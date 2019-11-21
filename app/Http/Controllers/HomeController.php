@@ -30,7 +30,7 @@ class HomeController extends Controller
         }
 
         if (Session::has('errors') && Session::get('_previous')) {
-            return redirect()->to(Session::get('_previous')['url'])->with('errors', Session::get('errors'))
+            return redirect()->to(url('/login'))->with('errors', Session::get('errors'))
             ->withInput(Session::getOldInput());
         }
 
