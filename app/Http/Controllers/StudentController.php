@@ -131,7 +131,7 @@ class StudentController extends Controller
 			->where('student_files.left_attempts', '>=', 1)
 			->where('assignment.subject_id', $request->subject_id)
 			->distinct('assignment.id')
-            ->union($assignments)->sortBy('delivered_date', 'asc')
+            ->union($assignments)->orderBy('delivered_date', 'asc')
 			->paginate(1);
 
 		$subject = Subject::where('id', $request->subject_id)
