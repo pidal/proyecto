@@ -23,14 +23,17 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        dd(Session::all());
-        
+    {   
         if (Session::has('errors') && Session::has('redirect')) {
             dd(Session::all());
             return redirect()->to(Session::get('redirect'))->with('errors', Session::get('errors'))
             ->withInput(Session::getOldInput());
         }
+
+        if (Session::has('errors') && Session::get('_previous')) {
+            dd(Session::get('_previous'));
+        }
+
         return redirect()->to(url('/login'));
     }
 }
