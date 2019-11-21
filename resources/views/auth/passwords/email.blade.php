@@ -18,8 +18,13 @@
                         <strong>{{ $errors->first('email') }}</strong>
                     </span>
                     @endif
-                    <div class="form-group">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">{{ __('auth.send_password') }}</button>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <a class="btn btn-lg btn-primary btn-block" href="/login">{{ __('Volver') }}</a>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">{{ __('auth.send_password') }}</button>
+                        </div>
                     </div>
                 </form>
 
