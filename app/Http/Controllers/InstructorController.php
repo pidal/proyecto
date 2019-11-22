@@ -72,7 +72,7 @@ class InstructorController extends Controller
     {
         $assignments = DB::table('assignment')
             ->where('created_by', auth()->id())
-            ->where('subject_id', $request->subject_id)
+            ->where('subject_id', $request->subject_id)->orderBy('delivered_date', 'asc')
             ->paginate(1);
         $subject = DB::table('subject')->where('id', $request['subject_id'])->value('name');
         return view('layouts.showAssignments', compact('assignments', 'subject'));
