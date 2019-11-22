@@ -32,7 +32,7 @@ class HomeController extends Controller
         //dd(Session::all());
 
         if (Session::has('errors') && Session::get('_previous')['url'] == 'https://www.joaquin-mateos.site/password/reset') {
-            Session::get('errors')->put('w', 'No hemos encontrado este correo.');
+            
             return redirect()->to(url('/password/reset'))->with('errors', Session::get('errors'))
             ->withInput(Session::getOldInput());
         }
