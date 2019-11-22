@@ -125,6 +125,13 @@
                     </div>
                 </div>
 
+                <div class="box" style="margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="grade">{{__('Imagen de asignatura')}}</label>
+                    </div>
+                    
+                </div>
+
                  <div class="form-group row">
                     <a href="{{ url('/subjects') }}"
                            class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
