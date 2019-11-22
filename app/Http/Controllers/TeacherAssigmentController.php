@@ -36,7 +36,7 @@ class TeacherAssigmentController extends Controller
             ->where('assignment.created_by', auth()->id(),'assignment.delivered_date >= now()')
             ->join('subject','subject.id', '=','assignment.subject_id')
             ->select('assignment.*','subject.name as subject')
-			->orderBy('id', 'DESC');
+			->orderBy('delivered_date', 'ASC');
 
         if (isset($_GET['subject'])) {
             $assigments->where('assignment.subject_id', $_GET['subject']);
