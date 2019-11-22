@@ -61,7 +61,21 @@ class SubjectsController extends Controller
             'grade' => 'required',
             'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048'
         ], $messages);
-        Subject::create($request->all());
+
+
+
+        $subject = Subject::create($request->all());
+
+        if($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $imagenName = $subject->id . '_' . time() . '.' . $imagen->getClientOriginalExtension();
+
+            Storage::disk('public')->put('/eventos/'.$photoName, file_get_contents($photo), 'public');
+
+            $subject->imagen = $imagenName;
+            $subject->save();
+        }
+
         return redirect()->route('subjects.index')->with('success', 'Registro creado satisfactoriamente');
     }
 
