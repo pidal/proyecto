@@ -37,6 +37,12 @@ class HomeController extends Controller
             ->withInput(Session::getOldInput());
         }
 
+        if (Session::has('errors') && Session::get('_previous')['url'] == 'https://www.joaquin-mateos.site/login') {
+
+            return redirect()->to(url('/login'))->with('error', "Correo o contraseña invalida, por favor intentelo nuevamente.")
+            ->withInput(Session::getOldInput());
+        }
+
         return redirect()->to(url('/login'));
     }
 }
