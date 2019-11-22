@@ -64,7 +64,7 @@ class StudentController extends Controller
 			->join('assignment', 'assignment.id','=', 'group_assignment.assignment_id')
             ->join('subject', 'assignment.subject_id', '=', 'subject.id')
             ->where('rel_users_groups.users_id', auth()->id())
-			->select('subject.name', 'subject.id')
+			->select('subject.name', 'subject.id', 'subject.imagen')
             ->union($subjects)
             ->get();
 
