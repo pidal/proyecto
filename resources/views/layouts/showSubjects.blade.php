@@ -32,7 +32,7 @@
                         <div class="pad15">
                             <form class="form-horizontal" action="{{ url('showAssignments',$subject) }}" method="get"  enctype="multipart/form-data">
                             <button type="submit">
-                                <img src="{{ ($subject->imagen != null) ? 'image/subject/'.$subject->imagen : 'image/coco.png' ; }}">
+                                <img src="{{ ($subject->imagen != null) ? 'image/subject/'.$subject->imagen : 'image/coco.png' }}">
                             </button>
                             </form>
                             <h1>{{$s}}</h1>
