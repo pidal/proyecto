@@ -41,7 +41,7 @@
                     @endforeach
 
                 </div>
-                @if(count($subjects)>=4)
+                @if($subjects->count()  >= 4)
                 <button class="btn btn-primary leftLst"><</button>
                 <button class="btn btn-primary rightLst">></button>
                 @endif
