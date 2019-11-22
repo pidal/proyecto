@@ -127,7 +127,13 @@
 
                 <div class="box" style="margin-top: 20px;">
                     <div class="form-group">
-                        <label for="grade">{{__('Imagen de asignatura')}}</label>
+                        <label for="grade">{{__('Imagen de asignatura')}} (opcional)</label>
+                         <input id="imagen" type="file" class="form-control {{ $errors->has('file') ? ' is-invalid' : '' }}" name="imagen" value="{{ old('imagen') }}">
+                         @if ($errors->has('imagen'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('imagen') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     
                 </div>
