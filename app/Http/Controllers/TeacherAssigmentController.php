@@ -171,6 +171,8 @@ class TeacherAssigmentController extends Controller
 
 		}
 
+
+
 		$assignment = new Assignment();
 		$assignment->fill($validatedData);
 		$total = 0;
@@ -185,6 +187,10 @@ class TeacherAssigmentController extends Controller
 				Session::flash('error', 'La ponderación del fichero ' . $i . ' está vacío');
 				return redirect('/teacherassignmentadd')->withInput();
 			}
+
+			preg_match("/\.[0-9a-z]+$/", $request->{'fileName_' . $i}, $ext);
+
+			dd($ext);
 
 		}
 		if ($total != 100) {
