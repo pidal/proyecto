@@ -28,7 +28,7 @@
                     <h2>Asignaturas</h2>
 
                 @foreach($subjects as $subject => $s)
-                {{ dd($subject) }}
+                {{ dd($s) }}
                     <div class="item">
                         <div class="pad15">
                             <form class="form-horizontal" action="{{ url('showAssignments',$subject) }}" method="get"  enctype="multipart/form-data">
