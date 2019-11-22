@@ -150,6 +150,11 @@ class TeacherAssigmentController extends Controller
 			return redirect('/teacherassignmentadd')->withInput();
 		}
 
+		if($request->file('file'))
+		{
+			$fileExtension = $request->file('file')->getClientOriginalExtension();
+		}
+
 		$assignment = new Assignment();
 		$assignment->fill($validatedData);
 		$total = 0;
