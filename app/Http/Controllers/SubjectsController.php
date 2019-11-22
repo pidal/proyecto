@@ -58,7 +58,8 @@ class SubjectsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'grade' => 'required'
+            'grade' => 'required',
+            'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048'
         ], $messages);
         Subject::create($request->all());
         return redirect()->route('subjects.index')->with('success', 'Registro creado satisfactoriamente');
