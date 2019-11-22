@@ -59,7 +59,7 @@ class SubjectsController extends Controller
             'name' => 'required',
             'description' => 'required',
             'grade' => 'required',
-            'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:2048'
+            'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:1024'
         ], $messages);
 
 

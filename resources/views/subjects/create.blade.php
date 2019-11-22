@@ -116,20 +116,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <form class="form-horizontal" method="POST" action="{{ route('subjects.store') }}" role="form">
+            <form class="form-horizontal" method="POST" action="{{ route('subjects.store') }}" role="form" enctype="multipart/form-data">
                 @csrf
 
 
