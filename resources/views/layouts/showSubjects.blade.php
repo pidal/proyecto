@@ -35,7 +35,7 @@
                                 <img src="{{ ($s->imagen != null) ? 'image/subject/'.$s->imagen : 'image/coco.png' }}">
                             </button>
                             </form>
-                            <h1>{{$s}}</h1>
+                            <h1>{{$s->name}}</h1>
                         </div>
                     </div>
                     @endforeach
