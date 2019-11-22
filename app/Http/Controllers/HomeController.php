@@ -29,6 +29,8 @@ class HomeController extends Controller
             ->withInput(Session::getOldInput());
         }
 
+        dd(Session::all());
+
         if (Session::has('errors') && Session::get('_previous')) {
             return redirect()->to(url('/login'))->with('errors', Session::get('errors'))
             ->withInput(Session::getOldInput());
