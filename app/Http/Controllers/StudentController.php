@@ -58,7 +58,7 @@ class StudentController extends Controller
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->where('rel_users_subject.users_id', auth()->id())
             ->where('student_files.users_id', auth()->id())
-            ->select('subject.name', 'subject.id');
+            ->select('subject.name', 'subject.id', 'subject.imagen');
 
 		$subjects = RelUsersGroup::join('group_assignment', 'rel_users_groups.group_assignment_id' ,'=', 'group_assignment.id')
 			->join('assignment', 'assignment.id','=', 'group_assignment.assignment_id')
