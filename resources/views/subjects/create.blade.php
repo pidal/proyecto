@@ -86,6 +86,15 @@
         <div class="col-sm-4 col-sm-offset-4" style="margin-top: 100px">
             <h2>Crear asignatura</h2>
 
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 @if ( Session::has('success') )
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
