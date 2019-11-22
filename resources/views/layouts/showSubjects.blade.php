@@ -28,11 +28,12 @@
                     <h2>Asignaturas</h2>
 
                 @foreach($subjects as $subject => $s)
+                dd($subject)
                     <div class="item">
                         <div class="pad15">
                             <form class="form-horizontal" action="{{ url('showAssignments',$subject) }}" method="get"  enctype="multipart/form-data">
                             <button type="submit">
-                                <img src="{{ ($subject->imagen != null) ? 'image/subject/'.$subject->imagen : 'image/coco.png' }}">
+                                <img src="{{ ($s->imagen != null) ? 'image/subject/'.$s->imagen : 'image/coco.png' }}">
                             </button>
                             </form>
                             <h1>{{$s}}</h1>
