@@ -30,7 +30,7 @@
                     @foreach($subjects as $s)
                     <div class="item">
                         <div class="pad15">
-                            <form class="form-horizontal" action="{{ url('showAssignments',$subject) }}" method="get"  enctype="multipart/form-data">
+                            <form class="form-horizontal" action="{{ url('showAssignments',$s->id) }}" method="get"  enctype="multipart/form-data">
                             <button type="submit">
                                 <img src="{{ ($s->imagen != null) ? 'image/subject/'.$s->imagen : 'image/coco.png' }}">
                             </button>
