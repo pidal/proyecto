@@ -153,6 +153,8 @@ class TeacherAssigmentController extends Controller
 		if($request->file('file'))
 		{
 			$fileExtension = $request->file('file')->getClientOriginalExtension();
+			dd($fileExtension);
+
 		}
 
 		$assignment = new Assignment();
