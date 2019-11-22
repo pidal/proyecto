@@ -191,17 +191,17 @@ class TeacherAssigmentController extends Controller
 			preg_match("/\.[0-9a-z]+$/", $request->{'fileName_' . $i}, $ext);
 
 			if ($validatedData['language'] == 'c' && $ext[0] != '.c') {
-				Session::flash('error', 'La extencion del archivo $i debe ser .c');
+				Session::flash('error', 'La extencion del archivo '.$i.' debe ser .c');
 				return redirect('/teacherassignmentadd')->withInput();
 			}
 
 			if ($validatedData['language'] == 'c#' && $ext[0] != '.cs') {
-				Session::flash('error', 'La extencion del archivo $i debe ser .cs');
+				Session::flash('error', 'La extencion del archivo '.$i.' debe ser .cs');
 				return redirect('/teacherassignmentadd')->withInput();
 			}
 
 			if ($validatedData['language'] == 'java' && $ext[0] != '.java') {
-				Session::flash('error', 'La extencion del archivo $i debe ser .java');
+				Session::flash('error', 'La extencion del archivo '.$i.' debe ser .java');
 				return redirect('/teacherassignmentadd')->withInput();
 			}
 
