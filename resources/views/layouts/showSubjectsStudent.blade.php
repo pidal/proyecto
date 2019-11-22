@@ -77,7 +77,7 @@
                                 <form class="form-horizontal" action="{{ url('showAssignmentsStudent',$subject->id) }}" method="get"
                                       enctype="multipart/form-data">
                                     <button type="submit">
-                                        <img src="image/coco.png">
+                                        <img style="width: 200px;height: 200px;" src="{{ ($subject->imagen != null) ? 'image/subjects/'.$subject->imagen : 'image/coco.png' }}">
                                     </button>
                                     <h1>{{$subject->name}}</h1>
                                 </form>
