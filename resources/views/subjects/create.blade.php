@@ -86,11 +86,6 @@
         <div class="col-sm-4 col-sm-offset-4" style="margin-top: 100px">
             <h2>Crear asignatura</h2>
 
-             @if (count($errors) > 0)
-                    <div class="alert alert-danger">
-                        Has introducido mal el Email y/o la contraseña .<br><br>
-                    </div>
-                @endif
                 @if ( Session::has('success') )
                     <div class="alert alert-success alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -124,7 +119,7 @@
 
 
 
-            
+
             <form class="form-horizontal" method="POST" action="{{ route('subjects.store') }}" role="form">
                 @csrf
 
