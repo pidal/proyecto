@@ -153,7 +153,21 @@ class TeacherAssigmentController extends Controller
 		if($request->file('file'))
 		{
 			$fileExtension = $request->file('file')->getClientOriginalExtension();
-			dd($fileExtension);
+
+			if ($validatedData['file'] == 'c' && $fileExtension != 'c' ) {
+				Session::flash('error', 'Debes ingresar un atchivo con extencion .c para una practicca en c.');
+				return redirect('/teacherassignmentadd')->withInput();
+			}
+
+			if ($validatedData['file'] == 'cs' && $fileExtension != 'cs' ) {
+				Session::flash('error', 'Debes ingresar un atchivo con extencion .cs para una practicca en c#.');
+				return redirect('/teacherassignmentadd')->withInput();
+			}
+
+			if ($validatedData['file'] == 'java' && $fileExtension != 'java' ) {
+				Session::flash('error', 'Debes ingresar un atchivo con extencion .java para una practicca en java.');
+				return redirect('/teacherassignmentadd')->withInput();
+			}
 
 		}
 
