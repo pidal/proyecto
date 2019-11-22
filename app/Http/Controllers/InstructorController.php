@@ -67,7 +67,7 @@ class InstructorController extends Controller
         $subjects = DB::table('rel_users_subject')->join('subject', 'subject_id', '=', 'subject.id')->where('rel_users_subject.users_id', auth()->id())->get();
         //->pluck('subject.name', 'subject.id');
 
-        dd($subjects);
+        //dd($subjects);
         return view('layouts.showSubjects', compact('subjects'));
     }
 

@@ -27,13 +27,12 @@
                 <div class="MultiCarousel-inner">
                     <h2>Asignaturas</h2>
 
-                @foreach($subjects as $subject => $s)
-                {{ dd($s) }}
+                    @foreach($subjects as $s)
                     <div class="item">
                         <div class="pad15">
                             <form class="form-horizontal" action="{{ url('showAssignments',$subject) }}" method="get"  enctype="multipart/form-data">
                             <button type="submit">
-                                
+                                <img src="{{ ($s->imagen != null) ? 'image/subject/'.$s->imagen : 'image/coco.png' }}">
                             </button>
                             </form>
                             <h1>{{$s}}</h1>
