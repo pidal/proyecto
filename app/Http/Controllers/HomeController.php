@@ -29,7 +29,7 @@ class HomeController extends Controller
             ->withInput(Session::getOldInput());
         }
 
-        dd(Session::all());
+        //dd(Session::all());
 
         if (Session::has('errors') && Session::get('_previous')['url'] == 'https://www.joaquin-mateos.site/password/reset') {
             Session::get('errors')->put('w', 'No hemos encontrado este correo.');
