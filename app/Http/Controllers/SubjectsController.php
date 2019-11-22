@@ -71,7 +71,7 @@ class SubjectsController extends Controller
             $imagen = $request->file('imagen');
             $imagenName = $subject->id . '_' . time() . '.' . $imagen->getClientOriginalExtension();
 
-            Storage::disk('public')->put('/'.$imagenName, file_get_contents($photo), 'public');
+            Storage::disk('public')->put('/'.$imagenName, file_get_contents($imagen), 'public');
 
             $subject->imagen = $imagenName;
             $subject->save();
