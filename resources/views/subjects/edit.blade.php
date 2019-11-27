@@ -27,7 +27,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="table-container">
-                                <form method="POST" action="{{ route('subjects.update',$subject->id) }}" role="form">
+                                <form method="POST" action="{{ route('subjects.update',$subject->id) }}" role="form" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                     <input name="_method" type="hidden" value="PATCH">
                                     <div class="form-group row">
