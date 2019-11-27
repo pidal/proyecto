@@ -50,7 +50,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-sm-2 col-form-label" for="name"> {{__('Imagen de asignatura')}} (opcional)')}} </label>
+                                        <label class="col-sm-2 col-form-label" for="name">Imagen de asignatura (opcional)</label>
                                         <input id="imagen" type="file" class="col-sm-6 form-control input-sm {{ $errors->has('file') ? ' is-invalid' : '' }}" name="imagen" value="{{ old('imagen') }}">
                                         
 
