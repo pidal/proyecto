@@ -116,9 +116,19 @@ class SubjectsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'grade' => 'required'
+            'grade' => 'required',
+            'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:1024'
         ]);
         Subject::find($id)->update($request->all());
+        if($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $imagenName = $subject->id . '_' . time() . '.' . $imagen->getClientOriginalExtension();
+
+            Storage::disk('public')->put('/image/subjects/'.$imagenName, file_get_contents($imagen), 'public');
+
+            $subject->imagen = $imagenName;
+            $subject->save();
+        }
         return redirect()->route('subjects.index')->with('success', 'Registro Actualizado satisfactoriamente');
     }
 
