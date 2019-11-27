@@ -119,7 +119,10 @@ class SubjectsController extends Controller
             'grade' => 'required',
             'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:1024'
         ]);
-        $subject = Subject::find($id)->update($request->all());
+
+        $subject = Subject::find($id);
+        $subject->update($request->all());
+
         if($request->hasFile('imagen')){
             $imagen = $request->file('imagen');
             $imagenName = $subject->id . '_' . time() . '.' . $imagen->getClientOriginalExtension();
