@@ -48,6 +48,14 @@
                                                   placeholder="{{__('subjects.new_description')}}">{{$subject->description}}
                                         </textarea>
                                     </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label" for="name"> {{__('Imagen de asignatura')}} (opcional)')}} </label>
+                                        <input id="imagen" type="file" class="col-sm-6 form-control input-sm {{ $errors->has('file') ? ' is-invalid' : '' }}" name="imagen" value="{{ old('imagen') }}">
+                                        
+
+                                    </div>
+
                                     <div class="form-group row">
                                         <a href="{{ route('subjects.index') }}"
                                            class="btn btn-primary col-sm-2 link"> {{__('subjects.back')}}</a>
