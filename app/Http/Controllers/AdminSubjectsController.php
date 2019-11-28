@@ -44,9 +44,22 @@ class AdminSubjectsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'grade' => 'required'
+            'grade' => 'required',
+            'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:1024'
+
         ]);
-        Subject::create($request->all());
+        $subject = Subject::create($request->all());
+
+        if($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $imagenName = $subject->id . '_' . time() . '.' . $imagen->getClientOriginalExtension();
+
+            Storage::disk('public')->put('/image/subjects/'.$imagenName, file_get_contents($imagen), 'public');
+
+            $subject->imagen = $imagenName;
+            $subject->save();
+        }
+
         return redirect()->route('adminasignaturas.index')->with('success', 'Registro creado satisfactoriamente');
     }
 
@@ -86,9 +99,24 @@ class AdminSubjectsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            'grade' => 'required'
+            'grade' => 'required',
+            'imagen' => 'nullable|image|mimes:jpeg,jpg,png,gif|max:1024'
+
         ]);
-        Subject::find($id)->update($request->all());
+
+        $subject = Subject::find($id);
+        $subject->update($request->all());
+
+        if($request->hasFile('imagen')){
+            $imagen = $request->file('imagen');
+            $imagenName = $subject->id . '_' . time() . '.' . $imagen->getClientOriginalExtension();
+
+            Storage::disk('public')->put('/image/subjects/'.$imagenName, file_get_contents($imagen), 'public');
+
+            $subject->imagen = $imagenName;
+            $subject->save();
+        }
+
         return redirect()->route('adminasignaturas.index')->with('success', 'Registro Actualizado satisfactoriamente');
     }
 
