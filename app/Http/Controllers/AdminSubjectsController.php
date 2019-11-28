@@ -2,6 +2,7 @@
 
 namespace pfg\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use pfg\Models\Subject;
 use pfg\Models\User;
