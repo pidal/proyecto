@@ -141,8 +141,10 @@ class TeacherAssigmentController extends Controller
 			'delivered_date' => 'required'
 		]);
 
+
 		if (!strtotime($validatedData['delivered_date'])) {
 			$validatedData['delivered_date'] = Carbon::createFromFormat("d/m/Y G:i", $validatedData['delivered_date']);
+			dd($validatedData['delivered_date']);
 		}
 		
 		if ($validatedData['delivered_date'] < Carbon::now()) {
