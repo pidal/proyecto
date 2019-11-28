@@ -193,9 +193,6 @@ class StudentController extends Controller
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 
-		//dd($request);
-
-
         $studentsUnion = StudentFile::select('student_files.*')
             ->join('assignment', 'assignment.id', '=', 'student_files.assignment_id')
             ->join('group_assignment', 'student_files.group_id', '=', 'group_assignment.id')
