@@ -212,7 +212,7 @@ class StudentController extends Controller
 
             $studentsFiles = StudentFile::whereIn('id',$request->files_id)->get();
 
-            dd($studentsFiles);
+            //dd($studentsFiles);
 
          
 
