@@ -191,7 +191,6 @@ class StudentController extends Controller
 	{
 		//Session::flash('redirect', 'showSubjectsStudent');
 
-		dd($request);
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 
@@ -209,6 +208,8 @@ class StudentController extends Controller
             ->where('student_files.users_id', auth()->id())
             ->union($studentsUnion)
             ->get();
+
+            dd($studentsFiles);
 
          
 
