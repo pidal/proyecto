@@ -235,6 +235,9 @@ class StudentController extends Controller
         foreach($studentsFiles as $studentFile){
 
             $record = Assignment::join('student_files', 'assignment.id','=', 'student_files.assignment_id')->where('student_files.id', $studentFile->id)->first();
+
+            dd($record);
+
 			$fileInstructor = $record->correction_file;
 			$language = $record->language;
 
