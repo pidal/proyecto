@@ -236,13 +236,14 @@ class StudentController extends Controller
 
             $record = Assignment::join('student_files', 'assignment.id','=', 'student_files.assignment_id')->where('student_files.id', $studentFile->id)->first();
 
-            dd($record);
-
 			$fileInstructor = $record->correction_file;
 			$language = $record->language;
 
+			
+
 			$path_save = $studentFile->id . '_' . $studentFile->left_attempts;
 			$studentFile->delivered = 1;
+
             $file = $request->file('file'.$studentFile->id);
 			Storage::put($path_save . DIRECTORY_SEPARATOR . $file->getClientOriginalName(), file_get_contents($file));
 
@@ -260,7 +261,9 @@ class StudentController extends Controller
 
 			$studentFile->left_attempts = $studentFile->left_attempts - 1;
             $studentFile->delivered = 1;
+
 			$path = storage_path(DIRECTORY_SEPARATOR.'TODO'.DIRECTORY_SEPARATOR . $studentFile->id . '_' . $studentFile->left_attempts);
+
             if (!file_exists($path)) {
                 mkdir($path);
             }
@@ -284,6 +287,8 @@ class StudentController extends Controller
             ->where('assignment.id', $request->assignment_id)
             ->where('student_files.users_id', auth()->id())
             ->paginate(1);
+
+        dd($studentsFiles);
 
 		$assignment = Assignment::find($request->assignment_id);;
 		$subject = Subject::find($request->subject_id);
