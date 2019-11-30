@@ -290,7 +290,7 @@ class StudentController extends Controller
 
         $studentsFiles = StudentFile::whereIn('id',$request->files_id)->paginate(1);
 
-        dd($studentsFiles);
+        //dd($studentsFiles);
 
 		$assignment = Assignment::find($request->assignment_id);;
 		$subject = Subject::find($request->subject_id);
