@@ -276,17 +276,19 @@ class StudentController extends Controller
 		}
 
 		Session::flash('success', 'Práctica entregada correctamente');
-		return redirect()->route('showResultsStudent',array('subject_id' => $request->subject_id, 'assignment_id' => $request->assignment_id));
+		return redirect()->route('showResultsStudent',array('files_id' => $request->files_id, 'subject_id' => $request->subject_id, 'assignment_id' => $request->assignment_id));
 	}
 
 	public function showResultsStudent(Request $request)
 	{
 
-        $studentsFiles = Assignment::select('student_files.*')
+        /*$studentsFiles = Assignment::select('student_files.*')
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->where('assignment.id', $request->assignment_id)
             ->where('student_files.users_id', auth()->id())
-            ->paginate(1);
+            ->paginate(1);*/
+
+        $studentsFiles = StudentFile::whereIn('id',$request->files_id)->paginate(1);
 
         dd($studentsFiles);
 
