@@ -256,10 +256,10 @@ class StudentController extends Controller
                 $studentFile = $pruebasUnitarias->executeLanguageJava($fileInstructor,$studentFile);
 			}
 			elseif ($language == 'c#') {
-
-				dd('prueba en c#');
                 $studentFile = $pruebasUnitarias->executeLanguageCsharp($fileInstructor,$studentFile);
 			}
+
+			dd($studentFile);
 
 			$studentFile->left_attempts = $studentFile->left_attempts - 1;
             $studentFile->delivered = 1;
