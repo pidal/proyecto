@@ -98,6 +98,8 @@ EOF;
 
         $exec = "sudo dotnet test ".$path_completo." > ".$path_completo."resultado.txt";
 
+        dd($exec);
+
         $salida = $this->shellExecute($exec,$env);
 
         $studentFile = $this->getOutputCsharp($studentFile,$path_completo."resultado.txt");
