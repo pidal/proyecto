@@ -90,12 +90,13 @@ class PruebasUnitarias
         $env = array('DOTNET_CLI_HOME' => '/var/www','HOME'=>'/var/www');
         $result = $this->shellExecute($exec, $env);
 
-        var_dump($result);die();
-
         $exec = <<<EOF
             echo '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>netcoreapp2.1</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="xunit" Version="2.4.1" /><PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" /></ItemGroup></Project>' > {$path_completo}{$project_name}.csproj
 EOF;
         $result = $this->shellExecute($exec);
+
+        var_dump($result);die();
+
 
         $exec = "dotnet test ".$path_completo." > ".$path_completo."resultado.txt";
         $salida = $this->shellExecute($exec,$env);
