@@ -78,24 +78,28 @@ class PruebasUnitarias
         return $studentFile;
     }
     public function executeLanguageCsharp($fileInstructor,StudentFile $studentFile){
+
         $project_name = $studentFile->id . '_' . $studentFile->left_attempts;
         $path_completo = storage_path('TODO'.DIRECTORY_SEPARATOR . $project_name.DIRECTORY_SEPARATOR);
+
         //Create the solution
-        $exec = "dotnet new classlib --force -o ".$path_completo.' 2>&1';
+        $exec = "dotnet new classlib --force -o ".$path_completo;
 
         //var_dump($exec);die();
 
         $env = array('DOTNET_CLI_HOME' => '/var/www','HOME'=>'/var/www');
         $result = $this->shellExecute($exec, $env);
 
-        var_dump($result);die();
+        //var_dump($result);die();
 
         $exec = <<<EOF
             echo '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>netcoreapp2.1</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="xunit" Version="2.4.1" /><PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" /></ItemGroup></Project>' > {$path_completo}{$project_name}.csproj
 EOF;
         $result = $this->shellExecute($exec);
+
         $exec = "dotnet test ".$path_completo." > ".$path_completo."resultado.txt";
         $salida = $this->shellExecute($exec,$env);
+
         $studentFile = $this->getOutputCsharp($studentFile,$path_completo."resultado.txt");
         return $studentFile;
     }
@@ -103,9 +107,11 @@ EOF;
     private function getOutputCsharp($studentFile,$file){
         $salida = file_get_contents($file);
         if(empty($salida)) throw new \Exception('El resultado de las pruebas ha sido nulo');
+
         preg_match('~Total tests: (\d+)~', $salida, $total );
         preg_match('~Passed: (\d+)~', $salida, $passed );
         preg_match('~Failed: (\d+)~', $salida, $failed );
+
         $total = isset($total[1]) ? $total[1] : 0;
         $passed = isset($passed[1]) ? $passed[1] : 0;
         $failed = isset($failed[1]) ? $failed[1] : 0;
@@ -115,6 +121,7 @@ EOF;
         $studentFile->score =  $studentFile->total > 0 ? ($studentFile->pass / $studentFile->total) * 10 : 0;
         return $studentFile;
     }
+
     private function shellExecute($exec, $env= array()){
         $return_value = '';
         $cwd = '/tmp';
@@ -132,6 +139,7 @@ EOF;
         }
         return $return_value;
     }
+
     private function PsExecute($command, $timeout = 8, $sleep = 2)
     {
         // First, execute the process, get the process ID
