@@ -282,13 +282,13 @@ class StudentController extends Controller
 	public function showResultsStudent(Request $request)
 	{
 
-        /*$studentsFiles = Assignment::select('student_files.*')
+        $studentsFiles = Assignment::select('student_files.*')
             ->join('student_files', 'assignment.id', '=', 'student_files.assignment_id')
             ->where('assignment.id', $request->assignment_id)
             ->where('student_files.users_id', auth()->id())
-            ->paginate(1);*/
+            ->paginate(1);
 
-        $studentsFiles = StudentFile::whereIn('id',$request->files_id)->paginate(1);
+        //$studentsFiles = StudentFile::whereIn('id',$request->files_id)->paginate(1);
 
         //dd($studentsFiles);
 
