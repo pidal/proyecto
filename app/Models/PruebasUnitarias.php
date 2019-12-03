@@ -91,7 +91,7 @@ class PruebasUnitarias
         $result = $this->shellExecute($exec, $env);
 
         $exec = <<<EOF
-            echo '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>netcoreapp2.1</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="xunit" Version="2.4.1" /><PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" /></ItemGroup></Project>' > {$path_completo}{$project_name}.csproj
+            sudo echo '<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>netcoreapp2.1</TargetFramework></PropertyGroup><ItemGroup><PackageReference Include="xunit" Version="2.4.1" /><PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" /></ItemGroup></Project>' > {$path_completo}{$project_name}.csproj
 EOF;
         $result = $this->shellExecute($exec);
 
