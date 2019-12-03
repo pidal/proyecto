@@ -95,10 +95,11 @@ class PruebasUnitarias
 EOF;
         $result = $this->shellExecute($exec);
 
-        var_dump($result);die();
-
 
         $exec = "dotnet test ".$path_completo." > ".$path_completo."resultado.txt";
+
+        dd($exec);
+
         $salida = $this->shellExecute($exec,$env);
 
         $studentFile = $this->getOutputCsharp($studentFile,$path_completo."resultado.txt");
