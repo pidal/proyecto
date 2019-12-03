@@ -256,6 +256,8 @@ class StudentController extends Controller
                 $studentFile = $pruebasUnitarias->executeLanguageJava($fileInstructor,$studentFile);
 			}
 			elseif ($language == 'c#') {
+
+				dd('prueba en c#');
                 $studentFile = $pruebasUnitarias->executeLanguageCsharp($fileInstructor,$studentFile);
 			}
 
