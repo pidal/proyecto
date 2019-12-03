@@ -259,8 +259,6 @@ class StudentController extends Controller
                 $studentFile = $pruebasUnitarias->executeLanguageCsharp($fileInstructor,$studentFile);
 			}
 
-			dd($studentFile);
-
 			$studentFile->left_attempts = $studentFile->left_attempts - 1;
             $studentFile->delivered = 1;
 
