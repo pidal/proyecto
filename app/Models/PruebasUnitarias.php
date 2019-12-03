@@ -83,7 +83,7 @@ class PruebasUnitarias
         //Create the solution
         $exec = "dotnet new classlib --force -o ".$path_completo.' 2>&1';
 
-        var_dump($exec);die();
+        //var_dump($exec);die();
 
         $env = array('DOTNET_CLI_HOME' => '/var/www','HOME'=>'/var/www');
         $result = $this->shellExecute($exec, $env);
@@ -99,6 +99,7 @@ EOF;
         $studentFile = $this->getOutputCsharp($studentFile,$path_completo."resultado.txt");
         return $studentFile;
     }
+
     private function getOutputCsharp($studentFile,$file){
         $salida = file_get_contents($file);
         if(empty($salida)) throw new \Exception('El resultado de las pruebas ha sido nulo');
