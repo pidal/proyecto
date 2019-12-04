@@ -86,7 +86,7 @@ class PruebasUnitarias
         chmod($path_completo, 0777);
 
         //Create the solution
-        $exec = "dotnet new classlib --force -o ".$path_completo;
+        $exec = "sudo dotnet new classlib --force -o ".$path_completo;
         $env = array('DOTNET_CLI_HOME' => '/var/www','HOME'=>'/var/www');
         $result = $this->shellExecute($exec, $env);
 
@@ -95,7 +95,7 @@ class PruebasUnitarias
 EOF;
         $result = $this->shellExecute($exec);
 
-        $exec = "dotnet test ".$path_completo." > ".$path_completo."resultado.txt";
+        $exec = "sudo dotnet test ".$path_completo." > ".$path_completo."resultado.txt";
         $salida = $this->shellExecute($exec,$env);
 
         $studentFile = $this->getOutputCsharp($studentFile,$path_completo."resultado.txt");
