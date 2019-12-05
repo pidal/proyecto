@@ -317,9 +317,7 @@
 
 		var members = parseInt($(this).val());
         var students = $number_students;
-        var groups = Math.ceil(students / members );
-
-        grupos = document.getElementById('grupos').length;
+        var grupos = Math.ceil(students / members );
         var current = $('.grupo').length;
 
         alert(grupos);
