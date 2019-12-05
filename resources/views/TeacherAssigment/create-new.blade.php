@@ -298,8 +298,8 @@
 			url: "{{route('numberofstudentsbysubject')}}",
 			data:{subject_id:subject},
 			success:function(data){
-				var number_students = data.number_students;
-				var users = data.users;
+				$number_students = data.number_students;
+				$users = data.users;
 			}
 		});
 	});
@@ -307,7 +307,7 @@
 	$('#members_number').change(function(e){
 		e.preventDefault();
 		var members = parseInt($(this).val());
-        var students = number_students;
+        var students = $number_students;
         var groups = Math.ceil(students / $members );
 
         alert(groups);
