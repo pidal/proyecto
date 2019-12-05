@@ -328,9 +328,12 @@
         		row.className = 'row grupo';
 				row.style = 'margin-top:20px';
 
-					title = document.createElement("h2")
-					title.innerHTML = 'Grupo' + $j;
-					row.appendChild(title);
+					title_container = document.createElement("div");
+						title = document.createElement("h4");
+						title.innerHTML = 'Grupo' + $j;
+						title_container = appendChild(title);
+
+					row.appendChild(title_container);
 
 					for ($i = 1; $i < members + 1; $i++) {
 
