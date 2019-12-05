@@ -1,5 +1,10 @@
 @extends('layouts.templateProfesor')
 
+@section('styles')
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+@endsection
+
 @section('content')
  <div class="container-fluid">
 	<div class="row justify-content-center">
