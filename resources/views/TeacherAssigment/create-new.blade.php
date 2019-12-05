@@ -232,7 +232,7 @@
 					row.appendChild(weight);
 
 
-				$('#files').appendChild(row);
+				document.getElementById('files').appendChild(row);
 
 			}
 		}
