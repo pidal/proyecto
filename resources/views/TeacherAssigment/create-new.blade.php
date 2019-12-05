@@ -374,7 +374,7 @@
         if (current > grupos) {
 			var extra = current - files;
 			for($i = 1; $i <= extra; $i++){
-				$('#grupos div.grupo').last().remove();
+				$('#grupos div.grupo').remove();
 			}
         }
 
