@@ -122,9 +122,17 @@
 			                @endif
 						</div>
 					</div>
-					
+
 					<div class="col-md-6">
 						<div class="form-group">
+							<label for="number_files_delivered">{{ __('Número de archivos a entregar') }}</label>
+							<input id="number_files_delivered" type="number" class="form-control" min="1" placeholder=">=1" name="number_files_delivered" value="{{ old('number_files_delivered') }}" required autofocus/>
+
+		                    @if ($errors->has('number_files_delivered'))
+		                        <span class="invalid-feedback" role="alert">
+		                            <strong>{{ $errors->first('number_files_delivered') }}</strong>
+		                        </span>
+		                    @endif
 						</div>
 					</div>
 				</div>
