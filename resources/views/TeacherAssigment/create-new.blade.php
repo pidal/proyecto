@@ -303,5 +303,9 @@
 			}
 		});
 	});
+
+	$('#members_number').change(function(){
+
+	});
 </script>
 @endsection
