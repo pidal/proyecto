@@ -38,16 +38,45 @@
                 <input type="hidden" name="new" value="1">
 
 
+                <div class="row">
+                	<div class="col-md-6">
 
-				<div class="form-group">
-					<label for="name">{{ __('Nombre de la práctica') }}</label>
-					<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" autofocus>
-					@if ($errors->has('name'))
-						<span class="invalid-feedback" role="alert">
-							<strong>{{ $errors->first('name') }}</strong>
-						</span>
-					@endif
-				</div>
+                		<div class="form-group">
+							<label for="name">{{ __('Nombre de la práctica') }}</label>
+							<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" autofocus required>
+							@if ($errors->has('name'))
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $errors->first('name') }}</strong>
+								</span>
+							@endif
+						</div>
+                		
+                	</div>
+
+                	<div class="col-md-6">
+
+                		<div class="form-group">
+							<label for="name">{{ __('Lenguaje de programación: ') }}</label>
+							<div>
+				                <select name="language" id="language" class="form-control" required="required">
+				                    <option value="c" @if(old('language') == 'c') selected @endif>C</option>
+				                    <option value="c#" @if(old('language') == 'c#') selected @endif>C#</option>
+				                    <option value="java" @if(old('language') == 'java') selected @endif>Java</option>
+				                </select>
+				                @if ($errors->has('language'))
+				                    <span class="invalid-feedback" role="alert">
+				                        <strong>{{ $errors->first('language') }}</strong>
+				                    </span>
+				                @endif
+				            </div>
+						</div>
+
+
+                		
+                	</div>
+                	
+                </div>
+				
 
 
 
