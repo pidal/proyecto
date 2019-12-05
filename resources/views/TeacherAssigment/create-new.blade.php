@@ -96,7 +96,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-
+							<label for="subject_id">{{ __('Asignatura: ') }}</label>
 							<div>
 				                <select name="subject_id" id="subject_id" class="form-control" required>
 				                    <option value="">{{__('Seleccione una')}}</option>
