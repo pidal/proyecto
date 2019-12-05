@@ -36,6 +36,8 @@
 			<form class="form-horizontal" method="POST" action="{{ route('teacherassignmentcreate') }}" role="form" enctype="multipart/form-data">
                 @csrf
 
+
+
 				<div class="form-group">
 					<label for="name">{{ __('Nombre de la práctica') }}</label>
 					<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" autofocus>
@@ -49,6 +51,19 @@
 
 
 
+
+
+
+
+				<div class="form-group row">
+                    <a href="{{ url('/teacherassignmen') }}"
+                           class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
+                    <div class="no box">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Registrar') }}
+                        </button>
+                    </div>
+                </div>
 
 
 
