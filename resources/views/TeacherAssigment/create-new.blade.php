@@ -178,6 +178,22 @@
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group" id="grupos" style="margin-top: 20px;display: none;">
+							<label for="members_number">{{ __('¿Cuántas personas van a formar el grupo?') }}</label>
+							<input type="number" class="form-control" min='1' placeholder=">=1" id="members_number" name="members_number" value="{{ old('members_number')}}" >
+				            @if ($errors->has('members_number'))
+				                <span class="invalid-feedback" role="alert">
+				                    <strong>{{ $errors->first('members_number') }}</strong>
+				                </span>
+				            @endif
+						</div>
+						
+					</div>
+					
+				</div>
+
 				<div class="form-group row" style="margin-top: 50px;">
                     <a href="{{ url('/teacherassignmen') }}"
                            class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
@@ -263,15 +279,13 @@
 
 	$('#type').change(function(){
 		if ($(this).val() == 'grupo') {
-			alert('grupo');
+
 		}
 
 		if ($(this).val() == 'individual') {
-			alert('individual');
+
+
 		}
 	});
 </script>
-
-
-
 @endsection
