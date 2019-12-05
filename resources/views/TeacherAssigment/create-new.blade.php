@@ -279,10 +279,12 @@
 
 	$('#type').change(function(){
 		if ($(this).val() == 'grupo') {
+			$('#grupos').show();
 
 		}
 
 		if ($(this).val() == 'individual') {
+			$('#grupos').hide();
 
 
 		}
