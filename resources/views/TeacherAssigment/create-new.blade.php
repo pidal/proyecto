@@ -204,6 +204,7 @@
 
 						var input_weight = document.createElement('input');
 						input_weight.className = 'form-control';
+						input_weight.id = 'weight.' + $i + '';
 						input_weight.name = 'weight.' + $i + '';
 			            input_weight.type = 'number';
 			            input_weight.min = '1'
