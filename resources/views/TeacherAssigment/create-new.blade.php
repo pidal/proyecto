@@ -188,7 +188,8 @@
 
 <script type="text/javascript">
 	$('#number_files_delivered').change(function(){
-		alert('test');
+		var items = $(this)->val();
+		alert(items);
 	});
 
 
