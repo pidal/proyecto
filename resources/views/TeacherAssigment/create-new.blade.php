@@ -319,7 +319,7 @@
         var students = $number_students;
         var groups = Math.ceil(students / members );
 
-        grupos = document.getElementById('grupos');
+        grupos = document.getElementById('grupos').length;
         var current = $('.grupo').length;
 
         alert(grupos);
