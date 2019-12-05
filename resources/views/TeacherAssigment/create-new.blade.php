@@ -219,15 +219,11 @@
 
 			}
 		}
-
 		if (current > files){
 
 
 		}
-
 	});
-
-
 </script>
 
 
