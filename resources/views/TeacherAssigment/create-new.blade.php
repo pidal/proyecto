@@ -220,7 +220,10 @@
 			}
 		}
 		if (current > files){
-
+			var extra = current - files;
+			for($i = 1; $i <= extra; $i++){
+				
+			}
 
 		}
 	});
