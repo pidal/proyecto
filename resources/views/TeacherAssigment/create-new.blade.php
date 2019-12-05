@@ -355,13 +355,13 @@
 							option = document.createElement('option');
 							option.value = '';
 							option.text = "Seleccione un Estudiante";
-							member.appendChild(option);
+							select.appendChild(option);
 
 							$.each($users,function(key,user){
 	                            option = document.createElement('option');
 	                            option.value = user.id;
 	                            option.text = user.name;
-	                            member.appendChild(option);
+	                            select.appendChild(option);
 	                        });
 	                        row.appendChild(member);
 
