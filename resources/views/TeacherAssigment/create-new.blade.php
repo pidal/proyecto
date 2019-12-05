@@ -332,7 +332,7 @@
 					title.innerHTML = 'Grupo' + $j;
 					row.appendChild(title);
 
-					for ($i = 1; $i < $members + 1; $i++) {
+					for ($i = 1; $i < members + 1; $i++) {
 
 						var member = document.createElement("div");
 						member.className = 'col-md-6';
