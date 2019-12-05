@@ -157,6 +157,30 @@
 							</div>
 						</div>      
                    	@endfor
+                   	@if ($errors->has('fileName'))
+	                    <span class="invalid-feedback" role="alert">
+	                        <strong>{{ $errors->first('fileName') }}</strong>
+	                    </span>
+	                @endif
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group" style="margin-top: 20px">
+							<label for="type">{{ __('Tipo de práctica: ') }}</label>
+							<div>
+				                <select name="type" id="type" class="form-control">
+				                    <option value="individual" @if(old('type') == 'individual') selected @endif>Individual</option>
+				                    <option value="grupo" @if(old('type') == 'grupo') selected @endif>Grupo</option>
+				                </select>
+				                @if ($errors->has('type'))
+				                    <span class="invalid-feedback" role="alert">
+				                        <strong>{{ $errors->first('type') }}</strong>
+				                    </span>
+				                @endif
+				            </div>
+
+					</div>
 				</div>
 
 				<div class="form-group row" style="margin-top: 50px;">
