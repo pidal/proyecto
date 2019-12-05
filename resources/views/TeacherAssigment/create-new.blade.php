@@ -309,7 +309,7 @@
 
 		if ( $('#subject_id').val() == "" ) {
 			alert("Debes seleccionar una asignatura para continuar");
-			$('#subject_id').val('');
+			$('#members_number').val('');
 			return 0;
 		}
 
