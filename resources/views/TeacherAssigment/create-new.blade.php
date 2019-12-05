@@ -331,7 +331,7 @@
 					title_container = document.createElement("div");
 						title = document.createElement("h4");
 						title.innerHTML = 'Grupo' + $j;
-						title_container = appendChild(title);
+						title_container.appendChild(title);
 
 					row.appendChild(title_container);
 
