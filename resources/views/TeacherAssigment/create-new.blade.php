@@ -336,6 +336,18 @@
 
 					for ($i = 1; $i < $members + 1; $i++) {
 
+						var member = document.createElement("div");
+						member.className = 'col-md-6';
+
+							label = document.createElement('label');
+							label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
+							member.appendChild(label);
+
+							option = document.createElement('select');
+							
+
+
+
 					}
 
         	}
