@@ -142,6 +142,11 @@
 					</div>
 				</div>
 
+				<div id="files" class="row">
+
+					
+				</div>
+
 
 
 
@@ -188,8 +193,8 @@
 
 <script type="text/javascript">
 	$('#number_files_delivered').change(function(){
-		var items = $(this).val();
-		alert(items);
+		var files = $(this).val();
+		
 	});
 
 
