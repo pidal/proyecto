@@ -50,11 +50,8 @@
 								</span>
 							@endif
 						</div>
-                		
                 	</div>
-
                 	<div class="col-md-6">
-
                 		<div class="form-group">
 							<label for="name">{{ __('Lenguaje de programación: ') }}</label>
 							<div>
@@ -70,13 +67,63 @@
 				                @endif
 				            </div>
 						</div>
-
-
-                		
                 	</div>
-                	
                 </div>
 				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+
+							<label for="call">{{ __('Convocatoria: ') }}</label>
+				            <div>
+				                <select name="call" id="call" class="form-control" required="required">
+				                    <option value="ordinaria" @if (old('call') == 'ordinaria') selected @endif>Ordinaria</option>
+				                    <option value="extraordinaria" @if (old('call') == 'extraordinaria') selected @endif>Extraordinaria</option>
+				                </select>
+				                @if ($errors->has('call'))
+				                    <span class="invalid-feedback" role="alert">
+				                        <strong>{{ $errors->first('call') }}</strong>
+				                    </span>
+				                @endif
+				            </div>
+
+
+
+
+
+						</div>
+						
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+
+							<div>
+				                <select name="subject_id" id="subject_id" class="form-control" required>
+				                    <option value="">{{__('Seleccione una')}}</option>
+				                    @foreach($subjects as $subject_id => $subject)
+				                        <option value="{{$subject_id}}"
+				                                @if($subject_id == old('subject_id')) selected @endif>{{$subject}}</option>
+				                    @endforeach
+				                </select>
+				                @if ($errors->has('subject_id'))
+				                    <span class="invalid-feedback" role="alert">
+				                        <strong>{{ $errors->first('subject_id') }}</strong>
+				                    </span>
+				                @endif
+				            </div>
+
+
+
+
+
+
+
+
+
+						</div>
+					</div>
+					
+				</div>
 
 
 
