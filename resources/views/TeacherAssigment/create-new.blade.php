@@ -147,7 +147,7 @@
 
 				</div>
 
-				<div class="form-group row">
+				<div class="form-group row" style="margin-top: 50px;">
                     <a href="{{ url('/teacherassignmen') }}"
                            class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
                     <div class="no box" style="margin-left: 20px;">
