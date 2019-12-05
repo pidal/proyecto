@@ -292,7 +292,16 @@
 
 	$('#subject_id').change(function(e){
 		e.preventDefault();
-
+		var subject = $(this).val();
+		$.ajax({
+			type:'GET',
+			url: "{{route('numberofstudentsbysubject')}}",
+			data:{subject_id:subject},
+			success:function(data){
+				$number_students = data.number_students;
+				$users = data.users;
+			}
+		});
 	});
 </script>
 @endsection
