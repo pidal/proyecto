@@ -146,8 +146,6 @@
 	                        $filename = "fileName_$i";
 	                        $weight = "weight_$i"
 	                    @endphp
-
-
 						<div class="row file" style="margin-top: 20px;">
 							<div class="col-md-6">
 								<label>Nombre de archivo {{ $i }} a entregar y extensión:</label>
@@ -155,7 +153,7 @@
 							</div>
 							<div class="col-md-6">
 								<label>Ponderación del archivo {{ $i }}:</label>
-								<input class="form-control" id="weight_{{ $i }}" name="weight_{{ $i }}" type="number" min="1" max="100" placeholder="100%" required="">
+								<input class="form-control" id="weight_{{ $i }}" name="weight_{{ $i }}" type="number" min="1" max="100" placeholder="100%" value="{{ old($weight) }}" required="">
 							</div>
 						</div>      
                    	@endfor
