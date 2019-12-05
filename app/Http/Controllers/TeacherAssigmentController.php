@@ -98,7 +98,7 @@ class TeacherAssigmentController extends Controller
                 ->get();
             $student = array('number_students' => count($query), 'users' => $query);
         }
-        return view('TeacherAssigment.create_NEW', compact('subjects', 'student', 'users'));
+        return view('TeacherAssigment.create-new', compact('subjects', 'student', 'users'));
     }
 
     public function edit(Request $request, int $id){
