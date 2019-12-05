@@ -143,6 +143,15 @@
 				</div>
 
 				<div id="files">
+					<div class="row file">
+						<div class="col-md-6">
+							<label id="label1_{{$i}}" for="fileName_{{$i}}">{{ __('Nombre de archivo '.$i .' a entregar y extensión:') }}</label>
+							
+						</div>
+						<div class="col-md-6">
+							
+						</div>
+					</div>
 
 					
 				</div>
@@ -196,8 +205,19 @@
 		var files = $(this).val();
 		var current = $('.file').length;
 
-		alert(current);
-		
+		if (current < files){
+			var left = files - current;
+			var block = ""
+			for ($i = 0; $i < left; $i++) {
+
+			}
+		}
+
+		if (current > files){
+
+
+		}
+
 	});
 
 
