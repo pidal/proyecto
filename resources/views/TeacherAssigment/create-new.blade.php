@@ -214,7 +214,8 @@
 @section('scripts')
 
 <script type="text/javascript">
-	$('#number_files_delivered').change(function(){
+	$('#number_files_delivered').change(function(e){
+		e.preventDefault();
 		var files = $(this).val();
 		var current = $('.file').length;
 
@@ -287,6 +288,11 @@
 			$('#members_number').val('');
             $('#members_number').attr("required","false");
 		}
+	});
+
+	$('#subject_id').change(function(e){
+		e.preventDefault();
+
 	});
 </script>
 @endsection
