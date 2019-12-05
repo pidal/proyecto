@@ -199,6 +199,9 @@
 					label_file.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
 					file.appendChild(label_file);
 
+					var input_file = document.createElement('input');
+					input_file.class = 'form-control';
+
 				row.appendChild(file);
 
 				var weight = document.createElement("div");
@@ -206,6 +209,10 @@
 
 					var label_weight = document.createElement('label');
 					label_weight.innerHTML = 'Ponderación del archivo ' + $i + ':';
+					weight.appendChild('label_weight');
+
+					var input_weight = document.createElement('input');
+					input_weight.class = 'form-control';
 
 				row.appendChild(weight);
 
