@@ -217,7 +217,7 @@
 
 						var label_weight = document.createElement('label');
 						label_weight.innerHTML = 'Ponderación del archivo ' + $i + ':';
-						weight.appendChild('label_weight');
+						weight.appendChild(label_weight);
 
 						var input_weight = document.createElement('input');
 						input_weight.class = 'form-control';
