@@ -363,8 +363,9 @@
 	                            member.appendChild($option);
 	                        });
 	                        row.appendChild(member);
-	                    
+
 					}
+				document.getElementById('grupos').appendChild(row);
 
         	}
         }
