@@ -280,13 +280,12 @@
 	$('#type').change(function(){
 		if ($(this).val() == 'grupo') {
 			$('#grupos').show();
-
+			$('#members_number').attr("required","required");
 		}
-
 		if ($(this).val() == 'individual') {
 			$('#grupos').hide();
-
-
+			$('#members_number').val('');
+            $('#members_number').attr("required","false");
 		}
 	});
 </script>
