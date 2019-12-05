@@ -189,51 +189,50 @@
 
 		if (current < files){
 			var left = files - current;
-			var row = document.createElement("div");
-			row.class = 'row file';
-
-				var file = document.createElement("div");
-				file.class = 'col-md-6';
-
-					var label_file = document.createElement('label');
-					label_file.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
-					file.appendChild(label_file);
-
-					var input_file = document.createElement('input');
-					input_file.class = 'form-control';
-					input_file.name = 'fileName.' + $i;
-            		input_file.id = 'fileName.' + $i;
-            		input_file.type = 'text';
-            		input_file.placeholder = 'Ej) practica.c';
-            		input_file.required = true;
-            		file.appendChild(input_file);
-
-				row.appendChild(file);
-
-				var weight = document.createElement("div");
-				weight.class = 'col-md-6';
-
-					var label_weight = document.createElement('label');
-					label_weight.innerHTML = 'Ponderación del archivo ' + $i + ':';
-					weight.appendChild('label_weight');
-
-					var input_weight = document.createElement('input');
-					input_weight.class = 'form-control';
-					input_weight.name = 'weight.' + $i + '';
-		            input_weight.type = 'number';
-		            input_weight.min = '1'
-		            input_weight.max = '100'
-		            input_weight.placeholder = '100%';
-		            input_weight.required = true;
-		            weight.appendChild(input_weight);
-
-				row.appendChild(weight);
-
-
-			$('#files').appendChild(row);
-			
 			for ($i = 1; $i <= left; $i++) {
-				var block = "";
+
+				var row = document.createElement("div");
+				row.class = 'row file';
+
+					var file = document.createElement("div");
+					file.class = 'col-md-6';
+
+						var label_file = document.createElement('label');
+						label_file.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
+						file.appendChild(label_file);
+
+						var input_file = document.createElement('input');
+						input_file.class = 'form-control';
+						input_file.name = 'fileName.' + $i;
+	            		input_file.id = 'fileName.' + $i;
+	            		input_file.type = 'text';
+	            		input_file.placeholder = 'Ej) practica.c';
+	            		input_file.required = true;
+	            		file.appendChild(input_file);
+
+					row.appendChild(file);
+
+					var weight = document.createElement("div");
+					weight.class = 'col-md-6';
+
+						var label_weight = document.createElement('label');
+						label_weight.innerHTML = 'Ponderación del archivo ' + $i + ':';
+						weight.appendChild('label_weight');
+
+						var input_weight = document.createElement('input');
+						input_weight.class = 'form-control';
+						input_weight.name = 'weight.' + $i + '';
+			            input_weight.type = 'number';
+			            input_weight.min = '1'
+			            input_weight.max = '100'
+			            input_weight.placeholder = '100%';
+			            input_weight.required = true;
+			            weight.appendChild(input_weight);
+
+					row.appendChild(weight);
+
+
+				$('#files').appendChild(row);
 
 			}
 		}
