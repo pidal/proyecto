@@ -260,6 +260,16 @@
 			}
 		}
 	});
+
+	$('#type').change(function(){
+		if ($(this).val() == 'grupo') {
+			alert('grupo');
+		}
+
+		if ($(this).val() == 'individual') {
+			alert('individual');
+		}
+	});
 </script>
 
 
