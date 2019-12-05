@@ -344,7 +344,6 @@
 							select = document.createElement('select');
 							select.className = 'form-control';
 							select.name = 'users_id.' + $j + '.' + $i;
-							select.onchange = recalculateUsersSelect;
 							select.value = '';
 							select.required = true;
 							member.appendChild(select);
