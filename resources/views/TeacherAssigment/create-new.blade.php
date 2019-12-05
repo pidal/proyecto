@@ -343,11 +343,27 @@
 							label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
 							member.appendChild(label);
 
-							option = document.createElement('select');
-							
+							select = document.createElement('select');
+							select.className = 'form-control';
+							select.name = 'users_id.' + $j + '.' + $i;
+							select.onchange = recalculateUsersSelect;
+							select.value = '';
+							select.required = true;
+							member.appendChild(select);
 
+							option = document.createElement('option');
+							option.value = '';
+							option.text = "Seleccione un Estudiante";
+							member.appendChild(option);
 
-
+							$.each($users,function(key,user){
+	                            option = document.createElement('option');
+	                            option.value = user.id;
+	                            option.text = user.name;
+	                            member.appendChild($option);
+	                        });
+	                        row.appendChild(member);
+	                    
 					}
 
         	}
