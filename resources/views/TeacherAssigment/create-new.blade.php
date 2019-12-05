@@ -289,6 +289,7 @@
 			$('#grupos_number').hide();
 			$('#members_number').val('');
             $('#members_number').attr("required","false");
+            $('#grupos').html('');
 		}
 	});
 
