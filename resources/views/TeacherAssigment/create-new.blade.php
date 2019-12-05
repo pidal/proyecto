@@ -193,6 +193,7 @@
 
 				var row = document.createElement("div");
 				row.className = 'row file';
+				row.style = 'margin-top:20px';
 
 					var file = document.createElement("div");
 					file.className = 'col-md-6';
