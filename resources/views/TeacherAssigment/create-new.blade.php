@@ -372,7 +372,10 @@
         }
 
         if (current > grupos) {
-			$('.grupo').remove();
+			var extra = current - files;
+			for($i = 1; $i <= extra; $i++){
+				$('#grupos div.grupo').last().remove();
+			}
         }
 
 	});
