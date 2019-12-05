@@ -59,7 +59,7 @@
                     <a href="{{ url('/teacherassignmen') }}"
                            class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
                     <div class="no box">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary col-sm-2 col-sm-offset-2">
                             {{ __('Registrar') }}
                         </button>
                     </div>
