@@ -304,7 +304,7 @@
 		});
 	});
 
-	$('#members_number').change(function(){
+	$('#members_number').change(function(e){
 		e.preventDefault();
 		var members = parseInt($(this).val());
         var students = $number_students;
