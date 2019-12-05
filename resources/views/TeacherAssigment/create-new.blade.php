@@ -35,6 +35,7 @@
 
 			<form class="form-horizontal" method="POST" action="{{ route('teacherassignmentcreate') }}" role="form" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="new" value="1">
 
 
 

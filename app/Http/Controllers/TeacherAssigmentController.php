@@ -151,8 +151,12 @@ class TeacherAssigmentController extends Controller
 
 	public function create(Request $request)
 	{
-		Session::flash('redirect', 'teacherassignmentadd');
-
+		if ($request->has('new')) {
+			Session::flash('redirect', 'teacherassignmentadd-NEW');
+		}else{
+			Session::flash('redirect', 'teacherassignmentadd');
+		}
+		
 		$validatedData = $request->validate([
 			'name' => 'required',
 			'number_files_delivered' => 'required',
