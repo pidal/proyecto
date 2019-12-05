@@ -143,13 +143,19 @@
 				</div>
 
 				<div id="files">
+
 					<div class="row file">
 						<div class="col-md-6">
-							<label id="label1_{{$i}}" for="fileName_{{$i}}">{{ __('Nombre de archivo '.$i .' a entregar y extensión:') }}</label>
-							
+
+							<label id="label1_1" for="fileName_1">{{ __('Nombre de archivo 1 a entregar y extensión:') }}</label>
+							<input id="fileName_1" type="text" class="form-control" min="1" placeholder="Ej) practica.c" name="fileName_1" value="{{ old($filename)}}" required autofocus />
+
 						</div>
 						<div class="col-md-6">
-							
+
+							<label id="label2_1" for="weight_1">{{ __('Ponderación del archivo 1:') }}</label>
+                        	<input id="weight_1" type="number" class="form-control" min="1" max="100" placeholder="100%" name="weight_1" value="{{ old($weight) }}" required autofocus/>
+                        	
 						</div>
 					</div>
 
@@ -207,7 +213,7 @@
 
 		if (current < files){
 			var left = files - current;
-			var block = ""
+			var block = "";
 			for ($i = 0; $i < left; $i++) {
 
 			}
