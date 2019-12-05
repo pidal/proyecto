@@ -357,7 +357,7 @@
 	                            option = document.createElement('option');
 	                            option.value = user.id;
 	                            option.text = user.name;
-	                            member.appendChild($option);
+	                            member.appendChild(option);
 	                        });
 	                        row.appendChild(member);
 
