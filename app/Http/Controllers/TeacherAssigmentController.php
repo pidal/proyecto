@@ -77,6 +77,30 @@ class TeacherAssigmentController extends Controller
         return view('TeacherAssigment.create.createAssignment', compact('subjects', 'student', 'users'));
     }
 
+    public function add_NEW(Request $request){
+        $subjects = DB::table('rel_users_subject')
+            ->join('subject', 'rel_users_subject.subject_id', '=', 'subject.id')
+            ->where('rel_users_subject.users_id', auth()->id())
+            ->pluck('subject.name', 'subject.id');
+
+        $users = DB::table('users')
+            ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
+            ->where('users.roles_id', '3')
+            //->where('rel_users_subject.subject_id', $assignment['subject_id'])
+            ->get();
+
+        $student = array();
+        if (old('subject_id')) {
+            $query = DB::table('users')
+                ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
+                ->select('users.id', 'users.name')
+                ->where('rel_users_subject.subject_id', old('subject_id'))
+                ->get();
+            $student = array('number_students' => count($query), 'users' => $query);
+        }
+        return view('TeacherAssigment.create_NEW', compact('subjects', 'student', 'users'));
+    }
+
     public function edit(Request $request, int $id){
 
 		$assignment = Assignment::find($id);
