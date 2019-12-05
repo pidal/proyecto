@@ -306,6 +306,12 @@
 
 	$('#members_number').change(function(e){
 		e.preventDefault();
+
+		if ( $('#subject_id').val() == "" ) {
+			alert("Debes seleccionar una asignatura para continuar");
+			return 0;
+		}
+
 		var members = parseInt($(this).val());
         var students = $number_students;
         var groups = Math.ceil(students / members );
