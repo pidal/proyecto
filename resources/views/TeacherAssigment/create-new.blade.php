@@ -144,32 +144,8 @@
 
 				<div id="files">
 
-					<div class="row file">
-						<div class="col-md-6">
 
-							<label id="label1_1" for="fileName_1">{{ __('Nombre de archivo 1 a entregar y extensión:') }}</label>
-							<input id="fileName_1" type="text" class="form-control" min="1" placeholder="Ej) practica.c" name="fileName_1" required autofocus />
-
-						</div>
-						<div class="col-md-6">
-
-							<label id="label2_1" for="weight_1">{{ __('Ponderación del archivo 1:') }}</label>
-                        	<input id="weight_1" type="number" class="form-control" min="1" max="100" placeholder="100%" name="weight_1" required autofocus/>
-
-						</div>
-					</div>
-
-					
 				</div>
-
-
-
-
-
-
-
-
-
 
 				<div class="form-group row">
                     <a href="{{ url('/teacherassignmen') }}"
@@ -213,8 +189,31 @@
 
 		if (current < files){
 			var left = files - current;
-			var block = "";
-			for ($i = 0; $i < left; $i++) {
+			var row = document.createElement("div");
+			row.class = 'row file';
+
+				var file = document.createElement("div");
+				file.class = 'col-md-6';
+
+					var label_file = document.createElement('label');
+					label_file.innerHTML = 'Nombre de archivo ' + $i + ' a entregar y extensión:';
+					file.appendChild(label_file);
+
+				row.appendChild(file);
+
+				var weight = document.createElement("div");
+				weight.class = 'col-md-6';
+
+					var label_weight = document.createElement('label');
+					label_weight.innerHTML = 'Ponderación del archivo ' + $i + ':';
+
+				row.appendChild(weight);
+
+
+			$('#files').appendChild(row);
+			
+			for ($i = 1; $i <= left; $i++) {
+				var block = "";
 
 			}
 		}
