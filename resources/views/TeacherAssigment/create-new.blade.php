@@ -329,6 +329,7 @@
 				row.style = 'margin-top:20px';
 
 					title_container = document.createElement("div");
+					title_container.className = 'col-md-12';
 						title = document.createElement("h4");
 						title.innerHTML = 'Grupo' + $j;
 						title_container.appendChild(title);
