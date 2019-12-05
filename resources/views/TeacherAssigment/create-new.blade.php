@@ -1,5 +1,6 @@
 @extends('layouts.templateProfesor')
 
+@section('content')
  <div class="container-fluid">
 	<div class="row justify-content-center">
 		<div class="col-sm-8 col-sm-offset-2" style="margin-top: 100px">
@@ -68,3 +69,5 @@
 		</div>
 	</div>
 </div>
+
+@endsection
