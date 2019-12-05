@@ -182,3 +182,18 @@
 </div>
 
 @endsection
+
+
+@section('scripts')
+
+<script type="text/javascript">
+	$('#number_files_delivered').change(function(){
+		alert('test');
+	});
+
+
+</script>
+
+
+
+@endsection
