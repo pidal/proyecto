@@ -201,6 +201,12 @@
 
 					var input_file = document.createElement('input');
 					input_file.class = 'form-control';
+					input_file.name = 'fileName.' + $i;
+            		input_file.id = 'fileName.' + $i;
+            		input_file.type = 'text';
+            		input_file.placeholder = 'Ej) practica.c';
+            		input_file.required = true;
+            		file.appendChild(input_file);
 
 				row.appendChild(file);
 
@@ -213,6 +219,13 @@
 
 					var input_weight = document.createElement('input');
 					input_weight.class = 'form-control';
+					input_weight.name = 'weight.' + $i + '';
+		            input_weight.type = 'number';
+		            input_weight.min = '1'
+		            input_weight.max = '100'
+		            input_weight.placeholder = '100%';
+		            input_weight.required = true;
+		            weight.appendChild(input_weight);
 
 				row.appendChild(weight);
 
