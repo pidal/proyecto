@@ -320,8 +320,6 @@
         var grupos = Math.ceil(students / members );
         var current = $('.grupo').length;
 
-        alert(grupos);
-
         if (current < grupos) {
         	var left = grupos - current;
         	for ($j = 1; $j <= left; $j++) {
