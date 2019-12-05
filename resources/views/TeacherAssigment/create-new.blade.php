@@ -322,6 +322,8 @@
         grupos = document.getElementById('grupos');
         var current = $('.grupo').length;
 
+        alert(grupos);
+
         if (current < grupos) {
         	var left = grupos - current;
         	for ($j = 1; $j <= left; $j++) {
