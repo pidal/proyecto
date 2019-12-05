@@ -372,11 +372,8 @@
         }
 
         if (current > grupos) {
-
+			$('.grupo').remove();
         }
-
-
-
 
 	});
 </script>
