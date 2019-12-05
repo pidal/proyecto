@@ -329,7 +329,7 @@
 				row.style = 'margin-top:20px';
 
 					title = document.createElement("h2")
-					title.innerHTML = 'Grupo' + j;
+					title.innerHTML = 'Grupo' + $j;
 					row.appendChild(title);
 
 					for ($i = 1; $i < $members + 1; $i++) {
