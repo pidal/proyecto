@@ -113,8 +113,16 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
+							<label for="attempts">{{ __('Intentos') }}</label>
+			                <input id="attempts" type="number" class="form-control {{ $errors->has('attempts') ? ' is-invalid' : '' }}" min='1' placeholder=">=1" name="attempts" value="{{ old('attempts') }}" required>
+			                @if ($errors->has('attempts'))
+			                    <span class="invalid-feedback" role="alert">
+			                        <strong>{{ $errors->first('attempts') }}</strong>
+			                    </span>
+			                @endif
 						</div>
 					</div>
+					
 					<div class="col-md-6">
 						<div class="form-group">
 						</div>
