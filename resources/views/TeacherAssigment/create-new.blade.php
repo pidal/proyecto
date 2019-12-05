@@ -157,15 +157,10 @@
 							</div>
 						</div>      
                    	@endfor
-                   	@if ($errors->has('fileName'))
-	                    <span class="invalid-feedback" role="alert">
-	                        <strong>{{ $errors->first('fileName') }}</strong>
-	                    </span>
-	                @endif
 				</div>
 
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="form-group" style="margin-top: 20px">
 							<label for="type">{{ __('Tipo de práctica: ') }}</label>
 							<div>
@@ -179,7 +174,7 @@
 				                    </span>
 				                @endif
 				            </div>
-
+				        </div>
 					</div>
 				</div>
 
