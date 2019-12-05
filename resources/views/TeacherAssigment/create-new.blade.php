@@ -305,6 +305,12 @@
 	});
 
 	$('#members_number').change(function(){
+		e.preventDefault();
+		var members = parseInt($(this).val());
+        var students = $number_students;
+        var groups = Math.ceil(students / $members );
+
+        alert(groups);
 
 	});
 </script>
