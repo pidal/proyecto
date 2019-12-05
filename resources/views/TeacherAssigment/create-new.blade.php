@@ -180,7 +180,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="form-group" id="grupos" style="margin-top: 20px;display: none;">
+						<div class="form-group" id="grupos_number" style="margin-top: 20px;display: none;">
 							<label for="members_number">{{ __('¿Cuántas personas van a formar el grupo?') }}</label>
 							<input type="number" class="form-control" min='1' placeholder=">=1" id="members_number" name="members_number" value="{{ old('members_number')}}" >
 				            @if ($errors->has('members_number'))
@@ -189,8 +189,10 @@
 				                </span>
 				            @endif
 						</div>
-						
 					</div>
+				</div>
+
+				<div id="grupos">
 					
 				</div>
 
@@ -280,11 +282,11 @@
 
 	$('#type').change(function(){
 		if ($(this).val() == 'grupo') {
-			$('#grupos').show();
+			$('#grupos_number').show();
 			$('#members_number').attr("required","required");
 		}
 		if ($(this).val() == 'individual') {
-			$('#grupos').hide();
+			$('#grupos_number').hide();
 			$('#members_number').val('');
             $('#members_number').attr("required","false");
 		}
@@ -317,7 +319,34 @@
         var students = $number_students;
         var groups = Math.ceil(students / members );
 
-        alert(groups);
+        grupos = document.getElementById('grupos');
+        var current = $('.grupo').length;
+
+        if (current < grupos) {
+        	var left = grupos - current;
+        	for ($j = 1; $j <= left; $j++) {
+
+        		var row = document.createElement("div");
+        		row.className = 'row grupo';
+				row.style = 'margin-top:20px';
+
+					title = document.createElement("h2")
+					title.innerHTML = 'Grupo' + j;
+					row.appendChild(title);
+
+					for ($i = 1; $i < $members + 1; $i++) {
+
+					}
+
+        	}
+        }
+
+        if (current > grupos) {
+
+        }
+
+
+
 
 	});
 </script>
