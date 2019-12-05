@@ -42,7 +42,6 @@
                 @csrf
                 <input type="hidden" name="new" value="1">
 
-
                 <div class="row">
                 	<div class="col-md-6">
 
@@ -127,7 +126,6 @@
 			                @endif
 						</div>
 					</div>
-
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="number_files_delivered">{{ __('Número de archivos a entregar') }}</label>
@@ -156,23 +154,7 @@
                         </button>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
             </form>
-
-
-
 		</div>
 	</div>
 </div>
