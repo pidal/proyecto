@@ -196,7 +196,7 @@
 					@if(old('members_number') && old('type') == 'grupo')
 						@php $k=0; @endphp
 
-						@for($i=1; $i<={{ ceil($student['number_students']/old('members_number')) }}; $i++)
+						@for($i=1; $i<= ceil( $student['number_students']/old('members_number') ); $i++)
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>Grupo {{ $i }}</h4></div>
 								@for($j=1; $j<={{ old('members_number') }}; $j++)
@@ -218,7 +218,6 @@
 									@endif
 								@endfor
 							</div>
-							
 						@endfor
 					@endif					
 				</div>
