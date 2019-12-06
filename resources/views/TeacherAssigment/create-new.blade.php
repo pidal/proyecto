@@ -309,18 +309,12 @@
 	});
 
 	$('#subject_id').change(function(e){
-		e.preventDefault();
-		var subject = $(this).val();
-		$.ajax({
-			type:'GET',
-			url: "{{route('numberofstudentsbysubject')}}",
-			data:{subject_id:subject},
-			success:function(data){
-				$number_students = data.number_students;
-				$users = data.users;
-			}
-		});
+		getUsers($(this).val());
 	});
+
+	@if(old('subject_id'))
+		getUsers({{ old('subject_id') }});
+	@endif
 
 	$('#members_number').change(function(e){
 		e.preventDefault();
@@ -392,6 +386,18 @@
 	
 	function recalculateStudents(){
 		$('.students:not([name="'+$(this).prop("name")+'"]) option[value="'+$(this).val()+'"]').remove();
+	}
+
+	function getUsers(subject){
+		$.ajax({
+			type:'GET',
+			url: "{{route('numberofstudentsbysubject')}}",
+			data:{subject_id:subject},
+			success:function(data){
+				$number_students = data.number_students;
+				$users = data.users;
+			}
+		});
 	}
 </script>
 @endsection
