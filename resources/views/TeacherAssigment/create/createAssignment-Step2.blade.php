@@ -2,7 +2,7 @@
     <div class="col-sm-12 col-sm-offset-4">
         <h2>Crear práctica</h2>
 
-        <div class="form-group" style="margin-top: 20px">
+        <div class="form-group" z>
             <label for="type">{{ __('Tipo de práctica: ') }}</label>
             <div>
                 <select name="type" id="type" class="form-control">

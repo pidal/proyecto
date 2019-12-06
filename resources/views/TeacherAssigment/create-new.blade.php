@@ -193,6 +193,20 @@
 				</div>
 
 				<div id="grupos">
+					@if(old('members_number') && old('type') == 'grupo')
+						@php $k=0; @endphp
+						@for($i=1; $i<=old('members_number'); $i++)
+
+
+						<div class="row grupo" style="margin-top: 20px;">
+						 	<div class="col-md-12"><h4>Grupo </h4></div>
+						 	
+						</div>
+
+
+						@endfor
+					@endif
+
 					
 				</div>
 
@@ -333,7 +347,7 @@
 				title_container = document.createElement("div");
 				title_container.className = 'col-md-12';
 					title = document.createElement("h4");
-					title.innerHTML = 'Grupo' + $j;
+					title.innerHTML = 'Grupo ' + $j;
 					title_container.appendChild(title);
 
 				row.appendChild(title_container);
