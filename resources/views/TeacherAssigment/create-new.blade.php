@@ -323,6 +323,7 @@
         var grupos = Math.ceil(students / members );
         var current = $('.grupo').length;
 
+		$k = 0;
         for ($j = 1; $j <= grupos; $j++) {
 
         	var row = document.createElement("div");
@@ -338,33 +339,35 @@
 				row.appendChild(title_container);
 
 				for ($i = 1; $i < members + 1; $i++) {
+					$k++;
+					if ($k <= students) {
+						var member = document.createElement("div");
+						member.className = 'col-md-6';
 
-					var member = document.createElement("div");
-					member.className = 'col-md-6';
+							label = document.createElement('label');
+							label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
+							member.appendChild(label);
 
-						label = document.createElement('label');
-						label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
-						member.appendChild(label);
+							select = document.createElement('select');
+							select.className = 'form-control';
+							select.name = 'users_id.' + $j + '.' + $i;
+							select.value = '';
+							select.required = true;
+							member.appendChild(select);
 
-						select = document.createElement('select');
-						select.className = 'form-control';
-						select.name = 'users_id.' + $j + '.' + $i;
-						select.value = '';
-						select.required = true;
-						member.appendChild(select);
-
-						option = document.createElement('option');
-						option.value = '';
-						option.text = "Seleccione un Estudiante";
-						select.appendChild(option);
-
-						$.each($users,function(key,user){
 							option = document.createElement('option');
-							option.value = user.id;
-							option.text = user.name;
+							option.value = '';
+							option.text = "Seleccione un Estudiante";
 							select.appendChild(option);
-						});
-					row.appendChild(member);
+
+							$.each($users,function(key,user){
+								option = document.createElement('option');
+								option.value = user.id;
+								option.text = user.name;
+								select.appendChild(option);
+							});
+						row.appendChild(member);
+					}
 
 				}
 			document.getElementById('grupos').appendChild(row);
