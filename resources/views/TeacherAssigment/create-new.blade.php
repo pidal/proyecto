@@ -208,7 +208,7 @@
 											<select class="form-control students" name="users_id.{{$j}}.{{$i}}">
 												<option value="">Seleccione un Estudiante</option>
 												@foreach($student['users'] as $user)
-												<option value="{{$user->id}}" {{ old(users_id.{{$j}}.{{$i}}) == $user->id?'selected':''}}>{{$user->name}}</option>
+												<option value="{{$user->id}}" {{ old("users_id.$j.$i") == $user->id?"selected":""}}>{{$user->name}}</option>
 												@endforeach
 											</select>
 										</div>
