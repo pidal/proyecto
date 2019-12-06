@@ -312,10 +312,6 @@
 		getUsers($(this).val());
 	});
 
-	@if(old('subject_id') != "")
-		getUsers({{ old('subject_id') }});
-	@endif
-
 	$('#members_number').change(function(e){
 		e.preventDefault();
 
@@ -399,5 +395,9 @@
 			}
 		});
 	}
+
+	@if(old('subject_id') != "")
+		getUsers({{ old('subject_id') }});
+	@endif
 </script>
 @endsection
