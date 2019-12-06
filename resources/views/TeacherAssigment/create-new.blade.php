@@ -224,6 +224,18 @@
 					@endif					
 				</div>
 
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							
+						</div>
+					</div>
+				</div>
+
 				<div class="form-group row" style="margin-top: 50px;">
                     <a href="{{ url('/teacherassignmen') }}"
                            class="btn btn-info col-sm-2 link"> {{__('alumnos.back')}}</a>
