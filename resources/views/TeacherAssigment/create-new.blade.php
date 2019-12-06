@@ -199,7 +199,20 @@
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>Grupo </h4></div>
 								@for($j=1; $j<=ceil($student['number_students']/old('members_number')); $j++)
-									<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
+									<div class="col-md-6">
+										<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
+										<select class="form-control students" name="users_id.{{$j}}.{{$i}}">
+											<option value="null">Seleccione un Estudiante</option>
+
+											<option value="{{$user->id}}"
+												@if(old("users_id_".$j."_".$i) == $user->id)
+												selected
+												@endif
+											>{{$user->name}}</option>
+											
+										</select>
+									</div>
+									
 
 
 								@endfor
@@ -395,9 +408,5 @@
 			}
 		});
 	}
-
-	@if(old('subject_id') != "")
-		getUsers({{ old('subject_id') }});
-	@endif
 </script>
 @endsection
