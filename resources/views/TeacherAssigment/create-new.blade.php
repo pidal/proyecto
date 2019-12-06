@@ -199,7 +199,7 @@
 						@for($i=1; $i<= ceil( $student['number_students']/old('members_number') ); $i++)
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>Grupo {{ $i }}</h4></div>
-								@for($j=1; $j<={{ old('members_number') }}; $j++)
+								@for($j=1; $j<=old('members_number'); $j++)
 									@php $k++; @endphp
 									@if($k<=$student['number_students'])
 										<div class="col-md-6">
