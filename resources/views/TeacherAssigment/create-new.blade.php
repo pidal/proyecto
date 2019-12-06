@@ -335,6 +335,7 @@
 		}
 
 		$('#grupos').html('');
+		getUsers($('#subject_id').val());
 
 		var members = parseInt($(this).val());
         var students = $number_students;
@@ -408,9 +409,5 @@
 			}
 		});
 	}
-
-	@if( old('subject_id') != "" )
-		getUsers(old('subject_id'));
-	@endif
 </script>
 @endsection
