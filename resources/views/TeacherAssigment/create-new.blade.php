@@ -205,11 +205,11 @@
 									@if($k<=$student['number_students'])
 										<div class="col-md-6">
 											<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
-											<select class="form-control students" name="users_id_{{$j}}_{{$i}}">
+											<select class="form-control students" name="users_id_{{$i}}_{{$j}}">
 												<option value="">Seleccione un Estudiante</option>
 												@foreach($student['users'] as $user)
 												<option value="{{$user->id}}"
-													@if(old("users_id_".$j."_".$i) == $user->id)
+													@if(old("users_id_".$i."_".$j) == $user->id)
                                                     selected
                                                     @endif
 												>{{$user->name}}</option>
