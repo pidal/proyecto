@@ -342,7 +342,7 @@
         var current = $('.grupo').length;
 
 		$k = 0;
-        for ($j = 1; $j <= grupos; $j++) {
+        for ($i = 1; $i <= grupos; $i++) {
 
         	var row = document.createElement("div");
         	row.className = 'row grupo';
@@ -351,25 +351,25 @@
 				title_container = document.createElement("div");
 				title_container.className = 'col-md-12';
 					title = document.createElement("h4");
-					title.innerHTML = 'Grupo ' + $j;
+					title.innerHTML = 'Grupo ' + $i;
 					title_container.appendChild(title);
 
 				row.appendChild(title_container);
 
-				for ($i = 1; $i < members + 1; $i++) {
+				for ($j = 1; $j < members + 1; $j++) {
 					$k++;
 					if ($k <= students) {
 						var member = document.createElement("div");
 						member.className = 'col-md-6';
 
 							label = document.createElement('label');
-							label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
+							label.innerHTML = 'Introduce el nombre del componente ' + $j + ' del grupo ' + $i;
 							member.appendChild(label);
 
 							select = document.createElement('select');
 							select.className = 'form-control students';
 							select.onchange = recalculateStudents;
-							select.name = 'users_id_' + $j + '_' + $i;
+							select.name = 'users_id_' + $i + '_' + $j;
 							select.value = '';
 							select.required = true;
 							member.appendChild(select);
