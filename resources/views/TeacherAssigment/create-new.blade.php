@@ -229,6 +229,15 @@
 						<div class="form-group">
 							<label for="attempts">{{ __('Fecha de entrega') }}</label>
 
+							<input id="delivered_date" type="text" class="form-control{{ $errors->has('delivered_date') ? ' is-invalid' : '' }}" name="delivered_date" value="{{ old('delivered_date') }}" required>
+							@if ($errors->has('delivered_date'))
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $errors->first('delivered_date') }}</strong>
+								</span>
+							@endif
+							<span id="invalid-date" class="invalid-feedback" role="alert" style="display: none;">
+								<strong>La fecha debe ser mayor a la fecha y hora actuales.</strong>
+							</span>
 						</div>
 					</div>
 					<div class="col-md-6">
