@@ -200,6 +200,7 @@
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>Grupo {{ $i }}</h4></div>
 								@for($j=1; $j<=old('members_number'); $j++)
+
 									@php $k++; @endphp
 									@if($k<=$student['number_students'])
 										<div class="col-md-6">
@@ -208,14 +209,17 @@
 												<option value="null">Seleccione un Estudiante</option>
 												@foreach($student['users'] as $user)
 												<option value="{{$user->id}}"
+
 													@if(old("users_id_".$j."_".$i) == $user->id)
 													selected
 													@endif
+
 												>{{$user->name}}</option>
 												@endforeach
 											</select>
 										</div>
 									@endif
+									
 								@endfor
 							</div>
 						@endfor
