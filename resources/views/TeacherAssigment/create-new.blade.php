@@ -196,14 +196,14 @@
 					@if(old('members_number') && old('type') == 'grupo')
 						@php $k=0; @endphp
 						@for($i=1; $i<=old('members_number'); $i++)
+							<div class="row grupo" style="margin-top: 20px;">
+							 	<div class="col-md-12"><h4>Grupo </h4></div>
+							 	
+							</div>
+							@for($j=1; $j<=ceil($student['number_students']/old('members_number')); $j++)
 
 
-						<div class="row grupo" style="margin-top: 20px;">
-						 	<div class="col-md-12"><h4>Grupo </h4></div>
-						 	
-						</div>
-
-
+							@endfor
 						@endfor
 					@endif
 
