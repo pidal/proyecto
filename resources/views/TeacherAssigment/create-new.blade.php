@@ -143,8 +143,8 @@
 				<div id="files">
 					@for($i = 1; $i<=old('number_files_delivered'); $i++)
 	                    @php
-	                        $filename = "fileName.$i";
-	                        $weight = "weight.$i"
+	                        $filename = "fileName".$i;
+	                        $weight = "weight".$i;
 	                    @endphp
 						<div class="row file" style="margin-top: 20px;">
 							<div class="col-md-6">
