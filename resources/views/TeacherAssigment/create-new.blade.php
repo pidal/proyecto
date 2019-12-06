@@ -323,64 +323,52 @@
         var grupos = Math.ceil(students / members );
         var current = $('.grupo').length;
 
-        if (current < grupos) {
-        	var left = grupos - current;
-        	for ($j = 1; $j <= left; $j++) {
+        for ($j = 1; $j <= grupos; $j++) {
 
-        		var row = document.createElement("div");
-        		row.className = 'row grupo';
-				row.style = 'margin-top:20px';
+        	var row = document.createElement("div");
+        	row.className = 'row grupo';
+			row.style = 'margin-top:20px';
 
-					title_container = document.createElement("div");
-					title_container.className = 'col-md-12';
-						title = document.createElement("h4");
-						title.innerHTML = 'Grupo' + $j;
-						title_container.appendChild(title);
+				title_container = document.createElement("div");
+				title_container.className = 'col-md-12';
+					title = document.createElement("h4");
+					title.innerHTML = 'Grupo' + $j;
+					title_container.appendChild(title);
 
-					row.appendChild(title_container);
+				row.appendChild(title_container);
 
-					for ($i = 1; $i < members + 1; $i++) {
+				for ($i = 1; $i < members + 1; $i++) {
 
-						var member = document.createElement("div");
-						member.className = 'col-md-6';
+					var member = document.createElement("div");
+					member.className = 'col-md-6';
 
-							label = document.createElement('label');
-							label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
-							member.appendChild(label);
+						label = document.createElement('label');
+						label.innerHTML = 'Introduce el nombre del componente ' + $i + ' del grupo ' + $j;
+						member.appendChild(label);
 
-							select = document.createElement('select');
-							select.className = 'form-control';
-							select.name = 'users_id.' + $j + '.' + $i;
-							select.value = '';
-							select.required = true;
-							member.appendChild(select);
+						select = document.createElement('select');
+						select.className = 'form-control';
+						select.name = 'users_id.' + $j + '.' + $i;
+						select.value = '';
+						select.required = true;
+						member.appendChild(select);
 
+						option = document.createElement('option');
+						option.value = '';
+						option.text = "Seleccione un Estudiante";
+						select.appendChild(option);
+
+						$.each($users,function(key,user){
 							option = document.createElement('option');
-							option.value = '';
-							option.text = "Seleccione un Estudiante";
+							option.value = user.id;
+							option.text = user.name;
 							select.appendChild(option);
+						});
+					row.appendChild(member);
 
-							$.each($users,function(key,user){
-	                            option = document.createElement('option');
-	                            option.value = user.id;
-	                            option.text = user.name;
-	                            select.appendChild(option);
-	                        });
-	                        row.appendChild(member);
-
-					}
-				document.getElementById('grupos').appendChild(row);
-
-        	}
-        }
-
-        if (current > grupos) {
-			var extra = current - files;
-			for($i = 1; $i <= extra; $i++){
-				$('#grupos div.grupo').remove();
-			}
-        }
-
+				}
+			document.getElementById('grupos').appendChild(row);
+		}
 	});
 </script>
 @endsection
