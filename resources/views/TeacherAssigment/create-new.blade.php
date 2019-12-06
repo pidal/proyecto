@@ -312,7 +312,7 @@
 		getUsers($(this).val());
 	});
 
-	@if(old('subject_id'))
+	@if(old('subject_id') != "")
 		getUsers({{ old('subject_id') }});
 	@endif
 
