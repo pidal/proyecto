@@ -199,20 +199,22 @@
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>Grupo </h4></div>
 								@for($j=1; $j<=ceil($student['number_students']/old('members_number')); $j++)
-									<div class="col-md-6">
-										<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
-										<select class="form-control students" name="users_id.{{$j}}.{{$i}}">
-											<option value="null">Seleccione un Estudiante</option>
-											@foreach($student['users'] as $user)
-											<option value="{{$user->id}}"
-												@if(old("users_id_".$j."_".$i) == $user->id)
-												selected
-												@endif
-											>{{$user->name}}</option>
-											@endforeach
-										</select>
-									</div>
-									
+									@php $k++; @endphp
+									@if($k<=$student['number_students'])
+										<div class="col-md-6">
+											<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
+											<select class="form-control students" name="users_id.{{$j}}.{{$i}}">
+												<option value="null">Seleccione un Estudiante</option>
+												@foreach($student['users'] as $user)
+												<option value="{{$user->id}}"
+													@if(old("users_id_".$j."_".$i) == $user->id)
+													selected
+													@endif
+												>{{$user->name}}</option>
+												@endforeach
+											</select>
+										</div>
+									@endif
 								@endfor
 							</div>
 							
