@@ -2,6 +2,8 @@
 
 @section('styles')
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" type="text/css" />
 
 @endsection
 
@@ -442,5 +444,22 @@
 	@if( old('subject_id') != "" )
 		getUsers({{ old('subject_id') }});
 	@endif
+
+	jSuites.calendar(document.getElementById('delivered_date'), {
+	    time:true,
+	    format:'DD/MM/YYYY HH24:MI',
+	    today:0,
+	    onclose:function() {
+	        if ( new Date(this.value) <=  new Date('{{ Carbon\Carbon::now() }}')) {
+	            document.getElementById('delivered_date').value = '';
+	            document.getElementById('delivered_date').classList.add("is-invalid");
+	            document.getElementById('invalid-date').style.display = "initial";
+	        }else{
+	            document.getElementById('invalid-date').style.display = "none";
+	            document.getElementById('delivered_date').classList.remove("is-invalid");
+
+	        }
+	    }
+	});
 </script>
 @endsection
