@@ -349,7 +349,7 @@
 							member.appendChild(label);
 
 							select = document.createElement('select');
-							select.className = 'form-control';
+							select.className = 'form-control students';
 							select.name = 'users_id.' + $j + '.' + $i;
 							select.value = '';
 							select.required = true;
@@ -373,5 +373,9 @@
 			document.getElementById('grupos').appendChild(row);
 		}
 	});
+	
+	function recalculateStudents(){
+		$('.students:not([name="'+$(this).prop("name")+'"]) option[value="'+$(this).val()+'"]').remove();
+	}
 </script>
 @endsection
