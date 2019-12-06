@@ -227,11 +227,19 @@
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group">
+							<label for="attempts">{{ __('Fecha de entrega') }}</label>
+
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							
+							<label for="attempts">{{ __('Archivo de corrección') }}</label>
+							<input id="file" type="file" class="form-control {{ $errors->has('file') ? ' is-invalid' : '' }}" name="file" value="{{ old('file') }}" required>
+							@if ($errors->has('file'))
+								<span class="invalid-feedback" role="alert">
+									<strong>{{ $errors->first('file') }}</strong>
+								</span>
+							@endif
 						</div>
 					</div>
 				</div>
