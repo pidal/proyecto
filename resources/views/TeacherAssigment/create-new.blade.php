@@ -350,6 +350,7 @@
 
 							select = document.createElement('select');
 							select.className = 'form-control students';
+							select.onchange = recalculateStudents;
 							select.name = 'users_id.' + $j + '.' + $i;
 							select.value = '';
 							select.required = true;
