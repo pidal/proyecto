@@ -205,10 +205,14 @@
 									@if($k<=$student['number_students'])
 										<div class="col-md-6">
 											<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
-											<select class="form-control students" name="users_id.{{$j}}.{{$i}}">
+											<select class="form-control students" name="users_id_{{$j}}_{{$i}}">
 												<option value="">Seleccione un Estudiante</option>
 												@foreach($student['users'] as $user)
-												<option value="{{$user->id}}" {{ old("users_id.$j.$i") == $user->id?"selected":""}}>{{$user->name}}</option>
+												<option value="{{$user->id}}"
+													@if(old("users_id_".$j."_".$i) == $user->id)
+                                                    selected
+                                                    @endif
+												>{{$user->name}}</option>
 												@endforeach
 											</select>
 										</div>
@@ -365,7 +369,7 @@
 							select = document.createElement('select');
 							select.className = 'form-control students';
 							select.onchange = recalculateStudents;
-							select.name = 'users_id.' + $j + '.' + $i;
+							select.name = 'users_id_' + $j + '_' + $i;
 							select.value = '';
 							select.required = true;
 							member.appendChild(select);
