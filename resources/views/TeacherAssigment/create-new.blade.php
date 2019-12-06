@@ -206,20 +206,14 @@
 										<div class="col-md-6">
 											<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
 											<select class="form-control students" name="users_id.{{$j}}.{{$i}}">
-												<option value="null">Seleccione un Estudiante</option>
+												<option value="">Seleccione un Estudiante</option>
 												@foreach($student['users'] as $user)
-												<option value="{{$user->id}}"
-
-													@if(old("users_id_".$j."_".$i) == $user->id)
-													selected
-													@endif
-
-												>{{$user->name}}</option>
+												<option value="{{$user->id}}">{{$user->name}}</option>
 												@endforeach
 											</select>
 										</div>
 									@endif
-									
+
 								@endfor
 							</div>
 						@endfor
