@@ -143,8 +143,8 @@
 				<div id="files">
 					@for($i = 1; $i<=old('number_files_delivered'); $i++)
 	                    @php
-	                        $filename = "fileName_$i";
-	                        $weight = "weight_$i"
+	                        $filename = "fileName.$i";
+	                        $weight = "weight.$i"
 	                    @endphp
 						<div class="row file" style="margin-top: 20px;">
 							<div class="col-md-6">
@@ -238,8 +238,8 @@
 
 						var input_file = document.createElement('input');
 						input_file.className = 'form-control';
-						input_file.name = 'fileName_' + $i;
-	            		input_file.id = 'fileName_' + $i;
+						input_file.name = 'fileName.' + $i;
+	            		input_file.id = 'fileName.' + $i;
 	            		input_file.type = 'text';
 	            		input_file.placeholder = 'Ej) practica.c';
 	            		input_file.required = true;
@@ -256,8 +256,8 @@
 
 						var input_weight = document.createElement('input');
 						input_weight.className = 'form-control';
-						input_weight.id = 'weight_' + $i + '';
-						input_weight.name = 'weight_' + $i + '';
+						input_weight.id = 'weight.' + $i + '';
+						input_weight.name = 'weight.' + $i + '';
 			            input_weight.type = 'number';
 			            input_weight.min = '1'
 			            input_weight.max = '100'
