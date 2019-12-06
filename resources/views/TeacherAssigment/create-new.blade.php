@@ -149,11 +149,11 @@
 						<div class="row file" style="margin-top: 20px;">
 							<div class="col-md-6">
 								<label>Nombre de archivo {{ $i }} a entregar y extensión:</label>
-								<input class="form-control" name="fileName_{{ $i }}" id="fileName_{{ $i }}" type="text" placeholder="Ej) practica.c" value="{{ old($filename)}}" required="">
+								<input class="form-control" name="fileName.{{ $i }}" id="fileName.{{ $i }}" type="text" placeholder="Ej) practica.c" value="{{ old($filename)}}" required="">
 							</div>
 							<div class="col-md-6">
 								<label>Ponderación del archivo {{ $i }}:</label>
-								<input class="form-control" id="weight_{{ $i }}" name="weight_{{ $i }}" type="number" min="1" max="100" placeholder="100%" value="{{ old($weight) }}" required="">
+								<input class="form-control" id="weight.{{ $i }}" name="weight.{{ $i }}" type="number" min="1" max="100" placeholder="100%" value="{{ old($weight) }}" required="">
 							</div>
 						</div>      
                    	@endfor
