@@ -71,6 +71,7 @@ class TeacherAssigmentController extends Controller
                 ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
                 ->select('users.id', 'users.name')
                 ->where('rel_users_subject.subject_id', old('subject_id'))
+                ->where('users.roles_id', '3')
                 ->get();
             $student = array('number_students' => count($query), 'users' => $query);
         }
@@ -95,9 +96,11 @@ class TeacherAssigmentController extends Controller
                 ->join('rel_users_subject', 'users.id', '=', 'rel_users_subject.users_id')
                 ->select('users.id', 'users.name')
                 ->where('rel_users_subject.subject_id', old('subject_id'))
+                ->where('users.roles_id', '3')
                 ->get();
             $student = array('number_students' => count($query), 'users' => $query);
         }
+
         return view('TeacherAssigment.create-new', compact('subjects', 'student', 'users'));
     }
 
