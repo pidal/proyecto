@@ -194,6 +194,9 @@
 
 				<div id="grupos">
 					@if(old('members_number') && old('type') == 'grupo')
+
+					{{ dd($student) }}
+
 						@php $k=0; @endphp
 						@for($i=1; $i<=old('members_number'); $i++)
 							<div class="row grupo" style="margin-top: 20px;">
