@@ -406,5 +406,9 @@
 			}
 		});
 	}
+
+	@if( old('subject_id') != "" )
+		getUsers(old('subject_id'));
+	@endif
 </script>
 @endsection
