@@ -316,6 +316,8 @@
 			return 0;
 		}
 
+		$('#grupos').html('');
+
 		var members = parseInt($(this).val());
         var students = $number_students;
         var grupos = Math.ceil(students / members );
