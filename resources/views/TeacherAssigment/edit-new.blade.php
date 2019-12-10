@@ -225,7 +225,7 @@
 						<div class="form-group">
 							<label for="attempts">{{ __('Fecha de entrega') }}</label>
 
-							<input id="delivered_date" type="text" class="form-control{{ $errors->has('delivered_date') ? ' is-invalid' : '' }}" name="delivered_date" value="{{ $assignment->delivered_date->format(""d/m/Y G:i"") }}" required>
+							<input id="delivered_date" type="text" class="form-control{{ $errors->has('delivered_date') ? ' is-invalid' : '' }}" name="delivered_date" value="{{ $assignment->delivered_date->format("d/m/Y G:i") }}" required>
 							@if ($errors->has('delivered_date'))
 								<span class="invalid-feedback" role="alert">
 									<strong>{{ $errors->first('delivered_date') }}</strong>
