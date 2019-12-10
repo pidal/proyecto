@@ -141,7 +141,7 @@
 				</div>
 
 				<div id="files">
-					@php $i = 1; @endforeach
+					@php $i = 1; @endphp
                		@foreach($files as $file)
 						<div class="row file" style="margin-top: 20px;">
 							<div class="col-md-6">
