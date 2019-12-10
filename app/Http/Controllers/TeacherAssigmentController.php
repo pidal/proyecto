@@ -155,11 +155,11 @@ class TeacherAssigmentController extends Controller
 
 	public function create(Request $request)
 	{
-		if ($request->has('new')) {
+		/*if ($request->has('new')) {
 			Session::flash('redirect', 'teacherassignmentadd-NEW');
 		}else{
 			Session::flash('redirect', 'teacherassignmentadd');
-		}
+		}*/
 		
 		$validatedData = $request->validate([
 			'name' => 'required',
@@ -201,8 +201,6 @@ class TeacherAssigmentController extends Controller
 			}
 
 		}
-
-
 
 		$assignment = new Assignment();
 		$assignment->fill($validatedData);
