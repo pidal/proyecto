@@ -193,8 +193,8 @@
 				<div id="grupos">
 					@if( $assignment->type == 'grupo' )
 						@php $k=0; @endphp
+						@foreach($group_assignment as $group)
 
-						@for($i=1; $i<= ceil( $student['number_students']/old('members_number') ); $i++)
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>Grupo {{ $i }}</h4></div>
 								@for($j=1; $j<=old('members_number'); $j++)
@@ -218,7 +218,7 @@
 
 								@endfor
 							</div>
-						@endfor
+						@endforeach
 					@endif					
 				</div>
 
