@@ -197,26 +197,12 @@
 
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>{{$group->groupName}}</h4></div>
-								@for($j=1; $j<=old('members_number'); $j++)
+								@php $j=1; @endphp
+                            	@foreach($group->students as $student)
 
-									@php $k++; @endphp
-									@if($k<=$student['number_students'])
-										<div class="col-md-6">
-											<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
-											<select class="form-control students" name="users_id_{{$i}}_{{$j}}">
-												<option value="">Seleccione un Estudiante</option>
-												@foreach($student['users'] as $user)
-												<option value="{{$user->id}}"
-													@if(old("users_id_".$i."_".$j) == $user->id)
-                                                    selected
-                                                    @endif
-												>{{$user->name}}</option>
-												@endforeach
-											</select>
-										</div>
-									@endif
+									
 
-								@endfor
+								@endforeach
 							</div>
 						@endforeach
 					@endif					
