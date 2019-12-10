@@ -105,7 +105,8 @@ Route::resource('alumnos', 'AlumnosController');
 
 Route::resource('teacherassignment','TeacherAssigmentController');
 
-Route::get('teacherassignmentadd','TeacherAssigmentController@add')->name('teacherassignmentadd');
+//Route::get('teacherassignmentadd','TeacherAssigmentController@add')->name('teacherassignmentadd');
+Route::get('teacherassignmentadd','TeacherAssigmentController@add_NEW');
 
 Route::post('teacherassignmentcreate','TeacherAssigmentController@create')->name('teacherassignmentcreate');
 Route::post('teacherassignmentedit','TeacherAssigmentController@saveedit')->name('teacherassignmentedit');
@@ -116,7 +117,3 @@ Route::get('/adminrelatedsubjects/{subject_id}', 'AdminSubjectsController@relate
 Route::post('/postadminrelatedsubjects/{subject_id}', 'AdminSubjectsController@postrelateSubjects')->name('postadminrelatedsubjects');
 #Route::resource('admin', 'AdminAlumnosController');
 Route::get('/home', 'AdminAlumnosController@index')->name('home');
-
-
-//oswaldo
-Route::get('teacherassignmentadd-NEW','TeacherAssigmentController@add_NEW');
