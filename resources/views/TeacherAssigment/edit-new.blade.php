@@ -141,7 +141,7 @@
 				</div>
 
 				<div id="files">
-					@for($i = 1; $i<=old('number_files_delivered'); $i++)
+					@for($i = 1; $i<=$assignment->number_files_delivered; $i++)
 	                    @php
 	                        $filename = "fileName_$i";
 	                        $weight = "weight_$i"
