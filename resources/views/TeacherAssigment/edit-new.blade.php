@@ -196,7 +196,7 @@
 						@foreach($group_assignment as $group)
 
 							<div class="row grupo" style="margin-top: 20px;">
-								<div class="col-md-12"><h4>Grupo {{ $i }}</h4></div>
+								<div class="col-md-12"><h4>{{$group->groupName}}</h4></div>
 								@for($j=1; $j<=old('members_number'); $j++)
 
 									@php $k++; @endphp
