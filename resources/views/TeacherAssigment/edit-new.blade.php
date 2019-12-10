@@ -191,7 +191,7 @@
 				</div>
 
 				<div id="grupos">
-					@if(old('members_number') && old('type') == 'grupo')
+					@if( $assignment->type == 'grupo' )
 						@php $k=0; @endphp
 
 						@for($i=1; $i<= ceil( $student['number_students']/old('members_number') ); $i++)
