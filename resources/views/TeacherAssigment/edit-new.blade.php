@@ -82,8 +82,8 @@
 							<label for="call">{{ __('Convocatoria: ') }}</label>
 				            <div>
 				                <select name="call" id="call" class="form-control" required="required">
-				                    <option value="ordinaria" @if (old('call') == 'ordinaria') selected @endif>Ordinaria</option>
-				                    <option value="extraordinaria" @if (old('call') == 'extraordinaria') selected @endif>Extraordinaria</option>
+				                    <option value="ordinaria" @if ($assignment->call == 'ordinaria') selected @endif>Ordinaria</option>
+                    				<option value="extraordinaria" @if ($assignment->call == 'extraordinaria') selected @endif>Extraordinaria</option>
 				                </select>
 				                @if ($errors->has('call'))
 				                    <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
 				                    <option value="">{{__('Seleccione una')}}</option>
 				                    @foreach($subjects as $subject_id => $subject)
 				                        <option value="{{$subject_id}}"
-				                                @if($subject_id == old('subject_id')) selected @endif>{{$subject}}</option>
+				                                @if($subject_id == $assignment->subject_id) selected @endif>{{$subject}}</option>
 				                    @endforeach
 				                </select>
 				                @if ($errors->has('subject_id'))
