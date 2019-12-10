@@ -141,7 +141,7 @@
 				</div>
 
 				<div id="files">
-					@php $i = 1 @endforeach
+					@php $i = 1; @endforeach
                		@foreach($files as $file)
 						<div class="row file" style="margin-top: 20px;">
 							<div class="col-md-6">
@@ -152,7 +152,8 @@
 								<label>Ponderación del archivo {{ $i }}:</label>
 								<input class="form-control" id="weight_{{ $i }}" name="weight_{{ $i }}" type="number" min="1" max="100" placeholder="100%" value="{{ $file->weight }}" required="">
 							</div>
-						</div>      
+						</div>
+						@php $i++; @endphp    
                    	@endforeach
 				</div>
 
