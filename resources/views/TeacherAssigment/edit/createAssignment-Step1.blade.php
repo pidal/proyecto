@@ -70,18 +70,15 @@
             </div>
 
             <div class="hidden">
-                @for($i = 1; $i<= $assignment->number_files_delivered; $i++)
-                    @php
-                        $filename = "fileName_$i";
-                        $weight = "weight_$i"
-                    @endphp
+                $i = 1
+                @foreach($files as $file)
                     <div id="hideShow" class="form-group">
                         <label id="label1_{{$i}}"
                                for="fileName_{{$i}}">{{ __('Nombre de archivo '.$i .' a entregar y extensión:') }}</label>
                         <input id="fileName_{{$i}}" type="text"
                                class="form-control" min="1" placeholder="Ej) practica.c"
                                name="fileName_{{$i}}"
-                               value="{{ old($filename)}}"
+                               value="{{ $file->fileName }}"
                                required
                                required autofocus />
                         <label id="label2_{{$i}}"
@@ -89,11 +86,12 @@
                         <input id="weight_{{$i}}" type="number"
                                class="form-control" min="1" max="100" placeholder="100%"
                                name="weight_{{$i}}"
-                               value="{{ old($weight) }}"
+                               value="{{ $file->weight }}"
                                required
                                required autofocus/>
                     </div>
-                @endfor
+                    @php $i++; @endphp
+                @endforeach
             </div>
 
             <div id="FormFields">
