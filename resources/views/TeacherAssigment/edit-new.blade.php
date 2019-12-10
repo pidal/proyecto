@@ -192,20 +192,21 @@
 
 				<div id="grupos">
 					@if( $assignment->type == 'grupo' )
-						@php $k=0; @endphp
+						@php $i=1; @endphp
 						@foreach($group_assignment as $group)
 
 							<div class="row grupo" style="margin-top: 20px;">
 								<div class="col-md-12"><h4>{{$group->groupName}}</h4></div>
 								@php $j=1; @endphp
                             	@foreach($group->students as $student)
-
-									
-
+                            		<div class="col-md-6">
+                            			<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
+                            		</div>
+                            		@php $j++; @endphp
 								@endforeach
 							</div>
-							@php $k++; @endphp
 						@endforeach
+						@php $j++; @endphp
 					@endif					
 				</div>
 
