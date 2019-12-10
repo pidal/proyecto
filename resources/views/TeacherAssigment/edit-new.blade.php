@@ -163,8 +163,8 @@
 							<label for="type">{{ __('Tipo de práctica: ') }}</label>
 							<div>
 				                <select name="type" id="type" class="form-control">
-				                    <option value="individual" @if(old('type') == 'individual') selected @endif>Individual</option>
-				                    <option value="grupo" @if(old('type') == 'grupo') selected @endif>Grupo</option>
+									<option value="individual" @if($assignment->type == 'individual') selected @endif>Individual</option>
+                    				<option value="grupo" @if($assignment->type == 'grupo') selected @endif>Grupo</option>
 				                </select>
 				                @if ($errors->has('type'))
 				                    <span class="invalid-feedback" role="alert">
