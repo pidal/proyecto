@@ -204,6 +204,7 @@
 
 								@endforeach
 							</div>
+							@php $k++; @endphp
 						@endforeach
 					@endif					
 				</div>
