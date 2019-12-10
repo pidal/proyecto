@@ -118,7 +118,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="attempts">{{ __('Intentos') }}</label>
-			                <input id="attempts" type="number" class="form-control {{ $errors->has('attempts') ? ' is-invalid' : '' }}" min='1' placeholder=">=1" name="attempts" value="{{ old('attempts') }}" required>
+			                <input id="attempts" type="number" class="form-control {{ $errors->has('attempts') ? ' is-invalid' : '' }}" min='1' placeholder=">=1" name="attempts" value="{{ $assignment->attempts }}" required>
 			                @if ($errors->has('attempts'))
 			                    <span class="invalid-feedback" role="alert">
 			                        <strong>{{ $errors->first('attempts') }}</strong>
@@ -129,7 +129,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="number_files_delivered">{{ __('Número de archivos a entregar') }}</label>
-							<input id="number_files_delivered" type="number" class="form-control" min="1" placeholder=">=1" name="number_files_delivered" value="{{ old('number_files_delivered') }}" required autofocus/>
+							<input id="number_files_delivered" type="number" class="form-control" min="1" placeholder=">=1" name="number_files_delivered" value="{{ $assignment->number_files_delivered }}" required autofocus/>
 
 		                    @if ($errors->has('number_files_delivered'))
 		                        <span class="invalid-feedback" role="alert">
