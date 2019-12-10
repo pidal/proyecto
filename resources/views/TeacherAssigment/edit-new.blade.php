@@ -141,7 +141,7 @@
 				</div>
 
 				<div id="files">
-					@for($i = 1; $i<=$assignment->number_files_delivered; $i++)
+					@foreach($files as $file)
 	                    @php
 	                        $filename = "fileName_$i";
 	                        $weight = "weight_$i"
@@ -156,7 +156,7 @@
 								<input class="form-control" id="weight_{{ $i }}" name="weight_{{ $i }}" type="number" min="1" max="100" placeholder="100%" value="{{ old($weight) }}" required="">
 							</div>
 						</div>      
-                   	@endfor
+                   	@endforeacg
 				</div>
 
 				<div class="row">
