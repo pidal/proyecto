@@ -60,9 +60,9 @@
 							<label for="name">{{ __('Lenguaje de programación: ') }}</label>
 							<div>
 				                <select name="language" id="language" class="form-control" required="required">
-				                    <option value="c" @if(old('language') == 'c') selected @endif>C</option>
-				                    <option value="c#" @if(old('language') == 'c#') selected @endif>C#</option>
-				                    <option value="java" @if(old('language') == 'java') selected @endif>Java</option>
+				                	<option value="c" @if($assignment->language == 'c') selected @endif>C</option>
+                    				<option value="c#" @if($assignment->language == 'c#') selected @endif>C#</option>
+                    				<option value="java" @if($assignment->language == 'java') selected @endif>Java</option>
 				                </select>
 				                @if ($errors->has('language'))
 				                    <span class="invalid-feedback" role="alert">
