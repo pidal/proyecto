@@ -143,7 +143,7 @@ class TeacherAssigmentController extends Controller
 			$group_assignment[] = $relUser;
 		}
 
-        return view('TeacherAssigment.edit.createAssignment',
+        return view('TeacherAssigment.edit-new',
 			compact('files', 'subjects', 'student', 'users', 'assignment', 'group_assignment')
 		);
     }
