@@ -178,7 +178,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<div id="grupos_number" class="form-group" style="margin-top: 20px;{{ old('members_number') == ""?'display: none;':''  }}">
+						<div id="grupos_number" class="form-group" style="margin-top: 20px;{{ $assignment->type != 'grupo'?'display: none;':''  }}">
 							<label for="members_number">{{ __('¿Cuántas personas van a formar el grupo?') }}</label>
 							<input type="number" class="form-control" min='1' placeholder=">=1" id="members_number" name="members_number" value="{{ old('members_number')}}" >
 				            @if ($errors->has('members_number'))
