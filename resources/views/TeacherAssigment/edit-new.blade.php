@@ -201,7 +201,7 @@
                             	@foreach($group->students as $student)
                             		<div class="col-md-6">
                             			<label>Introduce el nombre del componente {{$j}} del grupo {{$i}}</label>
-                            			<select class="form-control students" name="users_id_{{$i}}_{{$j}}">
+                            			<select disabled class="form-control students" name="users_id_{{$i}}_{{$j}}">
                             				<option value="">Seleccione un Estudiante</option>
                             				@foreach($users as $user)
                                         	<option value="{{$user->id}}"
