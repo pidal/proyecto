@@ -162,7 +162,7 @@
 						<div class="form-group" style="margin-top: 20px">
 							<label for="type">{{ __('Tipo de práctica: ') }}</label>
 							<div>
-				                <select name="type" id="type" class="form-control">
+				                <select disabled name="type" id="type" class="form-control">
 									<option value="individual" @if($assignment->type == 'individual') selected @endif>Individual</option>
                     				<option value="grupo" @if($assignment->type == 'grupo') selected @endif>Grupo</option>
 				                </select>
