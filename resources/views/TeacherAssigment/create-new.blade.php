@@ -159,6 +159,8 @@
                    	@endfor
 				</div>
 
+				<h4><span class="badge badge-pill badge-primary">2</span> Tipo de practica</h4>
+
 				<div class="row">
 					<div class="col-md-12">
 						<div class="form-group" style="margin-top: 20px">
@@ -223,6 +225,8 @@
 						@endfor
 					@endif					
 				</div>
+
+				<h4><span class="badge badge-pill badge-primary">1</span> Datos de entrega</h4>
 
 				<div class="row">
 					<div class="col-md-6">
