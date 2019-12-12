@@ -226,7 +226,7 @@
 					@endif					
 				</div>
 
-				<h4><span class="badge badge-pill badge-primary">1</span> Datos de entrega</h4>
+				<h4><span class="badge badge-pill badge-primary">3</span> Datos de entrega</h4>
 
 				<div class="row">
 					<div class="col-md-6">
