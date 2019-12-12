@@ -163,7 +163,7 @@ class StudentController extends Controller
             ->get();
         */
 
-        $groups = RelUsersGroup::where('user_id', Auth::user()->id)->pluck('user_id');
+        $groups = RelUsersGroup::where('users_id', Auth::user()->id)->pluck('users_id');
 
         dd($groups);
         
