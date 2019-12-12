@@ -42,7 +42,7 @@
 
 			<form class="form-horizontal" method="POST" action="{{ route('teacherassignmentcreate') }}" role="form" enctype="multipart/form-data">
                 @csrf
-				<h5><span class="badge badge-pill badge-primary">1</span> Datos basicos</h5>
+				<h5><span class="badge badge-pill badge-primary">1</span> Datos básicos</h5>
                 <div class="row">
                 	<div class="col-md-6">
 
@@ -158,7 +158,7 @@
                    	@endforeach
 				</div>
 
-				<h5><span class="badge badge-pill badge-primary">2</span> Tipo de practica</h5>
+				<h5><span class="badge badge-pill badge-primary">2</span> Tipo de práctica</h5>
 
 				<div class="row">
 					<div class="col-md-12">
