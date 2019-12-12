@@ -193,7 +193,7 @@
 					</div>
 				</div>
 
-				<div id="grupos">
+				<div id="grupos" style="margin-bottom: 40px;">
 					@if( $assignment->type == 'grupo' )
 						@php $i=1; @endphp
 						@foreach($group_assignment as $group)

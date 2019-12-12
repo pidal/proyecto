@@ -194,7 +194,7 @@
 					</div>
 				</div>
 
-				<div id="grupos">
+				<div id="grupos" style="margin-bottom: 40px;">
 					@if(old('members_number') && old('type') == 'grupo')
 						@php $k=0; @endphp
 
