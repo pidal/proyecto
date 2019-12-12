@@ -161,6 +161,10 @@ class StudentController extends Controller
             ->union($studentsUnion)
             ->get();
         */
+
+        $groups = RelUsersGroup::where('user_id', Auth::user()->id)->pluck('user_id');
+
+        dd($groups);
         
 
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
@@ -168,6 +172,7 @@ class StudentController extends Controller
 
 		if ($request->type == 'grupo') {
 			$studentsFiles = StudentFile::where('assignment_id', $assignment->id)->
+
 				get();
 		}else{
 			$studentsFiles = StudentFile::where('users_id', auth()->id())->
