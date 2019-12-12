@@ -140,7 +140,7 @@
 					</div>
 				</div>
 
-				<div id="files">
+				<div id="files" style="margin-bottom: 20px;">
 					@for($i = 1; $i<=old('number_files_delivered'); $i++)
 	                    @php
 	                        $filename = "fileName_$i";
