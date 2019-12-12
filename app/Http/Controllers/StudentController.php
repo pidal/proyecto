@@ -174,7 +174,7 @@ class StudentController extends Controller
 				where('assignment_id', $assignment->id)->
 				get();
 		}
-		//dd($studentsFiles);
+		dd($studentsFiles);
 
 		return view('layouts.showStudentsFiles', compact('assignment', 'studentsFiles', 'subject'));
 	}

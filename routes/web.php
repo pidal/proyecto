@@ -52,7 +52,6 @@ Route::get('/showAssignmentsStudent/{subject_id}', 'StudentController@showAssign
 Route::post('/showAssignmentsStudent', 'StudentController@showAssignmentsStudent');
 
 
-
 Route::get('/showAssignments/{subject_id}', 'InstructorController@showAssignments')->name('showAssignments');
 Route::post('/showAssignments', 'InstructorController@showAssignments');
 
