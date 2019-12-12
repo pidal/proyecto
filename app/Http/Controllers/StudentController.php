@@ -162,18 +162,15 @@ class StudentController extends Controller
             ->union($studentsUnion)
             ->get();
         */
-
-        $groups = RelUsersGroup::where('users_id', Auth::user()->id)->pluck('group_assignment_id');
-
-        dd($groups);
         
-
 		$assignment = Assignment::where('id', $request->assignment_id)->first();
 		$subject = Subject::where('id', $request->subject_id)->first();
 
 		if ($request->type == 'grupo') {
-			$studentsFiles = StudentFile::where('assignment_id', $assignment->id)->
+			$groups = RelUsersGroup::where('users_id', Auth::user()->id)->pluck('group_assignment_id');
 
+			$studentsFiles = StudentFile::where('assignment_id', $assignment->id)->
+				whereIn('group_id', $groups)->
 				get();
 		}else{
 			$studentsFiles = StudentFile::where('users_id', auth()->id())->
