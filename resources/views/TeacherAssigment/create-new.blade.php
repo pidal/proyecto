@@ -42,10 +42,9 @@
 
 			<form class="form-horizontal" method="POST" action="{{ route('teacherassignmentcreate') }}" role="form" enctype="multipart/form-data">
                 @csrf
+                <h3><span class="badge badge-primary">1</span> Datos basicos</h3>
                 <div class="row">
-                	<span class="badge badge-primary">1</span>
                 	<div class="col-md-6">
-
                 		<div class="form-group">
 							<label for="name">{{ __('Nombre de la práctica') }}</label>
 							<input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" autofocus required>
