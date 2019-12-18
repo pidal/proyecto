@@ -40,5 +40,9 @@ class RelUsersGroup extends Model
 		return $this->belongsTo(\pfg\Models\GroupAssignment::class);
 	}
 
-
+	public function getNameAttribute()
+	{
+		$user = User::find($this->users_id);
+		return $user->name;
+	}
 }

@@ -419,7 +419,6 @@ class InstructorController extends Controller
         foreach($groups as $group)
         {
             $relUserGroup = RelUsersGroup::where('group_assignment_id', $group->id)->get();
-            $relUserGroup['name'] = User::find($relUserGroup->users_id)->pluck('name');
             $relUser = new \StdClass();
             $relUser->groupName = $group->name;
             $relUser->groupId = $group->id;
