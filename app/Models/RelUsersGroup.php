@@ -35,6 +35,8 @@ class RelUsersGroup extends Model
 		'group_assignment_id'
 	];
 
+	protected $appends = array('name');
+
 	public function group_assignment()
 	{
 		return $this->belongsTo(\pfg\Models\GroupAssignment::class);
