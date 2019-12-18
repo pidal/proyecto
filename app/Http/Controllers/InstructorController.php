@@ -407,7 +407,27 @@ class InstructorController extends Controller
             ->where('rel_users_subject.subject_id', $request->subject_id)
 			->where('users.roles_id', '3')
             ->get();
-        return response()->json(['number_students' => count($users), 'users' => $users]);
+
+
+
+        //Getting last f. group
+
+        $assignment = Assignment::where('subject_id', $request->subject_id)->where('type', 'grupo')->orderBy('created_at', 'desc')->first();
+
+        $groups = GroupAssignment::where('assignment_id',$assignment->id)->get();
+        $group_assignment = array();
+        foreach($groups as $group)
+        {
+            $relUserGroup = RelUsersGroup::where('group_assignment_id', $group->id)->get();
+            $relUser = new \StdClass();
+            $relUser->groupName = $group->name;
+            $relUser->groupId = $group->id;
+            $relUser->members_number = $group->members_number;
+            $relUser->students = $relUserGroup;
+            $group_assignment[] = $relUser;
+        }
+
+        return response()->json(['number_students' => count($users), 'users' => $users, 'groups' => $group_assignment]);
 
     }
 
