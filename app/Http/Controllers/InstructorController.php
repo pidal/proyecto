@@ -427,7 +427,7 @@ class InstructorController extends Controller
             $group_assignment[] = $relUser;
         }
 
-        return response()->json(['number_students' => count($users), 'users' => $users, 'groups' => $group_assignment]);
+        return response()->json(['number_students' => count($users), 'users' => $users, 'last_group' => $group_assignment]);
 
     }
 
