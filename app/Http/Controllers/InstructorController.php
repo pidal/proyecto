@@ -408,8 +408,6 @@ class InstructorController extends Controller
 			->where('users.roles_id', '3')
             ->get();
 
-
-
         //Getting last f. group
 
         $assignment = Assignment::where('subject_id', $request->subject_id)->where('type', 'grupo')->orderBy('created_at', 'desc')->first();
