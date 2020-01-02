@@ -1,4 +1,4 @@
-@extends ('layouts.template')
+﻿@extends ('layouts.template')
 
 @section('content')
     <div class="container-fluid">
@@ -77,6 +77,7 @@
                                         <td>{{$alumno->name}}</td>
                                         <td>{{$alumno->surname}}</td>
                                         <td>{{$alumno->email}}</td>
+					<td>{{$alumno->rol}}</td>
                                         <td>
                                             <div style="display: flex">
                                                 <a class="btn btn-primary btn-xs m-1"
