@@ -20,7 +20,7 @@ class AlumnosController extends Controller
         $this->middleware('CheckTeacher');
     }
 
-    /**
+    /**1
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

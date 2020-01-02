@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace pfg\Http\Controllers;
 
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
-	/**
+	/**1
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response

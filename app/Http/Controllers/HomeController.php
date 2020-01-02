@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace pfg\Http\Controllers;
 
@@ -8,7 +8,7 @@ use Session;
 
 class HomeController extends Controller
 {
-    /**
+    /**1
      * Create a new controller instance.
      *
      * @return void

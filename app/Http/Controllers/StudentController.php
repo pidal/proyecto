@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace pfg\Http\Controllers;
 
@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Storage;
 
 class StudentController extends Controller
 {
-	/**
+	/**1
 	 * Create a new controller instance.
 	 *
 	 * @return void

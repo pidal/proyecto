@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace pfg\Http\Controllers;
 
@@ -23,7 +23,7 @@ class AdminAlumnosController extends Controller
         $this->middleware('CheckAdmin');
     }
 
-    /**
+    /**1
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

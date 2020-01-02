@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 namespace pfg\Http\Controllers;
 
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class AlumnoController extends Controller
 {
-	/**
+	/**1
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response

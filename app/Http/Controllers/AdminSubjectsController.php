@@ -11,7 +11,7 @@ use Session;
 
 class AdminSubjectsController extends Controller
 {
-    /**
+    /**1
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
